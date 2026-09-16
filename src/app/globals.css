@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Backgrounds */
+  --bg-base: #07090D;
+  --bg-elevated: #0B0F17;
+  --bg-card: #101726;
+
+  /* Surfaces */
+  --surface: rgba(13, 20, 36, 0.55);
+  --surface-hover: rgba(16, 25, 46, 0.75);
+  --surface-glass: rgba(11, 16, 28, 0.65);
+
+  /* Text - Enhanced contrast against #07090D */
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;    /* 7.5:1 contrast against #07090D (passes WCAG AAA) */
+  --text-subtle: #7E8B9F;   /* 4.8:1 contrast (passes WCAG AA) */
+
+  /* Accents */
+  --accent: #4F8CFF;
+  --accent-light: #7DB0FF;
+  --accent-cyan: #45D7FF;
+
+  /* Borders - Refined ultra-fine edges */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-hover: rgba(79, 140, 255, 0.35);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-glow: 0 0 50px rgba(79, 140, 255, 0.12);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(79, 140, 255, 0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.012em;
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-space-grotesk), var(--font-sans), sans-serif;
+  letter-spacing: -0.035em;
+}
+
+/* Accessibility: Skip link */
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(79, 140, 255, 0.4);
+}
+
+.skip-link:focus {
+  top: 1.5rem;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Visible keyboard focus rings */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 140, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 140, 255, 0.4);
+}
+
+/* Selection */
+::selection {
+  background: rgba(79, 140, 255, 0.30);
+  color: var(--text-primary);
+}
+
+/* Glass surface styling */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(16, 25, 46, 0.65) 0%, rgba(10, 15, 26, 0.75) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+/* Card 3D tilt perspective wrapper */
+.card-perspective {
+  perspective: 1200px;
+}
+
+.card-tilt-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Subtle ambient section separator */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(79, 140, 255, 0.15) 50%, transparent 100%);
+}
+
+/* Hero text protection vignette */
+.hero-vignette {
+  background: radial-gradient(circle at 40% 50%, rgba(7, 9, 13, 0.85) 0%, rgba(7, 9, 13, 0.45) 55%, transparent 100%);
+}
+
+/* Ambient light orbs animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(35px, -45px) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, 25px) scale(0.94);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 35px) scale(0.92);
+  }
+  66% {
+    transform: translate(30px, -25px) scale(1.06);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 24s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 28s ease-in-out infinite;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

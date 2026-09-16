@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A decade-long vision for sovereign intelligence. Explore QORVAYN's roadmap and technology bets.">
+  <title>Future — QORVAYN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.2;
+      animation: float 20s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 0.5; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body style="background:#0a0b0f;color:#e8e6f0;font-family:'DM Sans',sans-serif;overflow-x:hidden;">
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN">
+      <span class="nav-logo-text">QORVAYN</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" data-nav="home" class="nav-link">Home</a>
+      <a href="about.html" data-nav="about" class="nav-link">About</a>
+      <a href="products.html" data-nav="products" class="nav-link">Products</a>
+      <a href="team.html" data-nav="team" class="nav-link">Team</a>
+      <a href="future.html" data-nav="future" class="nav-link">Future</a>
+      <a href="contact.html" data-nav="contact" class="nav-link">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <button id="menu-toggle" class="hamburger" aria-expanded="false" aria-label="Open navigation" aria-controls="mobile-menu">
+        <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" data-nav="home" class="mobile-nav-link">Home</a>
+      <a href="about.html" data-nav="about" class="mobile-nav-link">About</a>
+      <a href="products.html" data-nav="products" class="mobile-nav-link">Products</a>
+      <a href="team.html" data-nav="team" class="mobile-nav-link">Team</a>
+      <a href="future.html" data-nav="future" class="mobile-nav-link">Future</a>
+      <a href="contact.html" data-nav="contact" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="mobile-nav-cta">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero" style="position:relative;min-height:75vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <canvas id="future-hero-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></canvas>
+    
+    <div class="orb" style="position:absolute;top:20%;left:10%;width:300px;height:300px;background:radial-gradient(circle, rgba(173,198,255,0.1) 0%, transparent 70%);border-radius:50%;filter:blur(40px);z-index:1;"></div>
+    <div class="orb" style="position:absolute;bottom:10%;right:20%;width:400px;height:400px;background:radial-gradient(circle, rgba(76,215,246,0.1) 0%, transparent 70%);border-radius:50%;filter:blur(50px);z-index:1;"></div>
+    
+    <!-- Particles -->
+    <div class="particle" style="top:90%;left:10%;width:4px;height:4px;animation-duration:15s;animation-delay:0s;"></div>
+    <div class="particle" style="top:80%;left:30%;width:6px;height:6px;animation-duration:22s;animation-delay:2s;"></div>
+    <div class="particle" style="top:95%;left:50%;width:3px;height:3px;animation-duration:18s;animation-delay:5s;"></div>
+    <div class="particle" style="top:85%;left:70%;width:5px;height:5px;animation-duration:25s;animation-delay:1s;"></div>
+    <div class="particle" style="top:70%;left:85%;width:7px;height:7px;animation-duration:19s;animation-delay:4s;"></div>
+    <div class="particle" style="top:92%;left:90%;width:4px;height:4px;animation-duration:21s;animation-delay:3s;"></div>
+    <div class="particle" style="top:88%;left:20%;width:5px;height:5px;animation-duration:16s;animation-delay:6s;"></div>
+    <div class="particle" style="top:75%;left:60%;width:6px;height:6px;animation-duration:24s;animation-delay:7s;"></div>
+
+    <div class="hero-vignette" style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at center, transparent 30%, #0a0b0f 100%);z-index:2;"></div>
+
+    <div class="hero-content" style="position:relative;z-index:3;text-align:center;padding:0 1.5rem;max-width:800px;margin-top:4rem;">
+      <span class="badge-primary reveal" style="display:inline-block;margin-bottom:1.5rem;padding:0.5rem 1rem;border-radius:999px;background:rgba(173,198,255,0.1);color:#adc6ff;border:1px solid rgba(173,198,255,0.2);font-size:0.875rem;">The Road Ahead</span>
+      <h1 class="text-hero font-display text-gradient reveal" style="margin-bottom:1.5rem;line-height:1.1;">Engineering Tomorrow</h1>
+      <p class="text-h3 reveal delay-1" style="color:#8890a4;margin-bottom:2rem;">A decade-long vision for sovereign intelligence.</p>
+      <div class="reveal delay-2" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;color:#8890a4;font-family:'DM Mono',monospace;font-size:0.875rem;">
+        <span>3 Active Products</span>
+        <span>·</span>
+        <span>Founded 2026</span>
+        <span>·</span>
+        <span>Long-Term Vision</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Statement -->
+  <section class="section section-full" style="padding:6rem 1.5rem;position:relative;text-align:center;">
+    <div style="max-width:900px;margin:0 auto;position:relative;">
+      <span style="position:absolute;top:-4rem;left:50%;transform:translateX(-50%);font-family:Syne,sans-serif;font-size:8rem;color:#ffffff;opacity:0.04;line-height:1;">"</span>
+      <blockquote class="text-display font-display reveal" style="line-height:1.3;margin-bottom:2rem;position:relative;z-index:1;">
+        We believe the next decade of technology will be defined not by who has the most data, but by who builds the most human-centered systems.
+      </blockquote>
+      <div class="text-label reveal delay-1" style="color:#8890a4;">— QORVAYN, 2026</div>
+    </div>
+    <div class="divider reveal delay-2" style="max-width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);margin:4rem auto 0;"></div>
+  </section>
+
+  <!-- Roadmap Timeline -->
+  <section class="section section-inner" style="padding:4rem 1.5rem 6rem;max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag reveal" style="display:inline-block;color:#8890a4;text-transform:uppercase;letter-spacing:0.1em;font-size:0.875rem;margin-bottom:1rem;">Product Roadmap</span>
+      <h2 class="text-display font-display reveal" style="margin-bottom:1.5rem;">The Path Forward</h2>
+    </div>
+
+    <div class="timeline" style="position:relative;border-left:1px solid rgba(255,255,255,0.1);padding-left:0;margin-left:1rem;">
+      
+      <!-- 1 -->
+      <div class="reveal delay-1" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#adc6ff;box-shadow:0 0 10px rgba(173,198,255,0.5);"></div>
+        <div class="text-label" style="color:#adc6ff;margin-bottom:0.5rem;">Q4 2026</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">RYNEKA Closed Alpha</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">Initial rollout of our flagship agentic assistant to early adopters, focusing on developer workflows and system stability.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-secondary" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(76,215,246,0.1);color:#4cd7f6;font-size:0.75rem;border:1px solid rgba(76,215,246,0.2);">In Progress</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Agents</span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="reveal delay-2" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot secondary" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#4cd7f6;box-shadow:0 0 10px rgba(76,215,246,0.5);"></div>
+        <div class="text-label" style="color:#4cd7f6;margin-bottom:0.5rem;">Q1 2027</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">SkyPics Public Beta</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">Launch of our decentralized, visually stunning media platform for creators and photographers.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-primary" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(173,198,255,0.1);color:#adc6ff;font-size:0.75rem;border:1px solid rgba(173,198,255,0.2);">Upcoming</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Media</span>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="reveal delay-3" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot secondary" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#4cd7f6;box-shadow:0 0 10px rgba(76,215,246,0.5);"></div>
+        <div class="text-label" style="color:#4cd7f6;margin-bottom:0.5rem;">Q2 2027</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">GoalWear Prototype Reveal</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">First look at our wearable productivity hardware designed to integrate seamlessly with the RYNEKA intelligence network.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-primary" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(173,198,255,0.1);color:#adc6ff;font-size:0.75rem;border:1px solid rgba(173,198,255,0.2);">Upcoming</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Hardware</span>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="reveal delay-4" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#adc6ff;box-shadow:0 0 10px rgba(173,198,255,0.5);"></div>
+        <div class="text-label" style="color:#adc6ff;margin-bottom:0.5rem;">Q3 2027</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">RYNEKA v1.0 Public Launch</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">General availability of the RYNEKA agentic ecosystem, featuring full cross-platform synchronization and enterprise support.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-primary" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(173,198,255,0.1);color:#adc6ff;font-size:0.75rem;border:1px solid rgba(173,198,255,0.2);">Planned</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Software</span>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="reveal delay-5" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#adc6ff;box-shadow:0 0 10px rgba(173,198,255,0.5);"></div>
+        <div class="text-label" style="color:#adc6ff;margin-bottom:0.5rem;">Q4 2027</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">QORVAYN Developer Platform</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">Opening our APIs and SDKs to let third-party developers build skills, apps, and integrations on the QORVAYN ecosystem.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-primary" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(173,198,255,0.1);color:#adc6ff;font-size:0.75rem;border:1px solid rgba(173,198,255,0.2);">Planned</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Platform</span>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="reveal delay-6" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot secondary" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#4cd7f6;box-shadow:0 0 10px rgba(76,215,246,0.5);"></div>
+        <div class="text-label" style="color:#4cd7f6;margin-bottom:0.5rem;">2028</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">GoalWear Consumer Launch</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">Wide release of our intelligent wearable lineup, bridging the gap between digital intentionality and physical action.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-muted" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(136,144,164,0.1);color:#8890a4;font-size:0.75rem;border:1px solid rgba(136,144,164,0.2);">Vision</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Hardware</span>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="reveal delay-7" style="position:relative;padding-left:2.5rem;margin-bottom:4rem;">
+        <div class="tl-dot secondary" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#4cd7f6;box-shadow:0 0 10px rgba(76,215,246,0.5);"></div>
+        <div class="text-label" style="color:#4cd7f6;margin-bottom:0.5rem;">2028-2029</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">Global Expansion</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">Scaling our infrastructure and establishing physical QORVAYN hubs in key tech capitals across Europe and North America.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-muted" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(136,144,164,0.1);color:#8890a4;font-size:0.75rem;border:1px solid rgba(136,144,164,0.2);">Vision</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Business</span>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="reveal delay-8" style="position:relative;padding-left:2.5rem;margin-bottom:0;">
+        <div class="tl-dot" style="position:absolute;left:-0.35rem;top:0.25rem;width:0.7rem;height:0.7rem;border-radius:50%;background:#adc6ff;box-shadow:0 0 10px rgba(173,198,255,0.5);"></div>
+        <div class="text-label" style="color:#adc6ff;margin-bottom:0.5rem;">2030+</div>
+        <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.5rem;color:#e8e6f0;">Sovereign Intelligence Platform</h3>
+        <p style="color:#8890a4;margin-bottom:1rem;line-height:1.6;max-width:500px;">A unified, edge-computed neural OS where users have absolute ownership of their digital models, memories, and capabilities.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <span class="badge-muted" style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(136,144,164,0.1);color:#8890a4;font-size:0.75rem;border:1px solid rgba(136,144,164,0.2);">Long-Term Vision</span>
+          <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">Ecosystem</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technology Bets Section -->
+  <section class="section section-full" style="padding:6rem 1.5rem;background:rgba(17,18,24,0.3);border-top:1px solid rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.03);">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="section-tag reveal" style="display:inline-block;color:#8890a4;text-transform:uppercase;letter-spacing:0.1em;font-size:0.875rem;margin-bottom:1rem;">Technology Bets</span>
+        <h2 class="text-display font-display reveal" style="margin-bottom:1.5rem;">What we're building towards</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1 -->
+        <div class="tilt-card glass reveal-scale delay-1" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(173,198,255,0.2), rgba(173,198,255,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(173,198,255,0.1);">
+            <span class="material-symbols-outlined" style="color:#adc6ff;">memory</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Local-First AI</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">Inference at the edge, not the cloud. Privacy and zero latency by default.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="tilt-card glass reveal-scale delay-2" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(76,215,246,0.2), rgba(76,215,246,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(76,215,246,0.1);">
+            <span class="material-symbols-outlined" style="color:#4cd7f6;">sensors</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Ambient Computing</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">Technology that fades into the background, anticipating needs without explicit commands.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="tilt-card glass reveal-scale delay-3" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(173,198,255,0.2), rgba(173,198,255,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(173,198,255,0.1);">
+            <span class="material-symbols-outlined" style="color:#adc6ff;">psychology</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Neural Interfaces</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">Blurring the boundary between human cognition and digital systems for seamless interaction.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="tilt-card glass reveal-scale delay-4" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(76,215,246,0.2), rgba(76,215,246,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(76,215,246,0.1);">
+            <span class="material-symbols-outlined" style="color:#4cd7f6;">hub</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Decentralized Media</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">No single point of failure. A network where content is truly owned by its creators.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="tilt-card glass reveal-scale delay-5" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(173,198,255,0.2), rgba(173,198,255,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(173,198,255,0.1);">
+            <span class="material-symbols-outlined" style="color:#adc6ff;">favorite</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Biorhythm Intelligence</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">AI that understands your body's rhythms to optimize your workflow and well-being.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="tilt-card glass reveal-scale delay-6" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;display:inline-block;width:100%;">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg, rgba(76,215,246,0.2), rgba(76,215,246,0.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(76,215,246,0.1);">
+            <span class="material-symbols-outlined" style="color:#4cd7f6;">fingerprint</span>
+          </div>
+          <h3 class="font-display text-h3" style="margin-bottom:0.75rem;color:#e8e6f0;">Sovereign Identity</h3>
+          <p style="color:#8890a4;line-height:1.6;font-size:0.95rem;">Your identity, your data, your control. True cryptographic sovereignty on the web.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-inner" style="padding:8rem 1.5rem;text-align:center;">
+    <h2 class="text-display font-display reveal" style="margin-bottom:2.5rem;">Want to shape the future?</h2>
+    <div class="reveal delay-1" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary" style="padding:0.75rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:500;">Get Early Access &rarr;</a>
+      <a href="team.html" class="btn btn-ghost" style="padding:0.75rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:#e8e6f0;">Join the Team &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" style="background:#0a0b0f;border-top:1px solid rgba(255,255,255,0.05);padding:4rem 1.5rem 2rem;">
+  <div class="footer-inner" style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem;" class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4">
+      <div style="display:flex;flex-direction:column;gap:1rem;" class="md:col-span-2">
+        <a href="index.html" class="nav-logo" style="width:fit-content;display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN" style="height:32px;width:32px;">
+          <span class="nav-logo-text font-display font-bold" style="color:#e8e6f0;letter-spacing:0.05em;font-size:1.1rem;">QORVAYN</span>
+        </a>
+        <p style="color:#8890a4;font-size:0.875rem;max-width:280px;line-height:1.6;">Building intelligent digital products for real human impact.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.875rem;">
+        <span class="text-label" style="color:#adc6ff;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.5rem;">Platform</span>
+        <a href="about.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">About</a>
+        <a href="products.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Products</a>
+        <a href="future.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Future</a>
+        <a href="team.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Team</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.875rem;">
+        <span class="text-label" style="color:#adc6ff;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.5rem;">Connect</span>
+        <a href="mailto:theqorvayn@gmail.com" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">theqorvayn@gmail.com</a>
+        <a href="contact.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Contact</a>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p style="color:#8890a4;font-size:0.82rem;">© <span class="current-year">2026</span> QORVAYN. All rights reserved.</p>
+      <p style="color:#8890a4;font-size:0.82rem;">Founded 10 March 2026 · Bangladesh</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // GLSL Shader Class
+  class QShader {
+    constructor(canvasId, fragShader) {
+      this.canvas = document.getElementById(canvasId);
+      if (!this.canvas) return;
+      this.gl = this.canvas.getContext('webgl');
+      this.fragSrc = fragShader;
+      this.init();
+    }
+    init() {
+      const gl = this.gl;
+      if (!gl) return;
+      const vs = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vs, 'attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}');
+      gl.compileShader(vs);
+      const fs = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.shaderSource(fs, this.fragSrc);
+      gl.compileShader(fs);
+      this.prog = gl.createProgram();
+      gl.attachShader(this.prog, vs);
+      gl.attachShader(this.prog, fs);
+      gl.linkProgram(this.prog);
+      gl.useProgram(this.prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(this.prog, 'p');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+      this.timeLoc = gl.getUniformLocation(this.prog, 'u_time');
+      this.resLoc = gl.getUniformLocation(this.prog, 'u_resolution');
+      this.mouseLoc = gl.getUniformLocation(this.prog, 'u_mouse');
+      this.mouse = [0.5, 0.5];
+      window.addEventListener('mousemove', e => {
+        this.mouse = [e.clientX/window.innerWidth, 1.0 - e.clientY/window.innerHeight];
+      });
+      window.addEventListener('resize', () => this.resize());
+      this.resize();
+      this.startTime = performance.now();
+      this.render();
+    }
+    resize() {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = this.canvas.parentElement.offsetHeight || window.innerHeight;
+      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+    }
+    render() {
+      const gl = this.gl;
+      gl.uniform1f(this.timeLoc, (performance.now() - this.startTime) / 1000);
+      gl.uniform2f(this.resLoc, this.canvas.width, this.canvas.height);
+      gl.uniform2f(this.mouseLoc, this.mouse[0], this.mouse[1]);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(() => this.render());
+    }
+  }
+
+  // Tilt Card Effect
+  class QTilt {
+    constructor() {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+          const dx = x - xc;
+          const dy = y - yc;
+          card.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg)`;
+          const shine = card.querySelector('.tilt-shine');
+          if (shine) {
+            shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15), transparent 60%)`;
+          }
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+          const shine = card.querySelector('.tilt-shine');
+          if (shine) shine.style.background = 'none';
+        });
+      });
+    }
+  }
+
+  const spaceWarpGLSL = \`
+    precision highp float;
+    uniform float u_time;
+    uniform vec2 u_resolution;
+    uniform vec2 u_mouse;
+    float rand(vec2 n){return fract(sin(dot(n,vec2(12.9898,4.1414)))*43758.5453);}
+    void main(){
+      vec2 uv=(gl_FragCoord.xy-.5*u_resolution)/min(u_resolution.x,u_resolution.y);
+      float t=u_time*0.55;
+      vec2 m=(u_mouse-.5)*.06;
+      uv+=m;
+      float d=length(uv);
+      float a=atan(uv.y,uv.x);
+      float tunnel=fract(0.8/(d+0.01)-t*1.4);
+      float ray=pow(max(0.,sin(a*6.+t*.4)),3.)*.6+.4;
+      float star=smoothstep(.94,1.,tunnel)*ray;
+      // Radial star streaks
+      float streaks=0.;
+      for(int i=0;i<8;i++){
+        float fi=float(i);
+        float ang=fi*0.7854+t*0.08;
+        vec2 dir=vec2(cos(ang),sin(ang));
+        float proj=dot(uv,dir);
+        float perp=length(uv-dir*proj);
+        float fade=smoothstep(0.,.8,proj)*smoothstep(1.2,.6,proj);
+        streaks+=smoothstep(.025,.0,perp)*fade*.5;
+      }
+      vec3 bg=vec3(.024,.028,.046);
+      vec3 starC=vec3(.65,.85,1.);
+      vec3 streakC=vec3(.38,.72,1.);
+      vec3 core=vec3(.1,.3,.8);
+      vec3 col=bg;
+      col+=starC*star*0.85;
+      col+=streakC*streaks;
+      col+=core*exp(-d*3.)*.6*(0.7+0.3*sin(t*1.5));
+      float vign=smoothstep(1.4,.18,d);
+      col*=vign;
+      gl_FragColor=vec4(pow(max(col,vec3(0.)),vec3(.88)),1.);
+    }
+  \`;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new QShader('future-hero-canvas', spaceWarpGLSL);
+    new QTilt();
+  });
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

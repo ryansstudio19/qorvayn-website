@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about QORVAYN — a remote-first technology company rooted in Bangladesh.">
+  <title>About — QORVAYN</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/shared.css">
+</head>
+<body style="background:#0a0b0f; color:#e8e6f0; font-family:'DM Sans',sans-serif;">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header id="site-header">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN">
+      <span class="nav-logo-text">QORVAYN</span>
+    </a>
+    <!-- Desktop nav -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html"    data-nav="home"     class="nav-link">Home</a>
+      <a href="about.html"    data-nav="about"    class="nav-link">About</a>
+      <a href="products.html" data-nav="products" class="nav-link">Products</a>
+      <a href="team.html"     data-nav="team"     class="nav-link">Team</a>
+      <a href="future.html"   data-nav="future"   class="nav-link">Future</a>
+      <a href="contact.html"  data-nav="contact"  class="nav-link">Contact</a>
+    </nav>
+    <!-- Right side -->
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <button id="menu-toggle" class="hamburger" aria-expanded="false" aria-label="Open navigation" aria-controls="mobile-menu">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html"    data-nav="home"     class="mobile-nav-link">Home</a>
+      <a href="about.html"    data-nav="about"    class="mobile-nav-link">About</a>
+      <a href="products.html" data-nav="products" class="mobile-nav-link">Products</a>
+      <a href="team.html"     data-nav="team"     class="mobile-nav-link">Team</a>
+      <a href="future.html"   data-nav="future"   class="mobile-nav-link">Future</a>
+      <a href="contact.html"  data-nav="contact"  class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="mobile-nav-cta">Get in touch</a>
+    </div>
+  </div>
+</header>
+  <main id="main-content" class="page-content" style="padding-top:72px;">
+    
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 80vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <canvas id="about-hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
+      
+      <div class="orb" style="position: absolute; width:500px;height:500px;background:#4d8eff;top:-20%;left:-10%;--dx:10px;--dy:20px;--dur:15s;border-radius:50%;filter:blur(100px);opacity:0.2;z-index:1;"></div>
+      <div class="orb" style="position: absolute; width:400px;height:400px;background:#a4c9ff;bottom:-20%;right:-10%;--dx:-20px;--dy:-10px;--dur:12s;border-radius:50%;filter:blur(100px);opacity:0.15;z-index:1;"></div>
+      
+      <!-- 6 Floating particles -->
+      <div class="particle" style="position:absolute; width:4px; height:4px; background:#fff; border-radius:50%; top:25%; left:15%; --dur:9s; --delay:0s; --tx1:15px; --ty1:25px; --tx2:-10px; --ty2:-15px; z-index:1;"></div>
+      <div class="particle" style="position:absolute; width:3px; height:3px; background:#adc6ff; border-radius:50%; top:35%; left:75%; --dur:11s; --delay:1s; --tx1:-20px; --ty1:10px; --tx2:15px; --ty2:-20px; z-index:1;"></div>
+      <div class="particle" style="position:absolute; width:5px; height:5px; background:#4cd7f6; border-radius:50%; top:65%; left:25%; --dur:13s; --delay:2s; --tx1:25px; --ty1:-25px; --tx2:-15px; --ty2:15px; z-index:1;"></div>
+      <div class="particle" style="position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; top:75%; left:65%; --dur:8s; --delay:0.5s; --tx1:-10px; --ty1:-15px; --tx2:10px; --ty2:15px; z-index:1;"></div>
+      <div class="particle" style="position:absolute; width:4px; height:4px; background:#a4c9ff; border-radius:50%; top:45%; left:45%; --dur:10s; --delay:1.5s; --tx1:20px; --ty1:20px; --tx2:-20px; --ty2:-10px; z-index:1;"></div>
+      <div class="particle" style="position:absolute; width:3px; height:3px; background:#fff; border-radius:50%; top:55%; left:55%; --dur:7s; --delay:0.2s; --tx1:-15px; --ty1:15px; --tx2:15px; --ty2:-20px; z-index:1;"></div>
+
+      <div class="hero-vignette" style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, transparent 30%, #0a0b0f 100%); z-index: 2; pointer-events: none;"></div>
+      
+      <div class="hero-content section-inner" style="position: relative; z-index: 3; text-align: center; max-width: 900px; display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+        <div class="badge badge-primary reveal">
+          Founded 10 March 2026
+        </div>
+        
+        <h1 class="text-hero font-display reveal">We are QORVAYN</h1>
+        
+        <p class="text-h3 font-body reveal delay-1" style="color: #e8e6f0; max-width: 700px;">A remote-first technology company rooted in Bangladesh, dedicated to crafting intelligent and beautiful software.</p>
+        
+        <div class="reveal delay-2 text-caption" style="display: flex; gap: 1rem; color: #8890a4; background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.05);">
+          <span>Founded 2026</span> <span style="color:rgba(255,255,255,0.2);">|</span> <span>Remote-First</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="section" style="padding: 4rem 0; position:relative;">
+      <div class="section-inner" style="text-align:center; position:relative; max-width:800px; margin: 0 auto;">
+        <div style="font-size: 8rem; opacity: 0.06; position: absolute; top: -4rem; left: 0; font-family: serif; line-height: 1; pointer-events: none; color: #adc6ff;">&ldquo;</div>
+        <blockquote class="text-display font-display reveal" style="color:#e8e6f0; font-weight:600; line-height:1.4; margin:0; padding:0 2rem; position:relative; z-index:1;">
+          "Our mission is to build a sovereign technology ecosystem — products that serve people, not platforms."
+        </blockquote>
+        <div class="divider" style="margin: 3rem auto 0; width: 100px; height: 2px; background: linear-gradient(90deg, transparent, #4cd7f6, transparent);"></div>
+      </div>
+    </section>
+
+    <!-- Our Story Timeline -->
+    <section class="section">
+      <div class="section-inner max-w-4xl mx-auto">
+        <div class="section-tag">The QORVAYN Story</div>
+        <h2 class="text-display font-display reveal" style="margin-bottom: 3rem;">A journey of innovation</h2>
+        
+        <div class="timeline" style="border-left: 2px solid rgba(255,255,255,0.07); padding-left: 2rem; margin-left: 1rem;">
+          
+          <div style="position:relative; margin-bottom:2.5rem;" class="reveal delay-1">
+            <div class="tl-dot" style="position:absolute; left:-2.45rem; top:0.25rem; width:14px; height:14px; border-radius:50%; background:#4d8eff; border:3px solid #0a0b0f;"></div>
+            <div class="text-label" style="color:#adc6ff; margin-bottom:0.4rem;">March 10, 2026</div>
+            <h3 class="text-h3 font-display" style="color:#e8e6f0; margin-bottom:0.5rem;">The Genesis</h3>
+            <p class="text-caption" style="color:#b0b5c4; max-width:600px; margin-bottom:0.75rem;">QORVAYN was officially founded in Bangladesh with a vision to build software that enhances human capability.</p>
+            <div style="display:flex; gap:0.5rem;"><span class="badge badge-muted">Incorporation</span></div>
+          </div>
+          
+          <div style="position:relative; margin-bottom:2.5rem;" class="reveal delay-2">
+            <div class="tl-dot" style="position:absolute; left:-2.45rem; top:0.25rem; width:14px; height:14px; border-radius:50%; background:#4d8eff; border:3px solid #0a0b0f;"></div>
+            <div class="text-label" style="color:#adc6ff; margin-bottom:0.4rem;">June 2026</div>
+            <h3 class="text-h3 font-display" style="color:#e8e6f0; margin-bottom:0.5rem;">RYNEKA v1 Launch</h3>
+            <p class="text-caption" style="color:#b0b5c4; max-width:600px; margin-bottom:0.75rem;">The first version of our flagship AI workspace was released, introducing novel ways to orchestrate intelligent agents.</p>
+            <div style="display:flex; gap:0.5rem;"><span class="badge badge-muted">Product Launch</span><span class="badge badge-muted">AI</span></div>
+          </div>
+          
+          <div style="position:relative; margin-bottom:2.5rem;" class="reveal delay-3">
+            <div class="tl-dot" style="position:absolute; left:-2.45rem; top:0.25rem; width:14px; height:14px; border-radius:50%; background:#4d8eff; border:3px solid #0a0b0f;"></div>
+            <div class="text-label" style="color:#adc6ff; margin-bottom:0.4rem;">October 2026</div>
+            <h3 class="text-h3 font-display" style="color:#e8e6f0; margin-bottom:0.5rem;">Expanding the Ecosystem</h3>
+            <p class="text-caption" style="color:#b0b5c4; max-width:600px; margin-bottom:0.75rem;">SkyPics enters beta, expanding our portfolio into high-performance visual media cloud storage.</p>
+            <div style="display:flex; gap:0.5rem;"><span class="badge badge-muted">Expansion</span></div>
+          </div>
+          
+          <div style="position:relative; margin-bottom:2.5rem;" class="reveal delay-4">
+            <div class="tl-dot secondary" style="position:absolute; left:-2.45rem; top:0.25rem; width:14px; height:14px; border-radius:50%; background:#4cd7f6; border:3px solid #0a0b0f;"></div>
+            <div class="text-label" style="color:#4cd7f6; margin-bottom:0.4rem;">January 2027</div>
+            <h3 class="text-h3 font-display" style="color:#e8e6f0; margin-bottom:0.5rem;">GoalWear Integration</h3>
+            <p class="text-caption" style="color:#b0b5c4; max-width:600px; margin-bottom:0.75rem;">We announce the GoalWear platform, bridging the gap between digital workflows and human physiology.</p>
+            <div style="display:flex; gap:0.5rem;"><span class="badge badge-muted">Hardware/Software</span></div>
+          </div>
+          
+          <div style="position:relative; margin-bottom:0;" class="reveal delay-5">
+            <div class="tl-dot" style="position:absolute; left:-2.45rem; top:0.25rem; width:14px; height:14px; border-radius:50%; background:transparent; border:3px solid rgba(255,255,255,0.2);"></div>
+            <div class="text-label" style="color:#8890a4; margin-bottom:0.4rem;">Future</div>
+            <h3 class="text-h3 font-display" style="color:#e8e6f0; margin-bottom:0.5rem;">Beyond Software</h3>
+            <p class="text-caption" style="color:#b0b5c4; max-width:600px;">Continuing to push the boundaries of how humanity interacts with computational systems.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Grid -->
+    <section class="section" style="background:#0a0b0f;">
+      <div class="section-inner">
+        <div class="section-tag">Our Core Values</div>
+        <h2 class="text-display font-display reveal" style="margin-bottom: 3rem;">Principles we build by</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="tilt-card glass reveal-scale delay-1" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#4cd7f6;">favorite</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Empathy</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">We build for real people, understanding their contexts, constraints, and aspirations.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+          <div class="tilt-card glass reveal-scale delay-2" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#adc6ff;">architecture</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Craftsmanship</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">We obsess over the details, from the invisible architecture to the final pixel.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+          <div class="tilt-card glass reveal-scale delay-3" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#4cd7f6;">psychology</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Curiosity</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">We constantly question assumptions and explore new paradigms of human-computer interaction.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+          <div class="tilt-card glass reveal-scale delay-4" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#adc6ff;">balance</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Integrity</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">We prioritize user sovereignty and ethical software design above short-term gains.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+          <div class="tilt-card glass reveal-scale delay-5" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#4cd7f6;">diversity_3</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Inclusivity</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">We believe technology should empower everyone, designing accessible and universally functional products.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+          <div class="tilt-card glass reveal-scale delay-6" style="position:relative; padding:2rem; border-radius:1.5rem;">
+            <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg, #181920, #272830); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.07);">
+              <span class="material-symbols-outlined" style="color:#adc6ff;">language</span>
+            </div>
+            <h3 class="text-h3 font-display" style="margin-bottom:0.75rem;">Global Perspective</h3>
+            <p style="color:#8890a4; font-size:0.95rem;">Rooted in Bangladesh but acting globally, we draw on diverse cultural insights to shape our work.</p>
+            <div class="tilt-shine"></div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="section" style="padding: 0;">
+      <div style="background: #111218; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="section-inner py-12">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-around; gap:2rem;">
+            
+            <div style="text-align:center; padding: 0 2rem;">
+              <div class="text-display font-display text-gradient stat-num" data-count="3">3</div>
+              <div class="text-label" style="color:#8890a4; margin-top:0.5rem;">Products</div>
+            </div>
+            
+            <div style="width:1px; background:rgba(255,255,255,0.1); display:none; @media(min-width:768px){display:block;}"></div>
+            
+            <div style="text-align:center; padding: 0 2rem;">
+              <div class="text-display font-display text-gradient stat-num" data-count="1" data-suffix="+">1+</div>
+              <div class="text-label" style="color:#8890a4; margin-top:0.5rem;">Years Active</div>
+            </div>
+            
+            <div style="width:1px; background:rgba(255,255,255,0.1); display:none; @media(min-width:768px){display:block;}"></div>
+            
+            <div style="text-align:center; padding: 0 2rem;">
+              <div class="text-display font-display text-gradient">∞</div>
+              <div class="text-label" style="color:#8890a4; margin-top:0.5rem;">Vision</div>
+            </div>
+            
+            <div style="width:1px; background:rgba(255,255,255,0.1); display:none; @media(min-width:768px){display:block;}"></div>
+            
+            <div style="text-align:center; padding: 0 2rem;">
+              <div class="text-display font-display text-gradient stat-num" data-count="100" data-suffix="%">100%</div>
+              <div class="text-label" style="color:#8890a4; margin-top:0.5rem;">Remote</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top: 6rem; padding-bottom: 6rem; text-align: center;">
+      <div class="section-inner">
+        <h2 class="text-display font-display reveal" style="margin-bottom: 2rem;">Join our mission</h2>
+        <p class="reveal delay-1" style="color: #b0b5c4; max-width: 600px; margin: 0 auto 3rem;">Whether you want to use our products or collaborate on something new, we'd love to have you in the ecosystem.</p>
+        
+        <div class="reveal delay-2" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
+          <a href="products.html" class="btn-primary">See products &rarr;</a>
+          <a href="contact.html" class="btn-ghost">Contact us &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div style="display:grid;grid-template-columns:1fr;gap:3rem;margin-bottom:3rem;"
+         class="md:grid-cols-[2fr_1fr_1fr]">
+      <!-- Brand -->
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <a href="index.html" class="nav-logo" style="width:fit-content;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN">
+          <span class="nav-logo-text">QORVAYN</span>
+        </a>
+        <p class="text-caption" style="max-width:320px;">Building intelligent digital products that make technology more useful, accessible, creative, and human-centered.</p>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <span style="width:7px;height:7px;border-radius:50%;background:#4cd7f6;display:inline-block;animation:pulse 2s ease-in-out infinite;"></span>
+          <span class="text-label" style="color:#8890a4;">Remote-first · Bangladesh</span>
+        </div>
+      </div>
+      <!-- Platform -->
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <span class="text-label" style="color:#adc6ff;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="about.html"    style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">About</a>
+          <a href="products.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">Products</a>
+          <a href="future.html"   style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">Future</a>
+          <a href="team.html"     style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">Team</a>
+        </div>
+      </div>
+      <!-- Connect -->
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <span class="text-label" style="color:#adc6ff;">Connect</span>
+        <div style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="mailto:theqorvayn@gmail.com" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">theqorvayn@gmail.com</a>
+          <a href="contact.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#e8e6f0'" onmouseout="this.style.color='#8890a4'">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
+      <p class="text-caption">© <span class="current-year">2026</span> QORVAYN. All rights reserved.</p>
+      <p class="text-caption">Founded 10 March 2026 · Bangladesh</p>
+    </div>
+  </div>
+</footer>
+<style>
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
+</style>
+
+  <script src="js/shader.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    const glslSrc = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  float t=u_time*0.35;
+  vec2 m=(u_mouse-.5)*.25;
+  float b1=sin(uv.x*3.5+t+m.x*2.5)*.5+.5;
+  float b2=sin(uv.x*5.8-t*0.8+m.x*1.8)*.5+.5;
+  float b3=cos(uv.x*2.1+t*0.6-m.x)*.5+.5;
+  float b4=sin(uv.x*7.3+t*1.1+m.x*3.)*.5+.5;
+  float y1=smoothstep(0.,.45,1.-abs(uv.y-(.28+b1*.18+m.y*.12)));
+  float y2=smoothstep(0.,.38,1.-abs(uv.y-(.48+b2*.14+m.y*.09)));
+  float y3=smoothstep(0.,.32,1.-abs(uv.y-(.62+b3*.10)));
+  float y4=smoothstep(0.,.28,1.-abs(uv.y-(.72+b4*.08)));
+  vec3 c1=vec3(.1,.42,.92)*y1*.65;
+  vec3 c2=vec3(.1,.82,.97)*y2*.48;
+  vec3 c3=vec3(.52,.3,.92)*y3*.32;
+  vec3 c4=vec3(.2,.65,.85)*y4*.25;
+  vec3 bg=vec3(.039,.043,.059);
+  float vign=smoothstep(1.5,.25,length(uv*2.-1.));
+  vec3 col=bg+(c1+c2+c3+c4)*vign;
+  col=pow(max(col,vec3(0.)),vec3(.88));
+  gl_FragColor=vec4(col,1.);
+}
+    `;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof QShader !== 'undefined') new QShader('about-hero-canvas', glslSrc).start();
+      if (typeof QTilt !== 'undefined') QTilt.init('.tilt-card');
+    });
+  </script>
+</body>
+</html>

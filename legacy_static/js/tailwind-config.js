@@ -1,0 +1,108 @@
+// QORVAYN — Tailwind Design Tokens
+// Load this BEFORE the Tailwind CDN script
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-tertiary-container": "#002a51",
+        "tertiary-fixed-dim": "#a4c9ff",
+        "on-primary-container": "#00285d",
+        "on-background": "#e3e1e9",
+        "background": "#121318",
+        "surface-dim": "#121318",
+        "primary-fixed": "#d8e2ff",
+        "on-tertiary": "#00315d",
+        "tertiary": "#a4c9ff",
+        "on-surface-variant": "#c2c6d6",
+        "surface-tint": "#adc6ff",
+        "secondary-container": "#03b5d3",
+        "on-secondary-fixed-variant": "#004e5c",
+        "secondary": "#4cd7f6",
+        "surface-container-low": "#1a1b21",
+        "outline": "#8c909f",
+        "on-tertiary-fixed-variant": "#004883",
+        "surface-container-lowest": "#0d0e13",
+        "on-secondary": "#003640",
+        "surface-variant": "#34343a",
+        "primary-fixed-dim": "#adc6ff",
+        "secondary-fixed": "#acedff",
+        "primary-container": "#4d8eff",
+        "outline-variant": "#424754",
+        "on-secondary-fixed": "#001f26",
+        "on-tertiary-fixed": "#001c39",
+        "on-surface": "#e3e1e9",
+        "tertiary-fixed": "#d4e3ff",
+        "on-secondary-container": "#00424e",
+        "surface": "#121318",
+        "error": "#ffb4ab",
+        "secondary-fixed-dim": "#4cd7f6",
+        "primary": "#adc6ff",
+        "surface-container-high": "#292a2f",
+        "inverse-primary": "#005ac2",
+        "surface-container": "#1e1f25",
+        "error-container": "#93000a",
+        "inverse-surface": "#e3e1e9",
+        "on-error": "#690005",
+        "on-error-container": "#ffdad6",
+        "on-primary": "#002e6a",
+        "on-primary-fixed": "#001a42",
+        "tertiary-container": "#4c93e7",
+        "surface-bright": "#38393f",
+        "on-primary-fixed-variant": "#004395",
+        "surface-container-highest": "#34343a",
+        "inverse-on-surface": "#2f3036"
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "gutter": "1.5rem",
+        "space-md": "1rem",
+        "space-xs": "0.25rem",
+        "margin": "3rem",
+        "space-xl": "2.5rem",
+        "margin-mobile": "1.25rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "gutter-mobile": "1rem"
+      },
+      fontFamily: {
+        // Legacy tokens (kept for backward compat)
+        "body-lg": ["DM Sans", "Inter", "sans-serif"],
+        "headline-md": ["Syne", "Space Grotesk", "sans-serif"],
+        "headline-lg": ["Syne", "Space Grotesk", "sans-serif"],
+        "body-md": ["DM Sans", "Inter", "sans-serif"],
+        "label-md": ["DM Mono", "JetBrains Mono", "monospace"],
+        "display-hero-mobile": ["Syne", "Space Grotesk", "sans-serif"],
+        "headline-sm": ["Syne", "Space Grotesk", "sans-serif"],
+        "body-sm": ["DM Sans", "Inter", "sans-serif"],
+        "display-hero": ["Syne", "Space Grotesk", "sans-serif"],
+        "label-sm": ["DM Mono", "JetBrains Mono", "monospace"],
+        "headline-lg-mobile": ["Syne", "Space Grotesk", "sans-serif"],
+        "label-lg": ["DM Mono", "JetBrains Mono", "monospace"],
+        // New v2 tokens
+        "display": ["Syne", "sans-serif"],
+        "sans": ["DM Sans", "sans-serif"],
+        "mono": ["DM Mono", "monospace"],
+      },
+      fontSize: {
+        "body-lg": ["1.125rem", { lineHeight: "1.6", letterSpacing: "-0.01em", fontWeight: "400" }],
+        "headline-md": ["1.5rem", { lineHeight: "1.25", letterSpacing: "-0.02em", fontWeight: "500" }],
+        "headline-lg": ["2.5rem", { lineHeight: "1.15", letterSpacing: "-0.03em", fontWeight: "600" }],
+        "body-md": ["0.9375rem", { lineHeight: "1.55", letterSpacing: "0em", fontWeight: "400" }],
+        "label-md": ["0.75rem", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "500" }],
+        "display-hero-mobile": ["2.75rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "600" }],
+        "headline-sm": ["1.125rem", { lineHeight: "1.35", letterSpacing: "-0.01em", fontWeight: "500" }],
+        "body-sm": ["0.8125rem", { lineHeight: "1.5", letterSpacing: "0em", fontWeight: "400" }],
+        "display-hero": ["4.5rem", { lineHeight: "1.05", letterSpacing: "-0.04em", fontWeight: "600" }],
+        "label-sm": ["0.6875rem", { lineHeight: "1.2", letterSpacing: "0.08em", fontWeight: "500" }],
+        "headline-lg-mobile": ["1.875rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+        "label-lg": ["0.875rem", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "500" }]
+      }
+    }
+  }
+};

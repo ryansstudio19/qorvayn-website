@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with QORVAYN. Product inquiry, partnership, press, or careers.">
+  <title>Contact — QORVAYN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.2;
+      animation: float 20s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 0.5; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+    /* Simple form styles */
+    .q-label {
+      display: block;
+      font-size: 0.875rem;
+      color: #8890a4;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .q-input {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: #e8e6f0;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .q-input:focus {
+      outline: none;
+      border-color: #adc6ff;
+      background: rgba(255,255,255,0.05);
+    }
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #e8e6f0;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .accordion-trigger:hover {
+      color: #adc6ff;
+    }
+    .accordion-icon {
+      transition: transform 0.3s ease;
+      color: #8890a4;
+    }
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+      color: #adc6ff;
+    }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+    .accordion-item.open .accordion-body {
+      max-height: 500px; /* arbitrary max height */
+      padding: 1rem 0 1.5rem 0;
+    }
+    .accordion-body p {
+      color: #8890a4;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body style="background:#0a0b0f;color:#e8e6f0;font-family:'DM Sans',sans-serif;overflow-x:hidden;">
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN">
+      <span class="nav-logo-text">QORVAYN</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" data-nav="home" class="nav-link">Home</a>
+      <a href="about.html" data-nav="about" class="nav-link">About</a>
+      <a href="products.html" data-nav="products" class="nav-link">Products</a>
+      <a href="team.html" data-nav="team" class="nav-link">Team</a>
+      <a href="future.html" data-nav="future" class="nav-link">Future</a>
+      <a href="contact.html" data-nav="contact" class="nav-link">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <button id="menu-toggle" class="hamburger" aria-expanded="false" aria-label="Open navigation" aria-controls="mobile-menu">
+        <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" data-nav="home" class="mobile-nav-link">Home</a>
+      <a href="about.html" data-nav="about" class="mobile-nav-link">About</a>
+      <a href="products.html" data-nav="products" class="mobile-nav-link">Products</a>
+      <a href="team.html" data-nav="team" class="mobile-nav-link">Team</a>
+      <a href="future.html" data-nav="future" class="mobile-nav-link">Future</a>
+      <a href="contact.html" data-nav="contact" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="mobile-nav-cta">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero" style="position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <canvas id="contact-hero-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></canvas>
+    
+    <div class="orb" style="position:absolute;top:30%;left:20%;width:350px;height:350px;background:radial-gradient(circle, rgba(76,215,246,0.15) 0%, transparent 70%);border-radius:50%;filter:blur(40px);z-index:1;"></div>
+    <div class="orb" style="position:absolute;bottom:20%;right:25%;width:400px;height:400px;background:radial-gradient(circle, rgba(173,198,255,0.1) 0%, transparent 70%);border-radius:50%;filter:blur(50px);z-index:1;"></div>
+    
+    <!-- Particles -->
+    <div class="particle" style="top:85%;left:15%;width:4px;height:4px;animation-duration:15s;animation-delay:0s;"></div>
+    <div class="particle" style="top:75%;left:35%;width:6px;height:6px;animation-duration:22s;animation-delay:2s;"></div>
+    <div class="particle" style="top:90%;left:55%;width:3px;height:3px;animation-duration:18s;animation-delay:5s;"></div>
+    <div class="particle" style="top:80%;left:75%;width:5px;height:5px;animation-duration:25s;animation-delay:1s;"></div>
+    <div class="particle" style="top:65%;left:85%;width:7px;height:7px;animation-duration:19s;animation-delay:4s;"></div>
+    <div class="particle" style="top:88%;left:95%;width:4px;height:4px;animation-duration:21s;animation-delay:3s;"></div>
+
+    <div class="hero-vignette" style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at center, transparent 30%, #0a0b0f 100%);z-index:2;"></div>
+
+    <div class="hero-content" style="position:relative;z-index:3;text-align:center;padding:0 1.5rem;max-width:900px;margin-top:3rem;">
+      <span class="badge-secondary reveal" style="display:inline-block;margin-bottom:1.5rem;padding:0.5rem 1rem;border-radius:999px;background:rgba(76,215,246,0.1);color:#4cd7f6;border:1px solid rgba(76,215,246,0.2);font-size:0.875rem;">Get In Touch</span>
+      <h1 class="text-hero font-display reveal" style="margin-bottom:1.5rem;line-height:1.1;">
+        <span class="text-gradient">Let's build something</span><br>
+        remarkable together.
+      </h1>
+      <p class="text-h3 reveal delay-1" style="color:#8890a4;margin-bottom:2.5rem;">Product inquiry, partnership, press, or careers — we'd love to hear from you.</p>
+      <div class="reveal delay-2" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;color:#8890a4;font-size:0.875rem;">
+        <span style="display:flex;align-items:center;gap:0.5rem;"><span class="material-symbols-outlined" style="font-size:18px;color:#adc6ff;">mail</span> Email Available</span>
+        <span style="display:flex;align-items:center;gap:0.5rem;"><span class="material-symbols-outlined" style="font-size:18px;color:#adc6ff;">public</span> Remote-First</span>
+        <span style="display:flex;align-items:center;gap:0.5rem;"><span class="material-symbols-outlined" style="font-size:18px;color:#adc6ff;">location_on</span> Bangladesh & Global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section section-inner" style="padding:4rem 1.5rem 6rem;max-width:1200px;margin:0 auto;">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left Column - Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="tilt-card glass reveal" style="border-radius:1.5rem;padding:2.5rem;position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <h2 class="text-h1 font-display" style="margin-bottom:1.5rem;position:relative;z-index:3;">Send us a message</h2>
+          
+          <form id="contact-form" style="position:relative;z-index:3;">
+            <div style="margin-bottom:1.25rem;">
+              <label class="q-label">Full Name</label>
+              <input type="text" class="q-input" placeholder="Your full name" required>
+            </div>
+            <div style="margin-bottom:1.25rem;">
+              <label class="q-label">Email Address</label>
+              <input type="email" class="q-input" placeholder="your@email.com" required>
+            </div>
+            <div style="margin-bottom:1.25rem;">
+              <label class="q-label">Subject</label>
+              <select class="q-input" style="appearance:none;cursor:pointer;background-image:url('data:image/svg+xml;utf8,<svg fill=%22%238890a4%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 0.75rem center;">
+                <option value="">Select a subject...</option>
+                <option>General Inquiry</option>
+                <option>Product Question</option>
+                <option>Partnership</option>
+                <option>Press & Media</option>
+                <option>Careers</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div style="margin-bottom:1.75rem;">
+              <label class="q-label">Message</label>
+              <textarea class="q-input" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;gap:0.5rem;padding:0.75rem;border-radius:8px;font-weight:500;display:flex;align-items:center;background:#adc6ff;color:#0a0b0f;border:none;cursor:pointer;">
+              <span>Send Message</span>
+              <span class="material-symbols-outlined" style="font-size:18px;">send</span>
+            </button>
+            <p style="color:#8890a4;font-size:0.78rem;margin-top:0.875rem;text-align:center;">Protected by local-first privacy standards.</p>
+          </form>
+
+          <!-- Success message (hidden) -->
+          <div id="contact-success" class="hidden" style="text-align:center;padding:3rem 0;position:relative;z-index:3;display:none;">
+            <span class="material-symbols-outlined" style="font-size:3rem;color:#4cd7f6;display:block;margin-bottom:1rem;">check_circle</span>
+            <h3 class="text-h2 font-display" style="margin-bottom:0.5rem;">Message received!</h3>
+            <p style="color:#8890a4;">We'll respond within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Cards -->
+      <div class="lg:col-span-5" style="display:flex;flex-direction:column;gap:1.5rem;">
+        
+        <!-- Direct Contact Card -->
+        <div class="tilt-card glass reveal delay-1" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;position:relative;z-index:3;">
+            <div style="background:rgba(173,198,255,0.1);padding:0.75rem;border-radius:12px;color:#adc6ff;">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-h3" style="margin-bottom:0.25rem;">Email Us</h3>
+              <a href="mailto:theqorvayn@gmail.com" style="color:#adc6ff;text-decoration:none;font-weight:500;display:block;margin-bottom:0.75rem;">theqorvayn@gmail.com</a>
+              <p style="color:#8890a4;font-size:0.875rem;margin-bottom:0.75rem;">Within 24–48 hours</p>
+              <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:#e8e6f0;">
+                <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4cd7f6;box-shadow:0 0 8px #4cd7f6;animation:pulse 2s infinite;"></span>
+                Currently available
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inquiry Types Card -->
+        <div class="glass reveal delay-2" style="border-radius:1.5rem;padding:2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+          <h3 class="font-display font-semibold text-h3" style="margin-bottom:1.5rem;">Inquiry Types</h3>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div style="display:flex;align-items:flex-start;gap:1rem;">
+              <span class="material-symbols-outlined" style="color:#adc6ff;font-size:20px;">send_to_mobile</span>
+              <div>
+                <h4 style="font-weight:500;margin-bottom:0.25rem;">Product Inquiries</h4>
+                <p style="color:#8890a4;font-size:0.875rem;">Questions about RYNEKA or SkyPics.</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:1rem;">
+              <span class="material-symbols-outlined" style="color:#adc6ff;font-size:20px;">handshake</span>
+              <div>
+                <h4 style="font-weight:500;margin-bottom:0.25rem;">Partnerships</h4>
+                <p style="color:#8890a4;font-size:0.875rem;">Collaborations and business inquiries.</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:1rem;">
+              <span class="material-symbols-outlined" style="color:#adc6ff;font-size:20px;">newspaper</span>
+              <div>
+                <h4 style="font-weight:500;margin-bottom:0.25rem;">Press & Media</h4>
+                <p style="color:#8890a4;font-size:0.875rem;">Interviews and media kits.</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:1rem;">
+              <span class="material-symbols-outlined" style="color:#adc6ff;font-size:20px;">work</span>
+              <div>
+                <h4 style="font-weight:500;margin-bottom:0.25rem;">Careers</h4>
+                <p style="color:#8890a4;font-size:0.875rem;">Join the QORVAYN team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="tilt-card glass reveal delay-3" style="border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+          <div class="tilt-shine" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;"></div>
+          <div style="position:relative;z-index:3;">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+              <span class="material-symbols-outlined" style="color:#adc6ff;">location_on</span>
+              <h3 class="font-display font-semibold text-h3">Location</h3>
+            </div>
+            <p style="font-weight:500;margin-bottom:0.25rem;">Remote-First Company</p>
+            <p style="color:#8890a4;font-size:0.875rem;margin-bottom:1.25rem;">Headquartered in Bangladesh</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">UTC+6</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">UTC+0</span>
+              <span style="padding:0.25rem 0.75rem;border-radius:999px;background:rgba(255,255,255,0.05);color:#8890a4;font-size:0.75rem;border:1px solid rgba(255,255,255,0.1);">UTC-5</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-full" style="padding:6rem 1.5rem;background:rgba(17,18,24,0.3);border-top:1px solid rgba(255,255,255,0.03);">
+    <div style="max-width:800px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="section-tag reveal" style="display:inline-block;color:#8890a4;text-transform:uppercase;letter-spacing:0.1em;font-size:0.875rem;margin-bottom:1rem;">FAQ</span>
+        <h2 class="text-display font-display reveal" style="margin-bottom:1.5rem;">Common Questions</h2>
+      </div>
+
+      <div class="accordion" style="display:flex;flex-direction:column;">
+        
+        <!-- FAQ 1 -->
+        <div class="accordion-item reveal delay-1">
+          <button class="accordion-trigger">
+            <span>When will RYNEKA be available?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>RYNEKA is currently in internal testing. We plan to open a closed alpha for early adopters in late 2026, with a broader public release targeting 2027.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item reveal delay-2">
+          <button class="accordion-trigger">
+            <span>How can I invest in QORVAYN?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>We are currently privately funded and not seeking outside investment. However, if you are a strategic partner interested in long-term collaboration, please reach out via the contact form under 'Partnerships'.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item reveal delay-3">
+          <button class="accordion-trigger">
+            <span>Do you offer enterprise plans?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>Enterprise offerings for RYNEKA are on our roadmap for late 2027. We are building features specifically tailored for team collaboration and secure, private deployments.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item reveal delay-4">
+          <button class="accordion-trigger">
+            <span>Where is QORVAYN based?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>We are headquartered in Bangladesh, operating as a remote-first organization with plans to expand globally over the next few years.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item reveal delay-5">
+          <button class="accordion-trigger">
+            <span>What does 'local-first privacy' mean?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>Local-first means that your data and the computations that process it happen on your own device whenever possible. Your personal information is never sent to the cloud unless absolutely necessary, giving you true ownership and privacy.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="accordion-item reveal delay-6">
+          <button class="accordion-trigger">
+            <span>Can I contribute to QORVAYN?</span>
+            <span class="material-symbols-outlined accordion-icon">add</span>
+          </button>
+          <div class="accordion-body">
+            <p>We'll be launching the QORVAYN Developer Platform in late 2027, allowing developers to build custom skills and integrations. In the meantime, keep an eye on our Careers section for full-time opportunities.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section section-inner" style="padding:6rem 1.5rem;text-align:center;">
+    <div style="max-width:600px;margin:0 auto;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:3rem;border-radius:1.5rem;">
+      <h2 class="text-h1 font-display reveal" style="margin-bottom:1rem;">Stay in the loop</h2>
+      <p class="reveal delay-1" style="color:#8890a4;margin-bottom:2rem;">Subscribe to our newsletter for major product announcements and visionary updates.</p>
+      
+      <form id="newsletter-form" class="reveal delay-2" style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <input type="email" class="q-input" placeholder="Enter your email" style="flex:1;min-width:200px;" required>
+        <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.5rem;border-radius:8px;background:#adc6ff;color:#0a0b0f;border:none;font-weight:500;cursor:pointer;">Subscribe</button>
+      </form>
+      
+      <div id="newsletter-feedback" class="hidden" style="display:none;margin-top:1.5rem;color:#4cd7f6;font-weight:500;">
+        Thanks for subscribing! We'll be in touch.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" style="background:#0a0b0f;border-top:1px solid rgba(255,255,255,0.05);padding:4rem 1.5rem 2rem;">
+  <div class="footer-inner" style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem;" class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4">
+      <div style="display:flex;flex-direction:column;gap:1rem;" class="md:col-span-2">
+        <a href="index.html" class="nav-logo" style="width:fit-content;display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HGk0WOiwNx2wsdNR5fnN-4XSpfJBJ-woekLmzVYyUMEmjt0BDpWjv80s3_StbBWp5wtdQZrJ7gHFP5ziLR9dP-z_y0KZWtrJyrw1gGu8rSGPajZFs72ObibQXBLKiwz8vrjbO4naK_yUF5qoxHaMavWkWunZ7J5famINHAn6caehdtw9qYT3UkdvDb3ENocjAGP55Nv2pIEqscaKuR3fUtt8GZ65OxNBReffXs5PNici0qM4htfaQ2I-ygqPvY6c4g" alt="QORVAYN" style="height:32px;width:32px;">
+          <span class="nav-logo-text font-display font-bold" style="color:#e8e6f0;letter-spacing:0.05em;font-size:1.1rem;">QORVAYN</span>
+        </a>
+        <p style="color:#8890a4;font-size:0.875rem;max-width:280px;line-height:1.6;">Building intelligent digital products for real human impact.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.875rem;">
+        <span class="text-label" style="color:#adc6ff;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.5rem;">Platform</span>
+        <a href="about.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">About</a>
+        <a href="products.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Products</a>
+        <a href="future.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Future</a>
+        <a href="team.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Team</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.875rem;">
+        <span class="text-label" style="color:#adc6ff;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.5rem;">Connect</span>
+        <a href="mailto:theqorvayn@gmail.com" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">theqorvayn@gmail.com</a>
+        <a href="contact.html" style="color:#8890a4;text-decoration:none;font-size:0.875rem;transition:color 0.2s;">Contact</a>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p style="color:#8890a4;font-size:0.82rem;">© <span class="current-year">2026</span> QORVAYN. All rights reserved.</p>
+      <p style="color:#8890a4;font-size:0.82rem;">Founded 10 March 2026 · Bangladesh</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // GLSL Shader Class
+  class QShader {
+    constructor(canvasId, fragShader) {
+      this.canvas = document.getElementById(canvasId);
+      if (!this.canvas) return;
+      this.gl = this.canvas.getContext('webgl');
+      this.fragSrc = fragShader;
+      this.init();
+    }
+    init() {
+      const gl = this.gl;
+      if (!gl) return;
+      const vs = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vs, 'attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}');
+      gl.compileShader(vs);
+      const fs = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.shaderSource(fs, this.fragSrc);
+      gl.compileShader(fs);
+      this.prog = gl.createProgram();
+      gl.attachShader(this.prog, vs);
+      gl.attachShader(this.prog, fs);
+      gl.linkProgram(this.prog);
+      gl.useProgram(this.prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(this.prog, 'p');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+      this.timeLoc = gl.getUniformLocation(this.prog, 'u_time');
+      this.resLoc = gl.getUniformLocation(this.prog, 'u_resolution');
+      this.mouseLoc = gl.getUniformLocation(this.prog, 'u_mouse');
+      this.mouse = [0.5, 0.5];
+      window.addEventListener('mousemove', e => {
+        this.mouse = [e.clientX/window.innerWidth, 1.0 - e.clientY/window.innerHeight];
+      });
+      window.addEventListener('resize', () => this.resize());
+      this.resize();
+      this.startTime = performance.now();
+      this.render();
+    }
+    resize() {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = this.canvas.parentElement.offsetHeight || window.innerHeight;
+      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+    }
+    render() {
+      const gl = this.gl;
+      gl.uniform1f(this.timeLoc, (performance.now() - this.startTime) / 1000);
+      gl.uniform2f(this.resLoc, this.canvas.width, this.canvas.height);
+      gl.uniform2f(this.mouseLoc, this.mouse[0], this.mouse[1]);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(() => this.render());
+    }
+  }
+
+  // Tilt Card Effect
+  class QTilt {
+    constructor() {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+          const dx = x - xc;
+          const dy = y - yc;
+          card.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg)`;
+          const shine = card.querySelector('.tilt-shine');
+          if (shine) {
+            shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15), transparent 60%)`;
+          }
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+          const shine = card.querySelector('.tilt-shine');
+          if (shine) shine.style.background = 'none';
+        });
+      });
+    }
+  }
+
+  const auroraGLSL = \`
+    precision highp float;
+    uniform float u_time;
+    uniform vec2 u_resolution;
+    uniform vec2 u_mouse;
+    void main(){
+      vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+      float t=u_time*0.22;
+      vec2 m=(u_mouse-.5)*.12;
+      float w1=sin(uv.x*4.2+t+m.x*3.)*.5+.5;
+      float w2=sin(uv.x*6.5-t*.9+m.x*2.)*.5+.5;
+      float w3=cos(uv.x*3.1+t*0.6)*.5+.5;
+      float a1=smoothstep(.0,.42,1.-abs(uv.y-(.32+w1*.13+m.y*.08)));
+      float a2=smoothstep(.0,.36,1.-abs(uv.y-(.52+w2*.11+m.y*.06)));
+      float a3=smoothstep(.0,.28,1.-abs(uv.y-(.67+w3*.08)));
+      vec3 teal=vec3(.1,.78,.88)*a1*.5;
+      vec3 blue=vec3(.2,.42,.95)*a2*.42;
+      vec3 viol=vec3(.45,.25,.85)*a3*.28;
+      vec3 bg=vec3(.039,.043,.059);
+      float vign=smoothstep(1.4,.28,length(uv*2.-1.));
+      vec3 col=bg+(teal+blue+viol)*vign;
+      gl_FragColor=vec4(pow(max(col,vec3(0.)),vec3(.9)),1.);
+    }
+  \`;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new QShader('contact-hero-canvas', auroraGLSL);
+    new QTilt();
+
+    // Form Submissions
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        contactForm.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      });
+    }
+
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        newsletterForm.style.display = 'none';
+        document.getElementById('newsletter-feedback').style.display = 'block';
+      });
+    }
+    
+    // Accordion interaction
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.closest('.accordion-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        });
+    });
+  });
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>
