@@ -20,7 +20,7 @@ export const TEAM: TeamMember[] = [
     category: 'Leadership',
     initials: 'RZ',
     image: '/team/ryan-zannah.jpg',
-    objectPosition: '55% 25%',
+    objectPosition: '52% 20%',
   },
   {
     id: 'tam-zayn',
