@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'QORVAYN',
-  tagline: 'Human-Centered Technology',
+  tagline: 'Building What Comes Next.',
   description:
     'QORVAYN is a technology company building intelligent digital products designed to make technology more useful, accessible, creative, and human-centered.',
   mission:
