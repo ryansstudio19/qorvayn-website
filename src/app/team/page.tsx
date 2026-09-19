@@ -140,7 +140,7 @@ export default function TeamPage() {
             </div>
           </div>
 
-          {/* Core Team Tier (Siyami Muntaha Saba, Rahat Ehsan Sufi, Sayel) */}
+          {/* Core Team Tier (Siyami Muntaha Saba, Rahat Ehsan Sufi, Shoyetur Rahman Sayel) */}
           <div>
             <Reveal>
               <div className="flex items-center gap-3 mb-8 pb-3 border-b border-white/10">

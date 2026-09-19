@@ -51,10 +51,10 @@ export const TEAM: TeamMember[] = [
   },
   {
     id: 'sayel',
-    name: 'Sayel',
+    name: 'Shoyetur Rahman Sayel',
     role: 'Software / Product Development',
     category: 'Core Team',
-    initials: 'SY',
+    initials: 'SR',
     image: '/team/sayel.jpg',
     objectPosition: '47% 20%',
   },
