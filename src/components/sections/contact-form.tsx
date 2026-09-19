@@ -65,12 +65,10 @@ export function ContactForm() {
         body: formData,
       });
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (response.ok) {
         router.push('/contact/thank-you');
       } else {
-        setApiError(data.message || 'Unable to transmit message. Please try again or reach out to theqorvayn@gmail.com.');
+        setApiError('Unable to transmit message. Please try again or reach out to theqorvayn@gmail.com.');
       }
     } catch {
       setApiError('Network connection issue. Please try again or email theqorvayn@gmail.com directly.');
