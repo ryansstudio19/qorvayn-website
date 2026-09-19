@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Send } from 'lucide-react';
+import { Send, AlertCircle } from 'lucide-react';
 
 interface FormState {
   name: string;
@@ -28,6 +28,7 @@ export function ContactForm() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
@@ -48,13 +49,37 @@ export function ContactForm() {
     if (Object.keys(errs).length > 0) return;
 
     setSubmitting(true);
+    setApiError(null);
 
-    // TODO: Connect production email dispatch (e.g. Resend, Nodemailer, SendGrid, Formspree)
-    // Example:
-    // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '0ae8c121-8064-4f5f-9198-7d52145dacea',
+          name: form.name.trim(),
+          email: form.email.trim(),
+          subject: form.subject.trim() || `Inquiry from ${form.name.trim()} — QORVAYN`,
+          message: form.message.trim(),
+          from_name: 'QORVAYN Website Inquiry',
+        }),
+      });
 
-    await new Promise((r) => setTimeout(r, 600));
-    router.push('/contact/thank-you');
+      const data = await response.json();
+
+      if (data.success) {
+        router.push('/contact/thank-you');
+      } else {
+        setApiError(data.message || 'Unable to transmit message. Please try again or reach out to theqorvayn@gmail.com.');
+      }
+    } catch {
+      setApiError('Network connection issue. Please try again or email theqorvayn@gmail.com directly.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const handleChange = (
@@ -73,8 +98,9 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-      <div className="p-3.5 rounded-xl bg-[#4F8CFF]/10 border border-[#4F8CFF]/20 text-xs text-[#7DB0FF] leading-relaxed">
-        This contact form interface is ready for email-service integration.
+      <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-[#94A3B8] leading-relaxed flex items-center gap-2.5">
+        <span className="w-2 h-2 rounded-full bg-[#4F8CFF] animate-pulse flex-shrink-0" />
+        <span>Direct inquiry channel — all messages are delivered directly to the QORVAYN core team.</span>
       </div>
 
       {/* Name */}
@@ -164,6 +190,13 @@ export function ContactForm() {
         )}
       </div>
 
+      {apiError && (
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-400 flex items-start gap-2.5">
+          <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+          <span>{apiError}</span>
+        </div>
+      )}
+
       <Button
         type="submit"
         variant="primary"
@@ -171,7 +204,7 @@ export function ContactForm() {
         disabled={submitting}
         className="w-full mt-2"
       >
-        <span>{submitting ? 'Preparing message…' : 'Send message'}</span>
+        <span>{submitting ? 'Transmitting message…' : 'Send message'}</span>
         <Send size={16} />
       </Button>
     </form>
