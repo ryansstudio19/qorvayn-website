@@ -52,23 +52,22 @@ export function ContactForm() {
     setApiError(null);
 
     try {
-      const response = await fetch('/api/contact', {
+      const formData = new FormData();
+      formData.append('access_key', '0ae8c121-8064-4f5f-9198-7d52145dacea');
+      formData.append('name', form.name.trim());
+      formData.append('email', form.email.trim());
+      formData.append('subject', form.subject.trim() || `Inquiry from ${form.name.trim()} — QORVAYN`);
+      formData.append('message', form.message.trim());
+      formData.append('from_name', 'QORVAYN Website');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          subject: form.subject.trim(),
-          message: form.message.trim(),
-        }),
+        body: formData,
       });
 
       const data = await response.json();
 
-      if (response.ok && data.success) {
+      if (data.success) {
         router.push('/contact/thank-you');
       } else {
         setApiError(data.message || 'Unable to transmit message. Please try again or reach out to theqorvayn@gmail.com.');
