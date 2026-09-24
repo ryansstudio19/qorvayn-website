@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
-import { organizationSchema } from '@/lib/schema';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -9,8 +8,7 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
 import { SITE, CORE_VALUES } from '@/data/site';
 import { PRODUCTS } from '@/data/products';
-import { HeroScene } from '@/components/three/hero-scene';
-import { EcosystemScene } from '@/components/three/ecosystem-scene';
+import { LazyHeroScene as HeroScene, LazyEcosystemScene as EcosystemScene } from '@/components/three/lazy-scenes';
 import {
   ArrowRight,
   Lightbulb,
@@ -42,18 +40,13 @@ const VALUE_ICONS: Record<string, LucideIcon> = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-
       {/* ── 1. CINEMATIC HERO SECTION ───────────────────────── */}
       <section className="relative min-h-[94vh] flex items-center overflow-hidden pt-24 pb-16">
         {/* Layered cinematic base gradients */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#07090D] via-[#0B0F17] to-[#07090D] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_40%,rgba(79,140,255,0.09)_0%,transparent_70%)] pointer-events-none" />
 
-        {/* 3D Orbital Canvas Scene */}
+        {/* 3D Orbital Canvas Scene (Lazy loaded) */}
         <HeroScene />
 
         {/* Text Protection Vignette (Ensures zero noise under text) */}
@@ -70,19 +63,18 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.06}>
-              <h1 className="font-display font-extrabold text-[#F8FAFC] text-4xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.03] tracking-[-0.03em] mb-8">
-                Building a human-centered technology ecosystem.
-              </h1>
-            </Reveal>
+            {/* Direct H1 rendering for instant paint (LCP optimization) */}
+            <h1 className="font-display font-extrabold text-[#F8FAFC] text-4xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.03] tracking-[-0.03em] mb-8">
+              Building a human-centered technology ecosystem.
+            </h1>
 
-            <Reveal delay={0.12}>
+            <Reveal delay={0.06}>
               <p className="text-[#94A3B8] text-lg sm:text-xl font-normal leading-relaxed max-w-2xl mb-10">
                 {SITE.description}
               </p>
             </Reveal>
 
-            <Reveal delay={0.18}>
+            <Reveal delay={0.12}>
               <div className="flex flex-wrap items-center gap-4 mb-12">
                 <Button href="/products" variant="primary" size="lg">
                   <span>Explore our products</span>
@@ -94,8 +86,8 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.24}>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#7E8B9F] tracking-wider uppercase">
+            <Reveal delay={0.18}>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#94A3B8] tracking-wider uppercase">
                 <Sparkles size={14} className="text-[#4F8CFF]" />
                 <span>
                   Founded {SITE.founded} · {SITE.country} · {SITE.operations}
@@ -138,7 +130,7 @@ export default function HomePage() {
                   >
                     {product.status}
                   </span>
-                  <span className="text-xs text-[#7E8B9F] font-mono">0{i + 1}</span>
+                  <span className="text-xs text-[#94A3B8] font-mono">0{i + 1}</span>
                 </div>
 
                 <h3 className="font-display font-bold text-[#F8FAFC] text-2xl sm:text-3xl mb-3 tracking-tight">

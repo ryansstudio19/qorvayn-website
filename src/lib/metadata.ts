@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
-// TODO: Set production domain when assigned by QORVAYN
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qorvayn.com';
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qorvayn.tech';
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),

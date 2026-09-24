@@ -101,7 +101,7 @@ export default function PrivacyPage() {
                   1. Introduction
                 </h2>
                 <p>
-                  This Privacy Policy describes how QORVAYN (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) handles information collected through our official website (<span className="text-[#F8FAFC]">qorvayn.com</span>) and related digital touchpoints.
+                  This Privacy Policy describes how QORVAYN (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) handles information collected through our official website (<span className="text-[#F8FAFC]">qorvayn.tech</span>) and related digital touchpoints.
                 </p>
                 <p>
                   Founded on 10 March 2026, QORVAYN is dedicated to creating human-centered technology built on digital sovereignty, user agency, and transparent communication. We believe that privacy should be a default architectural principle rather than an afterthought. This document outlines our data-handling practices in clear, human-readable terms so you understand how your information is respected.

@@ -2,11 +2,17 @@ import { SITE } from '@/data/site';
 import { siteUrl } from '@/lib/metadata';
 
 export const organizationSchema = {
-  '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: SITE.name,
+  alternateName: ['QORVAYN', 'Qorvayn', 'Qorvayn Tech', 'Qorvayn Technology'],
   url: siteUrl,
-  logo: `${siteUrl}/qorvayn-logo.png`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/qorvayn-logo.png`,
+    width: 256,
+    height: 256,
+  },
   foundingDate: SITE.foundedDate,
   founder: {
     '@type': 'Person',
@@ -25,4 +31,22 @@ export const organizationSchema = {
     SITE.social.facebook,
     SITE.social.twitter,
   ],
+};
+
+export const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: SITE.name,
+  alternateName: ['QORVAYN', 'Qorvayn', 'Qorvayn Tech', 'Qorvayn Technology'],
+  url: siteUrl,
+  description: SITE.description,
+  inLanguage: 'en-US',
+  publisher: {
+    '@id': `${siteUrl}/#organization`,
+  },
+};
+
+export const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [organizationSchema, websiteSchema],
 };

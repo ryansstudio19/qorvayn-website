@@ -74,8 +74,8 @@ function TeamCard({
         </div>
 
         {/* Minimal Footer Metadata */}
-        <div className="mt-6 pt-4 px-1 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-[#6B7280]">
-          <span className="uppercase tracking-widest text-[11px] text-[#7E8B9F]">
+        <div className="mt-6 pt-4 px-1 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-[#94A3B8]">
+          <span className="uppercase tracking-widest text-[11px] text-[#94A3B8]">
             QORVAYN
           </span>
           <span className="flex items-center gap-1.5 text-[#4F8CFF]">

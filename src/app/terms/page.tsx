@@ -106,7 +106,7 @@ export default function TermsPage() {
                   </h2>
                 </div>
                 <p>
-                  By accessing, browsing, or utilizing the QORVAYN website (<span className="text-[#F8FAFC]">qorvayn.com</span>) and related digital touchpoints, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+                  By accessing, browsing, or utilizing the QORVAYN website (<span className="text-[#F8FAFC]">qorvayn.tech</span>) and related digital touchpoints, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
                 </p>
                 <p>
                   These terms constitute an agreement between you and QORVAYN regarding your interaction with our online properties. If you do not agree with any part of these Terms of Service, you should discontinue use of the website and its related services immediately.

@@ -27,7 +27,8 @@ export function Footer() {
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 flex items-center justify-center">
                 <Image
                   src="/qorvayn-logo.png"
-                  alt="QORVAYN"
+                  alt=""
+                  aria-hidden="true"
                   width={80}
                   height={80}
                   className="w-full h-full object-contain select-none transition-transform duration-300 group-hover:scale-105"
@@ -42,7 +43,7 @@ export function Footer() {
               {SITE.description}
             </p>
 
-            <div className="flex items-center gap-2 text-[#7E8B9F] text-xs font-mono tracking-wider uppercase">
+            <div className="flex items-center gap-2 text-[#94A3B8] text-xs font-mono tracking-wider uppercase">
               <Globe size={14} className="text-[#4F8CFF]" />
               <span>{SITE.country} · {SITE.operations}</span>
             </div>
@@ -101,7 +102,7 @@ export function Footer() {
                     href={p.href}
                     className="text-sm text-[#94A3B8] hover:text-[#F8FAFC] transition-colors py-0.5 inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                   >
-                    {p.name} — <span className="text-[#7E8B9F]">{p.tagline}</span>
+                    {p.name} — <span className="text-[#94A3B8]">{p.tagline}</span>
                   </Link>
                 </li>
               ))}
@@ -122,19 +123,19 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/[0.08] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#7E8B9F] text-xs">
+          <p className="text-[#94A3B8] text-xs">
             &copy; 2026 QORVAYN. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="text-xs text-[#7E8B9F] hover:text-[#94A3B8] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              className="text-xs text-[#94A3B8] hover:text-[#F8FAFC] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="text-xs text-[#7E8B9F] hover:text-[#94A3B8] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              className="text-xs text-[#94A3B8] hover:text-[#F8FAFC] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
             >
               Terms
             </Link>

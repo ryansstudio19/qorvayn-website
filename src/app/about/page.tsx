@@ -359,12 +359,12 @@ export default function AboutPage() {
                     We envision a future where technology works alongside people, expands their possibilities, and helps them accomplish more.
                   </p>
 
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs text-[#7E8B9F] leading-relaxed">
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs text-[#94A3B8] leading-relaxed">
                     Global expansion is framed as our long-term vision and aspirational trajectory as the company matures.
                   </div>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-[#6B7280]">
+                <div className="mt-10 pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-[#94A3B8]">
                   <span className="uppercase tracking-wider text-[#94A3B8]">Long-Term Trajectory</span>
                   <span className="text-[#38BDF8]">Ecosystem Future</span>
                 </div>
@@ -481,7 +481,7 @@ export default function AboutPage() {
                       }}
                     />
                     <Layers size={36} className="text-[#94A3B8]/60 mb-2 transition-transform group-hover:scale-110" />
-                    <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[#7E8B9F]">
+                    <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[#94A3B8]">
                       {product.name}
                     </span>
                   </div>

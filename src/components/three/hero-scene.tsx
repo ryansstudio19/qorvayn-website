@@ -250,20 +250,22 @@ export function HeroScene() {
       className="absolute inset-0 pointer-events-none select-none overflow-hidden"
       aria-hidden="true"
     >
-      <ShaderBackground preset="hero" intensity={1.15} className="opacity-95" />
-      <Canvas
-        camera={{ position: [0, 0, 5.4], fov: 52 }}
-        dpr={isMobile ? [1, 1] : [1, 1.3]}
-        gl={{
-          antialias: !isMobile,
-          alpha: true,
-          powerPreference: 'high-performance',
-        }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-      >
-        <ambientLight intensity={0.4} />
-        <CinematicHeroGroup isMobile={isMobile} />
-      </Canvas>
+      <ShaderBackground preset="hero" intensity={isMobile ? 0.9 : 1.15} className="opacity-95" />
+      {!isMobile && (
+        <Canvas
+          camera={{ position: [0, 0, 5.4], fov: 52 }}
+          dpr={[1, 1.3]}
+          gl={{
+            antialias: true,
+            alpha: true,
+            powerPreference: 'high-performance',
+          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+        >
+          <ambientLight intensity={0.4} />
+          <CinematicHeroGroup isMobile={false} />
+        </Canvas>
+      )}
     </div>
   );
 }

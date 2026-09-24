@@ -5,6 +5,8 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { AmbientBackground } from '@/components/ui/ambient-background';
 import { baseMetadata } from '@/lib/metadata';
+import { siteJsonLd } from '@/lib/schema';
+import { Analytics } from '@vercel/analytics/react';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -36,6 +38,12 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
+      </head>
       <body className="bg-[#07090D] text-[#F5F7FA] min-h-screen flex flex-col font-sans antialiased selection:bg-[#4F8CFF]/30 relative">
         <AmbientBackground />
         <a href="#main-content" className="skip-link">
@@ -46,6 +54,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

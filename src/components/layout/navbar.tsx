@@ -68,7 +68,8 @@ export function Navbar() {
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center">
               <Image
                 src="/qorvayn-logo.png"
-                alt="QORVAYN"
+                alt=""
+                aria-hidden="true"
                 width={72}
                 height={72}
                 priority
