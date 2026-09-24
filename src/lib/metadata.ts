@@ -68,6 +68,9 @@ export const baseMetadata: Metadata = {
     creator: '@Qorvayn',
     images: [`${siteUrl}/qorvayn-logo.jpg`],
   },
+  verification: {
+    google: '5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94',
+  },
 };
 
 export function pageMetadata(

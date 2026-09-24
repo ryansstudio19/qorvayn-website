@@ -39,6 +39,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        <meta name="google-site-verification" content="5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
