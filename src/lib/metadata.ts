@@ -54,9 +54,10 @@ export const baseMetadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/qorvayn-logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/qorvayn-logo.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/qorvayn-logo.png', sizes: '256x256', type: 'image/png' },
     ],
+    shortcut: '/favicon.ico',
     apple: [{ url: '/qorvayn-logo.png', sizes: '180x180', type: 'image/png' }],
   },
   twitter: {

@@ -40,6 +40,9 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/qorvayn-logo.png" type="image/png" sizes="256x256" />
+        <link rel="apple-touch-icon" href="/qorvayn-logo.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
