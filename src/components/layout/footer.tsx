@@ -2,14 +2,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SITE } from '@/data/site';
 import { PRODUCTS } from '@/data/products';
-import { Instagram, Youtube, Music2, Facebook, Twitter, Mail, Globe } from 'lucide-react';
+import { Instagram, Youtube, Music2, Facebook, Twitter, Github, Mail, Globe } from 'lucide-react';
 
 const SOCIAL_LINKS = [
+  { icon: Github, href: SITE.social.github, label: 'QORVAYN on GitHub' },
+  { icon: Twitter, href: SITE.social.twitter, label: 'QORVAYN on X (Twitter)' },
   { icon: Instagram, href: SITE.social.instagram, label: 'QORVAYN on Instagram' },
   { icon: Youtube, href: SITE.social.youtube, label: 'QORVAYN on YouTube' },
   { icon: Music2, href: SITE.social.tiktok, label: 'QORVAYN on TikTok' },
   { icon: Facebook, href: SITE.social.facebook, label: 'QORVAYN on Facebook' },
-  { icon: Twitter, href: SITE.social.twitter, label: 'QORVAYN on X (Twitter)' },
 ];
 
 export function Footer() {

@@ -20,6 +20,7 @@ export const SITE = {
     tiktok: 'https://www.tiktok.com/@qorvayn',
     facebook: 'https://www.facebook.com/people/Qorvayn/61594435377169/',
     twitter: 'https://x.com/Qorvayn',
+    github: 'https://github.com/qorvayn',
   },
 } as const;
 

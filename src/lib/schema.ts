@@ -30,6 +30,7 @@ export const organizationSchema = {
     SITE.social.tiktok,
     SITE.social.facebook,
     SITE.social.twitter,
+    SITE.social.github,
   ],
 };
 
