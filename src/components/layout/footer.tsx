@@ -76,6 +76,7 @@ export function Footer() {
                 { label: 'Products', href: '/products' },
                 { label: 'Team', href: '/team' },
                 { label: 'Future', href: '/future' },
+                { label: 'Changelog', href: '/changelog' },
                 { label: 'Contact', href: '/contact' },
               ].map(({ label, href }) => (
                 <li key={href}>
