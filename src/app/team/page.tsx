@@ -117,7 +117,7 @@ export default function TeamPage() {
             </p>
           </Reveal>
 
-          {/* Leadership Tier (Founders: Ryan Zannah, Adelia Maharni, Siyami Muntaha Saba) */}
+          {/* Leadership Tier (Founders: Ryan Zannah, Adelia Maharani, Siyami Muntaha Saba) */}
           <div className="mb-14 sm:mb-20">
             <Reveal>
               <div className="flex items-center gap-3 mb-8 pb-3 border-b border-white/10">

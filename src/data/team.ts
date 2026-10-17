@@ -23,12 +23,12 @@ export const TEAM: TeamMember[] = [
     objectPosition: '52% 20%',
   },
   {
-    id: 'adelia-maharni',
-    name: 'Adelia Maharni',
+    id: 'adelia-maharani',
+    name: 'Adelia Maharani',
     role: 'Co-Founder / Brand & Creative Direction',
     category: 'Leadership',
     initials: 'AM',
-    image: '/team/adelia-maharni.jpg',
+    image: '/team/adelia-maharani.jpg',
     objectPosition: '50% 18%',
   },
   {
