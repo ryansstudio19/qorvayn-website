@@ -117,18 +117,18 @@ export default function TeamPage() {
             </p>
           </Reveal>
 
-          {/* Leadership Tier (Ryan Zannah & Tam Zayn) */}
+          {/* Leadership Tier (Founders: Ryan Zannah, Adelia Maharni, Siyami Muntaha Saba) */}
           <div className="mb-14 sm:mb-20">
             <Reveal>
               <div className="flex items-center gap-3 mb-8 pb-3 border-b border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#4F8CFF]" />
                 <h2 className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-[#7DB0FF]">
-                  Leadership & Founders
+                  Leadership &amp; Founders
                 </h2>
               </div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {leadership.map((member, i) => (
                 <TeamCard
                   key={member.id}
@@ -140,13 +140,13 @@ export default function TeamPage() {
             </div>
           </div>
 
-          {/* Core Team Tier (Siyami Muntaha Saba, Rahat Ehsan Sufi, Shoyetur Rahman Sayel) */}
+          {/* Core Team Tier (Tam Zayn, Rahat Ehsan Sufi, Shoyetur Rahman Sayel) */}
           <div>
             <Reveal>
               <div className="flex items-center gap-3 mb-8 pb-3 border-b border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#38BDF8]" />
                 <h2 className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-[#7DB0FF]">
-                  Product, Design & Operations
+                  Product, Technology &amp; Operations
                 </h2>
               </div>
             </Reveal>
