@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
-import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld';
+import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd, FaqPageJsonLd, type FaqItem } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -148,11 +148,59 @@ const TARGET_AUDIENCES = [
   { role: 'Researchers', desc: 'Connecting cross-disciplinary literature, cataloging citations, and exploring semantic hypotheses.' },
 ];
 
+const RYNEKA_USE_CASES = [
+  {
+    title: 'Research Synthesis & Study Planning',
+    desc: 'Designed to help users gather technical papers, lecture notes, and bookmarks into one semantic workspace—mapping connections across sources and outlining structured study roadmaps.',
+  },
+  {
+    title: 'Supervised Task & File Automation',
+    desc: 'Envisioned to assist with repetitive digital routines—such as organizing project folders or staging summaries—by preparing a plain-language action plan that waits for explicit human approval.',
+  },
+  {
+    title: 'Creative & Technical Drafting',
+    desc: 'Built around the goal of moving from early concepts to structured documentation, code scaffolds, or creative drafts inside a modular workspace that retains project context.',
+  },
+  {
+    title: 'Personal Digital Life Organization',
+    desc: 'Designed to unify scattered notes, tasks, and ongoing projects into a calm, modular hub guided by privacy-first principles.',
+  },
+];
+
+const RYNEKA_FAQS: FaqItem[] = [
+  {
+    question: 'What is RYNEKA and how is it different from a standard AI chatbot?',
+    answer:
+      'RYNEKA is an AI Operating System concept by QORVAYN designed as a modular AI workspace to help people think, create, automate, and manage their digital lives. Rather than operating only as a stateless conversational text box, RYNEKA is envisioned to connect contextual reasoning, creative workflows, and staged task automation built around the principle of human control before any action runs.',
+  },
+  {
+    question: 'Is RYNEKA available to download or use right now?',
+    answer:
+      'RYNEKA is currently in its early architecture and research phase at QORVAYN. You can sign up for product dispatches on this page or follow the QORVAYN changelog to be notified as development progresses.',
+  },
+  {
+    question: 'How is RYNEKA designed to approach user privacy and personal data?',
+    answer:
+      'RYNEKA is built around the principle of Privacy First. Its architecture is designed with the goal of minimizing data exposure, avoiding commercial data monetization, setting explicit context boundaries for AI models, and giving users control over data deletion and export.',
+  },
+  {
+    question: 'Will RYNEKA be free and open source?',
+    answer:
+      "Open Source First and Free Before Paid are two of RYNEKA's guiding principles, meaning we aim to favor transparent, auditable code and accessible core functionality before commercial tiers. Specific licensing and pricing have not been announced.",
+  },
+  {
+    question: 'How is automation designed to work in RYNEKA?',
+    answer:
+      'Automation in RYNEKA is designed around the principle of human agency and a staged authorization gate. Instead of performing unilateral background actions, the system is envisioned to preview its action plan in plain language, scope required permissions, and wait for explicit user confirmation.',
+  },
+];
+
 export default function RynekaPage() {
   return (
     <div className="relative min-h-screen">
       <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'RYNEKA', path: '/products/ryneka' }]} />
       <SoftwareApplicationJsonLd name="RYNEKA" path="/products/ryneka" applicationCategory="UtilitiesApplication" description={PAGE_SEO.ryneka.description} />
+      <FaqPageJsonLd items={RYNEKA_FAQS} />
       {/* ── 01. PRODUCT HERO ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-28 pb-20">
         {/* Layered Background & Gradients */}
@@ -467,9 +515,9 @@ export default function RynekaPage() {
                       RYNEKA MISSION
                     </span>
                   </div>
-                  <h3 className="font-display font-extrabold text-[#FFFFFF] text-2xl sm:text-3xl mb-4 leading-snug">
+                  <h2 className="font-display font-extrabold text-[#FFFFFF] text-2xl sm:text-3xl mb-4 leading-snug">
                     To build a free, intelligent, privacy-first AI operating system.
-                  </h3>
+                  </h2>
                   <p className="text-[#94A3B8] text-base sm:text-lg leading-relaxed mb-6">
                     &ldquo;Build a free, intelligent, privacy-first AI operating system that helps people think, create, and automate their digital lives using open-source technology.&rdquo;
                   </p>
@@ -493,9 +541,9 @@ export default function RynekaPage() {
                       RYNEKA VISION
                     </span>
                   </div>
-                  <h3 className="font-display font-extrabold text-[#FFFFFF] text-2xl sm:text-3xl mb-4 leading-snug">
+                  <h2 className="font-display font-extrabold text-[#FFFFFF] text-2xl sm:text-3xl mb-4 leading-snug">
                     An open AI operating system for the world.
-                  </h3>
+                  </h2>
                   <p className="text-[#94A3B8] text-base sm:text-lg leading-relaxed mb-6">
                     &ldquo;Become one of the world&apos;s leading open AI operating systems for work, learning, and creation.&rdquo;
                   </p>
@@ -631,24 +679,24 @@ export default function RynekaPage() {
                   <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#2563EB] block mb-2">
                     PRIVACY POSITIONING
                   </span>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-4">
+                  <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-4">
                     Intelligence without giving up control.
-                  </h3>
+                  </h2>
                   <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed mb-6">
                     True intelligence should amplify the user, not surveil them. RYNEKA is architected with a local-first orientation: minimizing data exposure, avoiding arbitrary cloud harvesting, and ensuring that user context remains sovereign.
                   </p>
                   <ul className="space-y-2 text-xs font-mono text-[#CBD5E1]">
                     <li className="flex items-center gap-2">
                       <span className="text-[#2563EB]">✓</span>
-                      <span>Zero commercial data monetization</span>
+                      <span>Designed with the goal of avoiding commercial data monetization</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-[#2563EB]">✓</span>
-                      <span>Explicit context boundaries for models</span>
+                      <span>Designed around explicit context boundaries for models</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-[#2563EB]">✓</span>
-                      <span>User-controlled deletion &amp; export</span>
+                      <span>Built with the goal of user-controlled deletion &amp; export</span>
                     </li>
                   </ul>
                 </div>
@@ -668,9 +716,9 @@ export default function RynekaPage() {
                   <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#00E5FF] block mb-2">
                     COMMUNITY &amp; CODE
                   </span>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-4">
+                  <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-4">
                     Built with an open-source mindset.
-                  </h3>
+                  </h2>
                   <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed mb-6">
                     RYNEKA is designed around an open-source-first philosophy. We believe the future of AI operating software belongs to open standards, public auditability, developer collaboration, and collective stewardship rather than closed proprietary monopolies.
                   </p>
@@ -722,9 +770,9 @@ export default function RynekaPage() {
                         <span className="w-2 h-2 rounded-full" style={{ backgroundColor: mod.color }} />
                         <span className="text-[10px] font-mono text-[#7E8B9F]">MOD 0{i + 1}</span>
                       </div>
-                      <h4 className="font-display font-bold text-lg text-[#FFFFFF] mb-1.5">
+                      <h3 className="font-display font-bold text-lg text-[#FFFFFF] mb-1.5">
                         {mod.name}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-[#94A3B8] leading-relaxed">
                         {mod.role}
                       </p>
@@ -882,7 +930,72 @@ export default function RynekaPage() {
 
       <div className="section-divider" />
 
-      {/* ── 12. FUTURE DIRECTION & UPDATES CAPTURE ────────────── */}
+      {/* ── 12. PRACTICAL WORKFLOWS & USE CASES ──────────────── */}
+      <section className="py-24 sm:py-32 bg-[#0A0E1A]">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="PRACTICAL WORKFLOWS"
+              title="How RYNEKA fits into everyday digital work."
+              description="RYNEKA is being architected for multi-step tasks that usually force you to jump between notes apps, browsers, terminals, and chat windows."
+              className="mb-16"
+            />
+          </Reveal>
+
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            {RYNEKA_USE_CASES.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.06}>
+                <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] h-full">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#00E5FF] block mb-2">
+                    Use Case 0{i + 1}
+                  </span>
+                  <h3 className="font-display font-bold text-xl text-[#FFFFFF] mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#94A3B8] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* ── 13. FREQUENTLY ASKED QUESTIONS ────────────────────── */}
+      <section id="faq" className="py-24 sm:py-32">
+        <Container size="md">
+          <Reveal>
+            <SectionHeading
+              eyebrow="FREQUENTLY ASKED QUESTIONS"
+              title="Common questions about RYNEKA."
+              description="Answers about RYNEKA's product vision, architectural principles, and current research status at QORVAYN."
+              className="mb-14"
+            />
+          </Reveal>
+
+          <div className="space-y-4">
+            {RYNEKA_FAQS.map((faq, i) => (
+              <Reveal key={faq.question} delay={i * 0.05}>
+                <div className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-[#FFFFFF] mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* ── 14. FUTURE DIRECTION & UPDATES CAPTURE ────────────── */}
       <section id="updates" className="py-24 sm:py-32 bg-[#0A0E1A]">
         <Container size="sm">
           <Reveal>
@@ -897,7 +1010,11 @@ export default function RynekaPage() {
                 Follow RYNEKA&apos;s development.
               </h2>
               <p className="text-[#94A3B8] text-sm sm:text-base max-w-md mx-auto">
-                Be the first to receive confidential engineering dispatches, architectural milestones, and community preview opportunities.
+                Be the first to receive confidential engineering dispatches, architectural milestones, and community preview opportunities, or{' '}
+                <Link href="/contact" className="text-[#00E5FF] hover:underline underline-offset-4">
+                  contact the QORVAYN team
+                </Link>{' '}
+                with research inquiries.
               </p>
             </div>
 
@@ -909,27 +1026,41 @@ export default function RynekaPage() {
 
           {/* Reciprocal Ecosystem Links */}
           <div className="mt-16 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
-            <Link
-              href="/"
-              className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
-            >
-              <ArrowLeft size={12} />
-              <span>Back to QORVAYN Home</span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/"
+                className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              >
+                <ArrowLeft size={12} />
+                <span>Back to QORVAYN Home</span>
+              </Link>
+              <Link
+                href="/products"
+                className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              >
+                All QORVAYN Products
+              </Link>
+              <Link
+                href="/changelog"
+                className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              >
+                Product Changelog
+              </Link>
+            </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <span className="text-[#7E8B9F]">Other Products:</span>
               <Link
                 href="/products/skypics"
                 className="text-[#00E5FF] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
               >
-                SkyPics
+                SkyPics Sky &amp; Nature Platform
               </Link>
               <Link
                 href="/products/goalwear"
                 className="text-[#6EE7B7] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
               >
-                GoalWear
+                GoalWear Football Jerseys &amp; Streetwear
               </Link>
             </div>
           </div>

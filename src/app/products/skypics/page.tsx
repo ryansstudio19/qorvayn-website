@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
-import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld';
+import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd, FaqPageJsonLd, type FaqItem } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -160,7 +160,7 @@ const DIFFERENTIATION = [
   {
     pillar: 'LESS NOISE',
     lead: 'More meaningful visual contemplation',
-    body: 'Free from algorithmic rage-bait, hyperactive infinite reels, and auto-playing ads. SkyPics prioritizes high-resolution, uncompressed photographic art that breathes.',
+    body: 'Free from algorithmic rage-bait, hyperactive infinite reels, and auto-playing ads. SkyPics is designed to present photographs with minimal compression so visual art has room to breathe.',
   },
   {
     pillar: 'MORE DISCOVERY',
@@ -271,11 +271,59 @@ const FUTURE_HORIZONS = [
   },
 ];
 
+const SKYPICS_USE_CASES = [
+  {
+    title: 'Cataloging Sky & Weather Phenomena',
+    desc: 'Designed to help photographers organize captures of cloud structures, storms, and golden-hour gradients by atmospheric condition, solar angle, and optical metadata alongside personal field notes.',
+  },
+  {
+    title: 'Exploring Global Horizons by Light & Mood',
+    desc: 'Envisioned to let viewers start from a single dusk photograph and explore connected visual paths—such as matching twilight color temperatures or synchronous sky observations across regions.',
+  },
+  {
+    title: 'Sharing a Calm Photography Portfolio',
+    desc: 'Built around the goal of presenting landscape and sky photography with minimal compression and without public like counters, disappearing stories, or competing feed ads.',
+  },
+  {
+    title: 'Studying Natural Color & Composition',
+    desc: 'Designed to offer visual artists and creators harmonic color palettes and exposure reflections drawn from real outdoor photography.',
+  },
+];
+
+const SKYPICS_FAQS: FaqItem[] = [
+  {
+    question: 'What is SkyPics?',
+    answer:
+      'SkyPics is an AI-powered platform for sky and nature photography being developed within the QORVAYN technology ecosystem. It is designed to combine calm visual curation with purposeful AI tools for atmospheric discovery and photo archive organization.',
+  },
+  {
+    question: 'Is SkyPics designed to generate artificial nature photos?',
+    answer:
+      'No. SkyPics is built around the principle of human creativity and the natural world. AI is envisioned strictly as an optical companion—designed to help analyze cloud and lighting conditions, organize personal photo libraries, and connect related photographs—rather than replacing photographers with synthetic imagery.',
+  },
+  {
+    question: 'How is SkyPics designed to differ from mainstream social media photo feeds?',
+    answer:
+      'SkyPics is built around the principles of a calm experience and visual-first design. It is designed to avoid public follower counts, virality scores, 24-hour disappearing stories, sponsored feed ads, and infinite-scroll loops, and is instead designed to present photographs with minimal compression alongside atmospheric context.',
+  },
+  {
+    question: 'Who is SkyPics designed for?',
+    answer:
+      'SkyPics is being crafted for landscape and sky photographers, nature lovers, travelers, visual artists, photography enthusiasts, and anyone who enjoys observing clouds, twilight transitions, and natural horizons.',
+  },
+  {
+    question: 'What is the current development status of SkyPics?',
+    answer:
+      'SkyPics is currently in the product vision and architecture research stage at QORVAYN. You can follow progress on the QORVAYN changelog or contact the team with questions and early feedback.',
+  },
+];
+
 export default function SkyPicsPage() {
   return (
     <div className="relative min-h-screen bg-[#050816] text-[#CBD5E1] selection:bg-[#38BDF8]/30 selection:text-[#FFFFFF] overflow-hidden">
       <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'SkyPics', path: '/products/skypics' }]} />
       <SoftwareApplicationJsonLd name="SkyPics" path="/products/skypics" applicationCategory="SocialNetworkingApplication" description={PAGE_SEO.skypics.description} />
+      <FaqPageJsonLd items={SKYPICS_FAQS} />
       {/* ── 01. HERO SECTION ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20 border-b border-white/[0.08]">
         {/* Sky Atmospheric Background Shader */}
@@ -385,7 +433,7 @@ export default function SkyPicsPage() {
                   ].map((cadence) => (
                     <div key={cadence.step} className="p-3">
                       <span className="text-[10px] font-mono text-[#38BDF8] block mb-1">{cadence.step}</span>
-                      <h4 className="font-display font-bold text-lg text-white mb-1">{cadence.word}</h4>
+                      <h3 className="font-display font-bold text-lg text-white mb-1">{cadence.word}</h3>
                       <p className="text-xs text-[#7E8B9F] leading-snug">{cadence.desc}</p>
                     </div>
                   ))}
@@ -658,7 +706,7 @@ export default function SkyPicsPage() {
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF]" />
-                          <h4 className="font-display font-semibold text-sm text-white">{branch.label}</h4>
+                          <h3 className="font-display font-semibold text-sm text-white">{branch.label}</h3>
                         </div>
                         <p className="text-xs text-[#94A3B8] leading-relaxed">{branch.detail}</p>
                       </div>
@@ -975,12 +1023,79 @@ export default function SkyPicsPage() {
         </Container>
       </section>
 
-      {/* ── 14. FINAL CTA & RECIPROCAL NAVIGATION ────────────── */}
+      {/* ── 14. USE CASES IN PRACTICE ─────────────────────────── */}
+      <section className="py-28 sm:py-36 relative z-10 bg-[#070B16] border-b border-white/[0.08]">
+        <Container>
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#38BDF8] font-bold block mb-4">
+                14 / Use Cases in Practice
+              </span>
+              <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
+                Ways to explore, organize, and share on SkyPics.
+              </h2>
+              <p className="text-[#94A3B8] text-lg leading-relaxed">
+                SkyPics is designed around how photographers and observers experience natural light and atmospheric moments.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {SKYPICS_USE_CASES.map((item, i) => (
+              <GlassCard key={item.title} delay={i * 0.06} className="p-8">
+                <span className="text-xs font-mono text-[#38BDF8] tracking-widest uppercase font-semibold block mb-2">
+                  Use Case 0{i + 1}
+                </span>
+                <h3 className="font-display font-bold text-xl text-white mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                  {item.desc}
+                </p>
+              </GlassCard>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 15. FREQUENTLY ASKED QUESTIONS ────────────────────── */}
+      <section id="faq" className="py-28 sm:py-36 relative z-10 border-b border-white/[0.08]">
+        <Container size="md">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#38BDF8] font-bold block mb-4">
+                15 / Frequently Asked Questions
+              </span>
+              <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
+                Common questions about SkyPics.
+              </h2>
+              <p className="text-[#94A3B8] text-lg leading-relaxed">
+                Key details on the SkyPics platform vision, AI philosophy, and current research status at QORVAYN.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="space-y-4">
+            {SKYPICS_FAQS.map((faq, i) => (
+              <GlassCard key={faq.question} delay={i * 0.05} className="p-6 sm:p-8">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-white mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                  {faq.answer}
+                </p>
+              </GlassCard>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 16. FINAL CTA & RECIPROCAL NAVIGATION ────────────── */}
       <section className="py-28 sm:py-36 relative z-10">
         <Container size="sm" className="text-center">
           <Reveal>
             <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#38BDF8] font-bold block mb-4">
-              14 / Next Steps
+              16 / Next Steps
             </span>
             <h2 className="font-display font-extrabold text-[#FFFFFF] text-4xl sm:text-5xl tracking-tight mb-6">
               See what&apos;s next.
@@ -990,8 +1105,8 @@ export default function SkyPicsPage() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/" variant="primary" size="lg">
-                Back to QORVAYN
+              <Button href="/products" variant="primary" size="lg">
+                Explore All Products
               </Button>
               <Button href="/contact" variant="secondary" size="lg">
                 Contact QORVAYN
@@ -1002,27 +1117,35 @@ export default function SkyPicsPage() {
           {/* Reciprocal Ecosystem Links */}
           <Reveal delay={0.15}>
             <div className="mt-16 pt-10 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
-              <Link
-                href="/"
-                className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
-              >
-                <ArrowLeft size={12} />
-                <span>Return to QORVAYN Home</span>
-              </Link>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/"
+                  className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+                >
+                  <ArrowLeft size={12} />
+                  <span>Return to QORVAYN Home</span>
+                </Link>
+                <Link
+                  href="/changelog"
+                  className="text-[#94A3B8] hover:text-[#FFFFFF] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+                >
+                  Product Changelog
+                </Link>
+              </div>
 
-              <div className="flex items-center gap-6">
+              <div className="flex flex-wrap items-center gap-6">
                 <span className="text-[#7E8B9F]">Other Products:</span>
                 <Link
                   href="/products/ryneka"
                   className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
-                  RYNEKA
+                  RYNEKA AI Operating System
                 </Link>
                 <Link
                   href="/products/goalwear"
                   className="text-[#6EE7B7] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
-                  GoalWear
+                  GoalWear Football Jerseys &amp; Streetwear
                 </Link>
               </div>
             </div>

@@ -56,6 +56,7 @@ export default function ContactPage() {
 
             {/* Right: Contact Information */}
             <div className="lg:col-span-5 flex flex-col gap-6">
+              <h2 className="sr-only">Contact Information and Social Channels</h2>
               <Reveal delay={0.06}>
                 <GlassCard hover={false} className="p-8">
                   <div className="flex items-start gap-4">

@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
-import { BreadcrumbListJsonLd, BrandJsonLd, GoalWearProductsJsonLd } from '@/components/seo/json-ld';
+import { BreadcrumbListJsonLd, BrandJsonLd, GoalWearProductsJsonLd, FaqPageJsonLd } from '@/components/seo/json-ld';
+import type { FaqItem } from '@/lib/schema';
 import { MATCHDAY_DROPS } from '@/data/goalwear';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
@@ -36,7 +37,7 @@ const BRAND_PILLARS = [
   {
     icon: Trophy,
     title: 'Stadium Grade Craft',
-    desc: 'Engineered with authentic matchday weight, moisture-wicking micro-channels, and precision silicone-pressed crests built for elite performance.',
+    desc: 'Engineered with matchday weight, moisture-wicking micro-channels, and precision silicone-pressed crests built for elite performance.',
   },
   {
     icon: Flame,
@@ -55,12 +56,56 @@ const BRAND_PILLARS = [
   },
 ];
 
+const GOALWEAR_USE_CASES = [
+  {
+    title: 'Matchday & Pitch Performance',
+    desc: 'Built with lightweight, breathable performance fabric and moisture-wicking micro-channels for five-a-side games, turf sessions, and matchday viewing.',
+  },
+  {
+    title: 'Everyday Football Streetwear',
+    desc: 'Designed to bridge football heritage and contemporary street culture, pairing naturally with cargo pants, hoodies, and daily casual rotation.',
+  },
+  {
+    title: '360° Pre-Purchase Kit Inspection',
+    desc: 'Use the interactive 3D visualizer on goalwear.online to rotate, zoom, and inspect collar details, sleeve cuffs, and crest textures in 360° before ordering.',
+  },
+];
+
+const GOALWEAR_FAQS: FaqItem[] = [
+  {
+    question: 'What is GoalWear and where can I shop?',
+    answer:
+      'GoalWear is QORVAYN’s football jersey and football streetwear e-commerce brand in Bangladesh. You can browse the live catalog, inspect kits in 3D, and place orders directly at goalwear.online.',
+  },
+  {
+    question: 'What types of football jerseys does GoalWear carry?',
+    answer:
+      'GoalWear carries player-edition and fan-edition club kits, international national team jerseys, and special-edition drops crafted from lightweight, breathable performance fabric with moisture-wicking micro-channels and silicone-pressed crests.',
+  },
+  {
+    question: 'How does delivery work across Bangladesh?',
+    answer:
+      'GoalWear delivers across all 64 districts in Bangladesh, with estimated delivery times of 24-48h Dhaka · 3-4d Nationwide.',
+  },
+  {
+    question: 'What payment methods are accepted on GoalWear?',
+    answer:
+      'GoalWear offers Cash On Delivery across all 64 districts in Bangladesh with 150 BDT advance dispatch verification via bKash.',
+  },
+  {
+    question: 'How does the interactive 3D kit visualizer work?',
+    answer:
+      'GoalWear features real-time 3D sandbox technology allowing fans to rotate, zoom, and inspect kit prints and textures in 360° before ordering on goalwear.online.',
+  },
+];
+
 export default function GoalWearPage() {
   return (
     <div className="relative min-h-screen bg-[#050608] text-[#CBD5E1] selection:bg-[#00FF66]/30 selection:text-[#FFFFFF] overflow-hidden">
       <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'GoalWear', path: '/products/goalwear' }]} />
       <BrandJsonLd />
       <GoalWearProductsJsonLd />
+      <FaqPageJsonLd items={GOALWEAR_FAQS} />
       {/* ── 01. HERO SECTION ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20 border-b border-white/[0.08]">
         {/* Stadium Tunnel Background Grid Shader */}
@@ -82,7 +127,7 @@ export default function GoalWearPage() {
             </div>
           </Reveal>
 
-          {/* Official GoalWear Logo Banner */}
+          {/* GoalWear Logo Banner */}
           <Reveal delay={0.06}>
             <div className="flex justify-center mb-6">
               <Image
@@ -97,14 +142,14 @@ export default function GoalWearPage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <p className="font-display text-2xl sm:text-3xl text-[#00FF66] font-bold tracking-tight uppercase mb-6">
-              Built for Matchday. Wear the Passion.
-            </p>
+            <h1 className="font-display text-2xl sm:text-3xl text-[#00FF66] font-bold tracking-tight uppercase mb-6">
+              <span className="sr-only">GoalWear: </span>Built for Matchday. Wear the Passion.
+            </h1>
           </Reveal>
 
           <Reveal delay={0.18}>
             <p className="text-[#94A3B8] text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              A premier football jersey and streetwear destination. Authentic player-edition kits crafted for the roar of the stadium and styled for the streets.
+              A dedicated football jersey and streetwear destination. Player-edition kits crafted for the roar of the stadium and styled for the streets.
             </p>
           </Reveal>
 
@@ -131,7 +176,7 @@ export default function GoalWearPage() {
             <div className="mt-14 pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-center gap-8 text-xs font-mono text-[#7E8B9F]">
               <span className="flex items-center gap-2">
                 <CheckCircle2 size={14} className="text-[#00FF66]" />
-                100% Authentic Player Edition
+                Player-Edition Matchday Kits
               </span>
               <span className="flex items-center gap-2">
                 <Truck size={14} className="text-[#00FF66]" />
@@ -185,7 +230,7 @@ export default function GoalWearPage() {
         </Container>
       </section>
 
-      {/* ── 03. AUTHENTIC MATCHDAY KIT DROPS ─────────────────── */}
+      {/* ── 03. MATCHDAY KIT DROPS ───────────────────────────── */}
       <section id="drops" className="py-28 sm:py-36 relative z-10 bg-[#07090D] border-b border-white/[0.08]">
         <Container>
           <Reveal>
@@ -260,8 +305,40 @@ export default function GoalWearPage() {
         </Container>
       </section>
 
-      {/* ── 04. GOALWEAR + QORVAYN LINEAGE ──────────────────── */}
+      {/* ── 04. OVERVIEW & USE CASES ─────────────────────────── */}
       <section className="py-28 sm:py-36 relative z-10 border-b border-white/[0.08]">
+        <Container size="md">
+          <Reveal>
+            <div className="text-center mb-16">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#00FF66] font-bold block mb-4">
+                Product Overview &amp; Use Cases
+              </span>
+              <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight uppercase mb-6">
+                What is GoalWear &amp; How Fans Wear It
+              </h2>
+              <p className="text-[#94A3B8] text-lg leading-relaxed max-w-2xl mx-auto">
+                GoalWear is QORVAYN&apos;s football jersey and football streetwear brand in Bangladesh, combining lightweight, breathable performance fabric kits with an interactive 360° 3D kit visualizer and nationwide Cash On Delivery.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {GOALWEAR_USE_CASES.map((item, idx) => (
+              <GlassCard key={item.title} delay={idx * 0.08} className="p-6">
+                <h3 className="font-display font-bold text-lg text-white mb-2 uppercase">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                  {item.desc}
+                </p>
+              </GlassCard>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 05. GOALWEAR + QORVAYN LINEAGE ──────────────────── */}
+      <section className="py-28 sm:py-36 relative z-10 bg-[#07090D] border-b border-white/[0.08]">
         <Container size="md">
           <Reveal>
             <div className="text-center mb-16">
@@ -272,7 +349,7 @@ export default function GoalWearPage() {
                 GoalWear in QORVAYN
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed max-w-xl mx-auto">
-                GoalWear represents QORVAYN&apos;s physical commerce and apparel layer — merging digital interactive technology with authentic sports fashion.
+                GoalWear represents QORVAYN&apos;s physical commerce and apparel layer — merging digital interactive technology with football streetwear and sports fashion.
               </p>
             </div>
           </Reveal>
@@ -305,7 +382,39 @@ export default function GoalWearPage() {
         </Container>
       </section>
 
-      {/* ── 05. FINAL CTA & RECIPROCAL NAVIGATION ────────────── */}
+      {/* ── 06. FREQUENTLY ASKED QUESTIONS ──────────────────── */}
+      <section className="py-28 sm:py-36 relative z-10 border-b border-white/[0.08]">
+        <Container size="md">
+          <Reveal>
+            <div className="text-center mb-16">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-[#00FF66] font-bold block mb-4">
+                FAQ
+              </span>
+              <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight uppercase mb-6">
+                GoalWear Frequently Asked Questions
+              </h2>
+              <p className="text-[#94A3B8] text-lg leading-relaxed max-w-xl mx-auto">
+                Answers to common questions about ordering football jerseys, sizing, nationwide delivery, and Cash On Delivery in Bangladesh.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="space-y-4">
+            {GOALWEAR_FAQS.map((faq, idx) => (
+              <GlassCard key={faq.question} delay={idx * 0.05} className="p-6">
+                <h3 className="font-display font-bold text-lg text-white mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                  {faq.answer}
+                </p>
+              </GlassCard>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 07. FINAL CTA & RECIPROCAL NAVIGATION ────────────── */}
       <section className="py-28 sm:py-36 relative z-10">
         <Container size="sm" className="text-center">
           <Reveal>
@@ -316,7 +425,7 @@ export default function GoalWearPage() {
               Wear the game.
             </h2>
             <p className="text-[#94A3B8] text-lg leading-relaxed mb-10 max-w-md mx-auto">
-              Ready to upgrade your matchday rotation? Explore the full collection on the official store.
+              Ready to upgrade your matchday rotation? Explore the full collection on the GoalWear store.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -347,19 +456,19 @@ export default function GoalWearPage() {
                 <span>Return to QORVAYN Home</span>
               </Link>
 
-              <div className="flex items-center gap-6">
-                <span className="text-[#7E8B9F]">Other Products:</span>
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <span className="text-[#7E8B9F]">Explore QORVAYN Products:</span>
                 <Link
                   href="/products/ryneka"
                   className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
-                  RYNEKA
+                  RYNEKA AI Operating System
                 </Link>
                 <Link
                   href="/products/skypics"
                   className="text-[#38BDF8] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
-                  SkyPics
+                  SkyPics Visual Photography Platform
                 </Link>
               </div>
             </div>

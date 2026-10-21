@@ -176,3 +176,68 @@ export function goalwearProductsSchema() {
     itemListElement: products,
   };
 }
+
+// ── FAQPage (only render where a visible FAQ section exists) ───
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export function faqPageSchema(items: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+// ── Article (for /blog/[slug]) ─────────────────────────────────
+export interface ArticleInput {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName: string;
+  authorRole?: string;
+}
+
+export function articleSchema({
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  authorName,
+  authorRole,
+}: ArticleInput) {
+  const url = absoluteUrl(path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline,
+    description,
+    url,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      '@type': 'Person',
+      name: authorName,
+      ...(authorRole ? { jobTitle: authorRole } : {}),
+    },
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en',
+  };
+}

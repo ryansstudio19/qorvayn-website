@@ -94,6 +94,15 @@ export const PAGE_SEO = {
     description: 'Thanks for reaching out to QORVAYN. We have received your message.',
     noindex: true,
   },
+  // NOTE: Remove `noindex: true` below when the first real post is added to `src/data/blog.ts`
+  // so `/blog` is indexed by search engines and included in `src/app/sitemap.ts`.
+  blog: {
+    path: '/blog',
+    title: 'Blog: Engineering Notes and Ecosystem Dispatches',
+    description:
+      'Read engineering articles, product architecture notes and ecosystem updates from QORVAYN covering RYNEKA, SkyPics and GoalWear.',
+    noindex: true,
+  },
 } as const satisfies Record<string, PageSeo>;
 
 export type PageSeoKey = keyof typeof PAGE_SEO;

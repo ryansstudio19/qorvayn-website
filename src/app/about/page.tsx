@@ -556,10 +556,30 @@ export default function AboutPage() {
                 Founded by Ryan Zannah in Bangladesh, the company started with an ambition that extended beyond a single website or application: to build a technology ecosystem capable of supporting different ideas, products, and experiences.
               </p>
               <p>
-                As the vision developed, QORVAYN began taking shape through projects spanning AI-powered software, creative platforms, and digital commerce.
+                As the vision developed, QORVAYN began taking shape through projects spanning AI-powered software like the{' '}
+                <Link href="/products/ryneka" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                  RYNEKA AI Operating System
+                </Link>
+                , creative platforms like the{' '}
+                <Link href="/products/skypics" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                  SkyPics sky and nature photography platform
+                </Link>
+                , and digital commerce through{' '}
+                <Link href="/products/goalwear" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                  GoalWear football jerseys and streetwear
+                </Link>
+                .
               </p>
               <p>
-                We are still at the beginning of our journey. Every project, every experiment, and every improvement contributes to the larger vision of what QORVAYN can become.
+                We are still at the beginning of our journey. Every project, every experiment, and every improvement documented in our{' '}
+                <Link href="/changelog" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                  public product changelog
+                </Link>{' '}
+                contributes to the{' '}
+                <Link href="/future" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                  long-term future vision of QORVAYN
+                </Link>
+                .
               </p>
 
               <div className="pt-6 mt-6 border-t border-white/10">

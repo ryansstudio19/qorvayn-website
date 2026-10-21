@@ -268,7 +268,23 @@ export default function HomePage() {
                   Building an expanding technology ecosystem
                 </h3>
                 <p className="text-[#94A3B8] text-sm leading-relaxed">
-                  Developing flagship digital tools across AI workspaces, creative media, and ambient e-commerce.
+                  Developing flagship digital tools across the{' '}
+                  <Link href="/products/ryneka" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                    RYNEKA AI Operating System
+                  </Link>
+                  , the{' '}
+                  <Link href="/products/skypics" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                    SkyPics visual photography platform
+                  </Link>
+                  , and{' '}
+                  <Link href="/products/goalwear" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                    GoalWear football jerseys and streetwear
+                  </Link>{' '}
+                  with the{' '}
+                  <Link href="/team" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                    QORVAYN founding and core team
+                  </Link>
+                  .
                 </p>
               </div>
             </Reveal>

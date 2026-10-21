@@ -82,11 +82,11 @@ export const PRODUCTS: Product[] = [
     name: 'GoalWear',
     tagline: 'Built for matchday. Worn everywhere.',
     description:
-      'A premier football jersey and football streetwear e-commerce brand. Authentic matchday player-edition drops, classic club kits, and street culture.',
+      'A football jersey and football streetwear e-commerce brand featuring matchday player-edition drops, classic club kits, and street culture.',
     href: '/products/goalwear',
     accent: '#00FF66',
     accentLight: '#66FFAA',
-    status: 'Official brand ecosystem',
+    status: 'Brand ecosystem',
     conceptCards: [
       {
         title: 'Football Fashion',

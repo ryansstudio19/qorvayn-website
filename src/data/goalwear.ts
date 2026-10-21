@@ -7,7 +7,7 @@ export const MATCHDAY_DROPS = [
     price: '3,850 BDT',
     image: '/jerseys/argentina-home.jpg',
     badge: '3 GOLD STARS',
-    spec: 'AEROREADY · Doubleknit · Slim Fit',
+    spec: 'Breathable Doubleknit · Slim Fit',
   },
   {
     id: 'bra-away-2024',
@@ -16,7 +16,7 @@ export const MATCHDAY_DROPS = [
     price: '3,950 BDT',
     image: '/jerseys/brazil-away.jpg',
     badge: 'PLAYER EDITION',
-    spec: 'Dri-FIT ADV · Jacquard · Wave Motif',
+    spec: 'Performance Jacquard · Wave Motif',
   },
   {
     id: 'fra-away-24',
@@ -34,7 +34,7 @@ export const MATCHDAY_DROPS = [
     price: '3,850 BDT',
     image: '/jerseys/germany-home.jpg',
     badge: 'EAGLE WING',
-    spec: 'HEAT.RDY · Gradient Sleeve',
+    spec: 'Breathable Mesh · Gradient Sleeve',
   },
   {
     id: 'esp-away-24',
@@ -52,6 +52,6 @@ export const MATCHDAY_DROPS = [
     price: '2,650 BDT',
     image: '/jerseys/bangladesh-special.jpg',
     badge: 'LIMITED RUN',
-    spec: 'CoolPass Active · Emerald Honeycomb',
+    spec: 'Breathable Knit · Emerald Honeycomb',
   },
 ];

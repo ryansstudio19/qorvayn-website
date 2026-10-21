@@ -1,10 +1,13 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BLOG_POSTS } from '@/data/blog';
 
 /**
  * Bump a page's date when its content meaningfully changes.
  * Static dates (instead of `new Date()`) keep lastModified honest.
+ * When publishing the first blog post in `src/data/blog.ts`, remove `noindex: true`
+ * from `PAGE_SEO.blog` in `src/data/seo.ts` and add `'/blog'` to `LAST_MODIFIED` below.
  */
 const LAST_MODIFIED: Record<string, string> = {
   '/': '2026-10-21',
@@ -32,12 +35,13 @@ const PRIORITY: Record<string, number> = {
   '/future': 0.6,
   '/contact': 0.6,
   '/changelog': 0.5,
+  '/blog': 0.6,
   '/privacy': 0.3,
   '/terms': 0.3,
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return Object.values(PAGE_SEO)
+  const staticPages: MetadataRoute.Sitemap = Object.values(PAGE_SEO)
     .filter((page) => !('noindex' in page && page.noindex))
     .map((page) => ({
       url: page.path === '/' ? SITE_URL : `${SITE_URL}${page.path}`,
@@ -45,4 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: page.path === '/' || page.path === '/changelog' ? 'weekly' : 'monthly',
       priority: PRIORITY[page.path] ?? 0.5,
     }));
+
+  const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.dateModified || post.datePublished,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogEntries];
 }

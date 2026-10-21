@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
 import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
@@ -50,7 +51,11 @@ export default function FuturePage() {
                   Future product
                 </h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Autonomous context engines designed for personal semantic memory.
+                  Autonomous context engines designed for personal semantic memory across the{' '}
+                  <Link href="/products/ryneka" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                    RYNEKA AI Operating System
+                  </Link>
+                  .
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-[#6B7280] uppercase">
@@ -70,7 +75,11 @@ export default function FuturePage() {
                   Currently in development
                 </h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Visual streaming infrastructure for distributed creative collaboration.
+                  Visual streaming infrastructure for distributed creative collaboration on the{' '}
+                  <Link href="/products/skypics" className="text-[#45D7FF] hover:underline underline-offset-4">
+                    SkyPics visual photography platform
+                  </Link>
+                  .
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-[#45D7FF] uppercase">
@@ -90,7 +99,11 @@ export default function FuturePage() {
                   More to come
                 </h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Ambient wearable computing interfaces designed to blend invisibly into daily life.
+                  Interactive 3D commerce and physical apparel experiences evolving alongside{' '}
+                  <Link href="/products/goalwear" className="text-[#6EE7B7] hover:underline underline-offset-4">
+                    GoalWear football jerseys and streetwear
+                  </Link>
+                  .
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-[#6EE7B7] uppercase">
@@ -98,6 +111,20 @@ export default function FuturePage() {
               </div>
             </GlassCard>
           </div>
+
+          <Reveal delay={0.22}>
+            <p className="mt-10 text-center text-xs font-mono text-[#94A3B8]">
+              Track live milestones in the{' '}
+              <Link href="/changelog" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                QORVAYN product changelog and release notes
+              </Link>{' '}
+              or explore{' '}
+              <Link href="/products" className="text-[#7DB0FF] hover:underline underline-offset-4">
+                all QORVAYN ecosystem products
+              </Link>
+              .
+            </p>
+          </Reveal>
         </Container>
       </section>
 

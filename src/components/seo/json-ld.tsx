@@ -5,8 +5,12 @@ import {
   softwareApplicationSchema,
   goalwearBrandSchema,
   goalwearProductsSchema,
+  faqPageSchema,
+  articleSchema,
   type BreadcrumbItem,
   type SoftwareAppInput,
+  type FaqItem,
+  type ArticleInput,
 } from '@/lib/schema';
 
 /**
@@ -39,4 +43,13 @@ export function GoalWearProductsJsonLd() {
   return <JsonLd data={goalwearProductsSchema()} />;
 }
 
-export { SITE_URL };
+/** Render only on pages that also display the identical FAQ items visibly. */
+export function FaqPageJsonLd({ items }: { items: FaqItem[] }) {
+  return <JsonLd data={faqPageSchema(items)} />;
+}
+
+export function ArticleJsonLd(props: ArticleInput) {
+  return <JsonLd data={articleSchema(props)} />;
+}
+
+export { SITE_URL, type FaqItem };

@@ -1,4 +1,4 @@
-﻿# QORVAYN Website
+# QORVAYN Website
 
 Next.js 15 (App Router) site for https://www.qorvayn.tech. See `AGENTS.md` for stack and conventions.
 
@@ -27,3 +27,4 @@ Leave it unset or set it to `https://www.qorvayn.tech` for **Production** in Ver
 - The non-www to www redirect is configured in the Vercel dashboard (Settings > Domains), not in code.
 
 - **Sitemap dates:** update the `lastModified` value for a page in `src/app/sitemap.ts` whenever that page's content changes meaningfully.
+- **Blog (`/blog`):** `/blog` is currently marked `noindex: true` in `src/data/seo.ts` while `BLOG_POSTS` in `src/data/blog.ts` is empty. When publishing the first real post, remove `noindex: true` from `PAGE_SEO.blog` in `src/data/seo.ts` and add `'/blog'` to `LAST_MODIFIED` in `src/app/sitemap.ts` so `/blog` and its posts are indexed and included in `/sitemap.xml`.
