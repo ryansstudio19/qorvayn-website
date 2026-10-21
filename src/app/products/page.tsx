@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -11,11 +12,7 @@ import { EcosystemScene } from '@/components/three/ecosystem-scene';
 import { ShaderBackground } from '@/components/canvas/shader-background';
 import { ChevronRight, ArrowRight, Layers } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Our Products',
-  'Different products. One human-centered direction. Discover RYNEKA, SkyPics, and GoalWear.',
-  '/products'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.products);
 
 export default function ProductsPage() {
   return (

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
@@ -24,25 +26,7 @@ import {
   Telescope,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'About QORVAYN | Building What Comes Next',
-  description:
-    'Discover QORVAYN, a technology company building intelligent digital products across AI, creative platforms, and digital commerce.',
-  alternates: {
-    canonical: 'https://qorvayn.tech/about',
-  },
-  openGraph: {
-    title: 'About QORVAYN | Building What Comes Next',
-    description:
-      'Discover QORVAYN, a technology company building intelligent digital products across AI, creative platforms, and digital commerce.',
-    url: 'https://qorvayn.tech/about',
-  },
-  twitter: {
-    title: 'About QORVAYN | Building What Comes Next',
-    description:
-      'Discover QORVAYN, a technology company building intelligent digital products across AI, creative platforms, and digital commerce.',
-  },
-};
+export const metadata: Metadata = pageMetadata(PAGE_SEO.about);
 
 const WHAT_WE_DO_AREAS = [
   {

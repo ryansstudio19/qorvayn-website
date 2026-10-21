@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { ShaderBackground } from '@/components/canvas/shader-background';
 import { SITE } from '@/data/site';
 import { AlertCircle, ArrowLeft, ArrowUpRight, Mail } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Terms of Service',
-  'Please read these terms carefully before using the QORVAYN website and related digital products.',
-  '/terms'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.terms);
 
 export default function TermsPage() {
   return (

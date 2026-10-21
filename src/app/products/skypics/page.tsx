@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -31,11 +32,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'SkyPics — Visual Discovery Reimagined | QORVAYN',
-  'SkyPics is an AI-powered visual and social platform by QORVAYN, focused on nature, sky photography, creative discovery, and visual experiences.',
-  '/skypics'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.skypics);
 
 // 06. The Experience Pillars
 const EXPERIENCE_PILLARS = [

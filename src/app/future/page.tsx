@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -9,11 +10,7 @@ import { EmailCapture } from '@/components/sections/email-capture';
 import { SignalScene } from '@/components/three/signal-scene';
 import { Sparkles, Terminal, Compass, Disc } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'What Comes Next — Future Vision',
-  'More products are currently in development as QORVAYN expands its human-centered technology ecosystem.',
-  '/future'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.future);
 
 export default function FuturePage() {
   return (

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -9,11 +10,7 @@ import { SITE } from '@/data/site';
 import { SignalScene } from '@/components/three/signal-scene';
 import { Mail, Phone, MapPin, Instagram, Youtube, Music2, Facebook, Twitter } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Contact QORVAYN',
-  'For questions, collaboration, and general inquiries, contact QORVAYN.',
-  '/contact'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.contact);
 
 const SOCIAL_CHANNELS = [
   { icon: Instagram, href: SITE.social.instagram, label: 'Instagram', handle: '@qorvayn' },

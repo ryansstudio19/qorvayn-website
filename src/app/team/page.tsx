@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -9,11 +10,7 @@ import { TEAM, type TeamMember } from '@/data/team';
 import { SignalScene } from '@/components/three/signal-scene';
 import { Users, Globe } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'The Team — People Behind QORVAYN',
-  'Meet the people building QORVAYN — a remote-first team architecting intelligent digital products rooted in Bangladesh.',
-  '/team'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.team);
 
 function TeamCard({
   member,

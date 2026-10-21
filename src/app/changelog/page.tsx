@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { GlassCard } from '@/components/ui/glass-card';
@@ -17,11 +18,7 @@ import {
   Activity,
 } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Changelog & Ecosystem Updates',
-  'Track the ongoing evolution, engineering releases, and architectural progress of QORVAYN.',
-  '/changelog'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.changelog);
 
 export default function ChangelogPage() {
   return (

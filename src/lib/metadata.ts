@@ -1,29 +1,31 @@
 import type { Metadata } from 'next';
+import { PAGE_SEO, type PageSeo } from '@/data/seo';
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qorvayn.tech';
+/**
+ * Canonical site origin. Defaults to the www host served by Vercel.
+ * Override with NEXT_PUBLIC_SITE_URL (see README). Trailing slashes are stripped.
+ */
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://www.qorvayn.tech'
+).replace(/\/+$/, '');
+
+/** @deprecated Use SITE_URL. Kept as an alias for existing imports. */
+export const siteUrl = SITE_URL;
+
+const HOME = PAGE_SEO.home;
 
 export const baseMetadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'QORVAYN — Human-Centered Technology',
+    default: HOME.title,
     template: '%s | QORVAYN',
   },
-  description:
-    'QORVAYN is a technology company building intelligent digital products designed to make technology more useful, accessible, creative, and human-centered.',
-  keywords: [
-    'QORVAYN',
-    'technology ecosystem',
-    'AI Operating System',
-    'RYNEKA',
-    'SkyPics',
-    'GoalWear',
-    'human-centered software',
-    'Bangladesh technology',
-    'remote-first',
-  ],
+  description: HOME.description,
+  applicationName: 'QORVAYN',
   authors: [{ name: 'QORVAYN' }],
   creator: 'QORVAYN',
   publisher: 'QORVAYN',
+  alternates: { canonical: '/' },
   robots: {
     index: true,
     follow: true,
@@ -35,22 +37,15 @@ export const baseMetadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // og:image / twitter:image come from the opengraph-image / twitter-image
+  // file conventions (src/app/**/opengraph-image.tsx).
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'QORVAYN',
-    title: 'QORVAYN — Human-Centered Technology',
-    description:
-      'QORVAYN builds intelligent digital products designed to make technology more useful, accessible, creative, and human-centered.',
-    url: siteUrl,
-    images: [
-      {
-        url: `${siteUrl}/qorvayn-logo.jpg`,
-        width: 1024,
-        height: 1024,
-        alt: 'QORVAYN',
-      },
-    ],
+    title: HOME.title,
+    description: HOME.description,
+    url: '/',
   },
   icons: {
     icon: [
@@ -62,36 +57,42 @@ export const baseMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QORVAYN — Human-Centered Technology',
-    description:
-      'QORVAYN builds intelligent digital products designed to make technology more useful, accessible, creative, and human-centered.',
+    title: HOME.title,
+    description: HOME.description,
     site: '@Qorvayn',
     creator: '@Qorvayn',
-    images: [`${siteUrl}/qorvayn-logo.jpg`],
   },
   verification: {
     google: '5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94',
+    // TODO: add Bing Webmaster code in Phase 5 via `other: { 'msvalidate.01': '...' }`
   },
 };
 
-export function pageMetadata(
-  title: string,
-  description: string,
-  path: string = ''
-): Metadata {
-  const url = `${siteUrl}${path}`;
+/**
+ * Per-page metadata. Pass a PAGE_SEO entry. Titles are page-specific only; the
+ * root template appends " | QORVAYN" (unless `absoluteTitle` is set).
+ */
+export function pageMetadata(seo: PageSeo): Metadata {
+  const fullTitle = seo.absoluteTitle ? seo.title : `${seo.title} | QORVAYN`;
   return {
-    title,
-    description,
-    alternates: { canonical: url },
+    title: seo.absoluteTitle ? { absolute: seo.title } : seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.path },
+    ...(seo.noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
-      title: `${title} | QORVAYN`,
-      description,
-      url,
+      type: 'website',
+      siteName: 'QORVAYN',
+      locale: 'en_US',
+      title: fullTitle,
+      description: seo.description,
+      url: seo.path,
     },
     twitter: {
-      title: `${title} | QORVAYN`,
-      description,
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: seo.description,
+      site: '@Qorvayn',
+      creator: '@Qorvayn',
     },
   };
 }

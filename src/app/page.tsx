@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -22,11 +23,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Building a human-centered technology ecosystem',
-  'QORVAYN builds intelligent digital products designed to make technology more useful, accessible, creative, and human-centered.',
-  '/'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.home);
 
 const VALUE_ICONS: Record<string, LucideIcon> = {
   innovation: Lightbulb,

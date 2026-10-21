@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
@@ -7,11 +8,7 @@ import { SITE } from '@/data/site';
 import { SignalScene } from '@/components/three/signal-scene';
 import { CheckCircle2, ArrowRight, Home } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'Message Received',
-  'Thanks for reaching out to QORVAYN.',
-  '/contact/thank-you'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.thankYou);
 
 export default function ThankYouPage() {
   return (

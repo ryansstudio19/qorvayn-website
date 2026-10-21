@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -30,11 +31,7 @@ import {
   Terminal,
 } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'RYNEKA — The Future Thinks With You | QORVAYN',
-  'RYNEKA is a next-generation AI Operating System by QORVAYN, designed to help people think, create, automate, and manage their digital lives through a modular, privacy-first, and open-source platform.',
-  '/ryneka'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.ryneka);
 
 // 6 Major Product Capability Domains
 const PRODUCT_DOMAINS = [

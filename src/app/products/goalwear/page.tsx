@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { pageMetadata } from '@/lib/metadata';
+import { PAGE_SEO } from '@/data/seo';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -25,11 +26,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-export const metadata: Metadata = pageMetadata(
-  'GoalWear — Football & Streetwear Brand | QORVAYN',
-  'GoalWear is a premier football jersey and streetwear e-commerce brand within the QORVAYN ecosystem. Authentic club and national player-edition kits crafted for the pitch and the streets.',
-  '/goalwear'
-);
+export const metadata: Metadata = pageMetadata(PAGE_SEO.goalwear);
 
 // Matchday Drops Showcase
 const MATCHDAY_DROPS = [
