@@ -8,28 +8,29 @@ import { baseMetadata } from '@/lib/metadata';
 import { siteJsonLd } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/json-ld';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+// Set your Bing Webmaster verification code here (or via NEXT_PUBLIC_BING_VERIFICATION).
+// Leave empty to render nothing until a verification code is provided.
+const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_VERIFICATION || '';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk',
   display: 'swap',
-  adjustFontFallback: false,
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
-  adjustFontFallback: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
-  weight: ['400', '600'],
   preload: false,
-  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = baseMetadata;
@@ -46,6 +47,11 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94" />
+        {/* Bing Webmaster verification placeholder: renders nothing until BING_SITE_VERIFICATION is set */}
+        {BING_SITE_VERIFICATION ? (
+          <meta name="msvalidate.01" content={BING_SITE_VERIFICATION} />
+        ) : null}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/qorvayn-logo.png" type="image/png" sizes="256x256" />
         <link rel="apple-touch-icon" href="/qorvayn-logo.png" />
         <JsonLd data={siteJsonLd} />
@@ -61,6 +67,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

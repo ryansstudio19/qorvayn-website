@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
@@ -34,7 +36,7 @@ export function Button({
 
   const variants: Record<Variant, string> = {
     primary:
-      'bg-[#2563EB] text-white hover:bg-[#3B82F6] hover:shadow-[0_0_30px_rgba(37,99,235,0.45)] active:scale-[0.98]',
+      'bg-[#4F8CFF] text-white hover:bg-[#7DB0FF] hover:shadow-[0_0_30px_rgba(79,140,255,0.45)] active:scale-[0.98]',
     secondary:
       'bg-transparent border border-white/20 text-[#F5F7FA] hover:border-white/40 hover:bg-white/5 active:scale-[0.98]',
     ghost:
@@ -66,7 +68,7 @@ export function Button({
       );
     }
     return (
-      <Link href={href} prefetch={false} className={classes} aria-label={ariaLabel}>
+      <Link href={href} className={classes} aria-label={ariaLabel}>
         {children}
       </Link>
     );

@@ -12,6 +12,9 @@ export const SITE_URL = (
 /** @deprecated Use SITE_URL. Kept as an alias for existing imports. */
 export const siteUrl = SITE_URL;
 
+// Optional Bing Webmaster verification token (renders nothing unless provided).
+const BING_VERIFICATION = process.env.NEXT_PUBLIC_BING_VERIFICATION || '';
+
 const HOME = PAGE_SEO.home;
 
 export const baseMetadata: Metadata = {
@@ -64,9 +67,17 @@ export const baseMetadata: Metadata = {
   },
   verification: {
     google: '5CxT7s8D22ROrSXSw9jJhPA6oj6bz02O1x-uuzftl94',
-    // TODO: add Bing Webmaster code in Phase 5 via `other: { 'msvalidate.01': '...' }`
+    // Bing Webmaster verification placeholder: renders nothing until BING_VERIFICATION is set
+    ...(BING_VERIFICATION ? { other: { 'msvalidate.01': BING_VERIFICATION } } : {}),
   },
 };
+
+const ROUTES_WITH_CUSTOM_OG_IMAGE = new Set([
+  '/',
+  '/products/ryneka',
+  '/products/skypics',
+  '/products/goalwear',
+]);
 
 /**
  * Per-page metadata. Pass a PAGE_SEO entry. Titles are page-specific only; the
@@ -74,6 +85,7 @@ export const baseMetadata: Metadata = {
  */
 export function pageMetadata(seo: PageSeo): Metadata {
   const fullTitle = seo.absoluteTitle ? seo.title : `${seo.title} | QORVAYN`;
+  const hasCustomOg = ROUTES_WITH_CUSTOM_OG_IMAGE.has(seo.path);
   return {
     title: seo.absoluteTitle ? { absolute: seo.title } : seo.title,
     description: seo.description,
@@ -86,6 +98,18 @@ export function pageMetadata(seo: PageSeo): Metadata {
       title: fullTitle,
       description: seo.description,
       url: seo.path,
+      ...(!hasCustomOg
+        ? {
+            images: [
+              {
+                url: '/opengraph-image',
+                width: 1200,
+                height: 630,
+                alt: fullTitle,
+              },
+            ],
+          }
+        : {}),
     },
     twitter: {
       card: 'summary_large_image',
@@ -93,6 +117,7 @@ export function pageMetadata(seo: PageSeo): Metadata {
       description: seo.description,
       site: '@Qorvayn',
       creator: '@Qorvayn',
+      ...(!hasCustomOg ? { images: ['/twitter-image'] } : {}),
     },
   };
 }

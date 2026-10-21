@@ -2,11 +2,11 @@
 
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import type { Group, Mesh, MeshBasicMaterial } from 'three';
+import * as THREE from 'three';
 
 function SignalRings() {
   const rings = [0, 1, 2, 3];
-  const groupRef = useRef<Group>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
     if (groupRef.current) {
@@ -28,7 +28,7 @@ function SignalRings() {
 }
 
 function SingleRing({ index }: { index: number }) {
-  const meshRef = useRef<Mesh>(null);
+  const meshRef = useRef<THREE.Mesh>(null);
   const baseScale = 0.9 + index * 0.65;
 
   useFrame(({ clock }) => {
@@ -36,7 +36,7 @@ function SingleRing({ index }: { index: number }) {
       const t = clock.getElapsedTime();
       const s = baseScale + Math.sin(t * 0.5 + index * 0.8) * 0.1;
       meshRef.current.scale.setScalar(s);
-      (meshRef.current.material as MeshBasicMaterial).opacity =
+      (meshRef.current.material as THREE.MeshBasicMaterial).opacity =
         0.11 + Math.sin(t * 0.45 + index) * 0.04;
     }
   });
@@ -49,15 +49,17 @@ function SingleRing({ index }: { index: number }) {
   );
 }
 
-export function SignalSceneCanvas() {
+export function SignalSceneCanvas({ isMobile }: { isMobile: boolean }) {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 4.5], fov: 52 }}
-      dpr={[1, 1.3]}
-      gl={{ antialias: true, alpha: true }}
-      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-    >
-      <SignalRings />
-    </Canvas>
+    <div className="absolute inset-0 pointer-events-none opacity-75 overflow-hidden" aria-hidden="true">
+      <Canvas
+        camera={{ position: [0, 0, 4.5], fov: 52 }}
+        dpr={isMobile ? [1, 1] : [1, 1.3]}
+        gl={{ antialias: !isMobile, alpha: true }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+      >
+        <SignalRings />
+      </Canvas>
+    </div>
   );
 }

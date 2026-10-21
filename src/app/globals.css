@@ -57,7 +57,7 @@ html {
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: -0.012em;
   line-height: 1.65;
   overflow-x: hidden;
@@ -154,24 +154,6 @@ h1, h2, h3, h4, .font-display {
   background: linear-gradient(90deg, transparent 0%, rgba(79, 140, 255, 0.15) 50%, transparent 100%);
 }
 
-/* Defer layout/paint of offscreen below-the-fold sections until scrolled near */
-main section:not(:first-of-type),
-footer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 700px;
-}
-
-@media (max-width: 767px) {
-  main section:not(:first-of-type),
-  footer {
-    content-visibility: hidden;
-  }
-  html.is-scrolled main section:not(:first-of-type),
-  html.is-scrolled footer {
-    content-visibility: auto;
-  }
-}
-
 /* Hero text protection vignette */
 .hero-vignette {
   background: radial-gradient(circle at 40% 50%, rgba(7, 9, 13, 0.85) 0%, rgba(7, 9, 13, 0.45) 55%, transparent 100%);
@@ -208,44 +190,6 @@ footer {
 
 .animate-float-reverse {
   animation: floatReverse 28s ease-in-out infinite;
-}
-
-@media (max-width: 767px) {
-  main > section:first-of-type,
-  main > div > section:first-of-type {
-    min-height: 105vh;
-  }
-  .animate-float-slow,
-  .animate-float-reverse,
-  .animate-pulse {
-    animation: none !important;
-  }
-  .card-perspective {
-    perspective: none;
-  }
-  .card-tilt-inner {
-    transform-style: flat;
-    transition: none;
-  }
-  .glass,
-  [class*="backdrop-blur"] {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  .glass {
-    background: rgba(13, 20, 36, 0.88);
-  }
-  .glass-panel {
-    background: linear-gradient(135deg, rgba(16, 25, 46, 0.9) 0%, rgba(10, 15, 26, 0.94) 100%);
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  [class*="blur-["],
-  .blur-2xl,
-  .blur-3xl,
-  [class*="drop-shadow"] {
-    filter: none !important;
-  }
 }
 
 /* Reduced motion overrides */

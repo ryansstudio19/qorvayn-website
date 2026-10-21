@@ -3,18 +3,14 @@ import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
 import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd, FaqPageJsonLd, type FaqItem } from '@/components/seo/json-ld';
-import dynamic from 'next/dynamic';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { Button } from '@/components/ui/button';
+import { EmailCapture } from '@/components/sections/email-capture';
 import { ProductScene } from '@/components/three/product-scene';
 import { ShaderBackground } from '@/components/canvas/shader-background';
-
-const EmailCapture = dynamic(() =>
-  import('@/components/sections/email-capture').then((mod) => mod.EmailCapture)
-);
 import {
   ArrowLeft,
   ArrowRight,
@@ -224,8 +220,7 @@ export default function RynekaPage() {
             {/* Breadcrumb Navigation */}
             <Link
               href="/"
-              prefetch={false}
-              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#94A3B8] hover:text-[#F8FAFC] transition-colors mb-6 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#7E8B9F] hover:text-[#94A3B8] transition-colors mb-6 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
             >
               <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1" />
               <span>Back to QORVAYN</span>
@@ -325,10 +320,10 @@ export default function RynekaPage() {
                       The Conversational Silo
                     </h3>
                     <div className="p-4 rounded-2xl bg-black/40 border border-white/[0.04] font-mono text-xs text-[#7E8B9F] space-y-2 mb-6">
-                      <div className="text-white/70">User → Question</div>
-                      <div className="text-white/60">↓ (Cloud server)</div>
-                      <div className="text-white/70">AI → Answer</div>
-                      <div className="text-white/60">Result: User manually copies, pastes, and performs every action.</div>
+                      <div className="text-white/50">User → Question</div>
+                      <div className="text-white/30">↓ (Cloud server)</div>
+                      <div className="text-white/50">AI → Answer</div>
+                      <div className="text-white/25">Result: User manually copies, pastes, and performs every action.</div>
                     </div>
                     <p className="text-sm text-[#94A3B8] leading-relaxed">
                       Stateless, isolated, and passive. You ask a question, receive a response, and are left with all the manual operational friction.
@@ -678,10 +673,10 @@ export default function RynekaPage() {
             <Reveal delay={0.06}>
               <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.02] border border-white/[0.08] h-full flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center text-[#60A5FA] mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] mb-6">
                     <Lock size={20} />
                   </div>
-                  <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#60A5FA] block mb-2">
+                  <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#2563EB] block mb-2">
                     PRIVACY POSITIONING
                   </span>
                   <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-4">
@@ -692,15 +687,15 @@ export default function RynekaPage() {
                   </p>
                   <ul className="space-y-2 text-xs font-mono text-[#CBD5E1]">
                     <li className="flex items-center gap-2">
-                      <span className="text-[#60A5FA]">✓</span>
+                      <span className="text-[#2563EB]">✓</span>
                       <span>Designed with the goal of avoiding commercial data monetization</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-[#60A5FA]">✓</span>
+                      <span className="text-[#2563EB]">✓</span>
                       <span>Designed around explicit context boundaries for models</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-[#60A5FA]">✓</span>
+                      <span className="text-[#2563EB]">✓</span>
                       <span>Built with the goal of user-controlled deletion &amp; export</span>
                     </li>
                   </ul>
@@ -1016,7 +1011,7 @@ export default function RynekaPage() {
               </h2>
               <p className="text-[#94A3B8] text-sm sm:text-base max-w-md mx-auto">
                 Be the first to receive confidential engineering dispatches, architectural milestones, and community preview opportunities, or{' '}
-                <Link href="/contact" className="text-[#00E5FF] underline hover:text-[#7DB0FF] underline-offset-4">
+                <Link href="/contact" className="text-[#00E5FF] hover:underline underline-offset-4">
                   contact the QORVAYN team
                 </Link>{' '}
                 with research inquiries.

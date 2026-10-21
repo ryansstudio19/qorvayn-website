@@ -1,18 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { MobileMenu } from './mobile-menu';
 import { SITE } from '@/data/site';
 import { Menu, X } from 'lucide-react';
-
-const MobileMenu = dynamic(
-  () => import('./mobile-menu').then((mod) => mod.MobileMenu),
-  { ssr: false }
-);
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -30,25 +25,11 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 4) {
-        document.documentElement.classList.add('is-scrolled');
-      }
       setScrolled(window.scrollY > 20);
     };
-    const unlockSections = () => {
-      document.documentElement.classList.add('is-scrolled');
-    };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('touchstart', unlockSections, { passive: true, once: true });
-    window.addEventListener('wheel', unlockSections, { passive: true, once: true });
-    window.addEventListener('keydown', unlockSections, { passive: true, once: true });
     handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchstart', unlockSections);
-      window.removeEventListener('wheel', unlockSections);
-      window.removeEventListener('keydown', unlockSections);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -81,7 +62,6 @@ export function Navbar() {
           {/* Official Brand Logo */}
           <Link
             href="/"
-            prefetch={false}
             className="flex items-center gap-3 text-[#F5F7FA] group focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded-lg transition-opacity hover:opacity-95"
             aria-label="QORVAYN"
           >
@@ -90,8 +70,8 @@ export function Navbar() {
                 src="/qorvayn-logo.png"
                 alt=""
                 aria-hidden="true"
-                width={36}
-                height={36}
+                width={72}
+                height={72}
                 sizes="36px"
                 className="w-full h-full object-contain select-none transition-transform duration-300 group-hover:scale-105"
               />
@@ -116,7 +96,6 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  prefetch={false}
                   className={cn(
                     'px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-200',
                     active
@@ -135,8 +114,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              prefetch={false}
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase bg-[#2563EB] text-white hover:bg-[#3B82F6] transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.45)] active:scale-[0.98]"
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase bg-[#4F8CFF] text-white hover:bg-[#7DB0FF] transition-all hover:shadow-[0_0_25px_rgba(79,140,255,0.45)] active:scale-[0.98]"
             >
               Get in touch
             </Link>
@@ -157,14 +135,12 @@ export function Navbar() {
       </header>
 
       {/* Accessible Mobile Menu Modal */}
-      {mobileOpen && (
-        <MobileMenu
-          links={NAV_LINKS}
-          isOpen={mobileOpen}
-          onClose={() => setMobileOpen(false)}
-          pathname={pathname}
-        />
-      )}
+      <MobileMenu
+        links={NAV_LINKS}
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        pathname={pathname}
+      />
     </>
   );
 }

@@ -115,8 +115,9 @@ export function Footer() {
               <a
                 href={`mailto:${SITE.email}`}
                 className="inline-flex items-center gap-2 text-sm text-[#7DB0FF] hover:text-[#45D7FF] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+                aria-label="Email QORVAYN"
               >
-                <Mail size={15} aria-hidden="true" />
+                <Mail size={15} />
                 <span>{SITE.email}</span>
               </a>
             </div>

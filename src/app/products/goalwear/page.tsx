@@ -133,9 +133,9 @@ export default function GoalWearPage() {
               <Image
                 src="/goalwear-logo.png"
                 alt="GoalWear"
-                width={112}
-                height={112}
-                sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                width={360}
+                height={120}
+                sizes="(max-width: 640px) 240px, 336px"
                 priority
                 className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_25px_rgba(0,255,102,0.3)]"
               />
@@ -462,7 +462,7 @@ export default function GoalWearPage() {
                 <span className="text-[#7E8B9F]">Explore QORVAYN Products:</span>
                 <Link
                   href="/products/ryneka"
-                  className="text-[#A78BFA] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+                  className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
                   RYNEKA AI Operating System
                 </Link>

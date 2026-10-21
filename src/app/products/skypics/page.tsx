@@ -1137,7 +1137,7 @@ export default function SkyPicsPage() {
                 <span className="text-[#7E8B9F]">Other Products:</span>
                 <Link
                   href="/products/ryneka"
-                  className="text-[#A78BFA] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
+                  className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
                   RYNEKA AI Operating System
                 </Link>
