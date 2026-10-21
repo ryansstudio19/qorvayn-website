@@ -25,7 +25,8 @@ export function MobileMenu({ links, isOpen, onClose, pathname }: MobileMenuProps
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-40 bg-[#07090D]/[0.98] backdrop-blur-2xl flex flex-col pt-24 pb-10 px-6 sm:px-10"
+          className="fixed inset-0 z-40 bg-[#07090D] flex flex-col pt-24 pb-10 px-6 sm:px-10"
+          style={{ backgroundColor: '#07090D' }}
         >
           <nav className="flex flex-col gap-2 mt-4" aria-label="Mobile main navigation">
             {links.map((link) => {
