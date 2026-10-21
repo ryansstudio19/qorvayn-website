@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMetadata(PAGE_SEO.future);
 export default function FuturePage() {
   return (
     <>
+      <BreadcrumbListJsonLd items={[{ name: 'Future', path: '/future' }]} />
       <PageHero
         eyebrow="WHAT'S NEXT"
         title="The ecosystem is growing."

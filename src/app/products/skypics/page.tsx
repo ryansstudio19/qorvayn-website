@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -273,6 +274,8 @@ const FUTURE_HORIZONS = [
 export default function SkyPicsPage() {
   return (
     <div className="relative min-h-screen bg-[#050816] text-[#CBD5E1] selection:bg-[#38BDF8]/30 selection:text-[#FFFFFF] overflow-hidden">
+      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'SkyPics', path: '/products/skypics' }]} />
+      <SoftwareApplicationJsonLd name="SkyPics" path="/products/skypics" applicationCategory="SocialNetworkingApplication" description={PAGE_SEO.skypics.description} />
       {/* ── 01. HERO SECTION ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20 border-b border-white/[0.08]">
         {/* Sky Atmospheric Background Shader */}
@@ -1010,7 +1013,7 @@ export default function SkyPicsPage() {
               <div className="flex items-center gap-6">
                 <span className="text-[#7E8B9F]">Other Products:</span>
                 <Link
-                  href="/ryneka"
+                  href="/products/ryneka"
                   className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
                   RYNEKA

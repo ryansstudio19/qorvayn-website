@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd, BrandJsonLd, GoalWearProductsJsonLd } from '@/components/seo/json-ld';
+import { MATCHDAY_DROPS } from '@/data/goalwear';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -28,63 +30,6 @@ import {
 
 export const metadata: Metadata = pageMetadata(PAGE_SEO.goalwear);
 
-// Matchday Drops Showcase
-const MATCHDAY_DROPS = [
-  {
-    id: 'arg-home-2024',
-    name: 'Argentina 2024 Home — 3 Star Edition',
-    category: 'National Teams',
-    price: '3,850 BDT',
-    image: '/jerseys/argentina-home.jpg',
-    badge: '3 GOLD STARS',
-    spec: 'AEROREADY · Doubleknit · Slim Fit',
-  },
-  {
-    id: 'bra-away-2024',
-    name: 'Brazil 2024 Away Player Edition',
-    category: 'National Teams',
-    price: '3,950 BDT',
-    image: '/jerseys/brazil-away.jpg',
-    badge: 'PLAYER EDITION',
-    spec: 'Dri-FIT ADV · Jacquard · Wave Motif',
-  },
-  {
-    id: 'fra-away-24',
-    name: 'France 2024 Away Player Edition',
-    category: 'National Teams',
-    price: '4,100 BDT',
-    image: '/jerseys/france-away.jpg',
-    badge: 'VINTAGE CREST',
-    spec: 'Retro Rooster · Pinstripe Knit',
-  },
-  {
-    id: 'ger-home-24',
-    name: 'Germany 2024 Home Player Edition',
-    category: 'National Teams',
-    price: '3,850 BDT',
-    image: '/jerseys/germany-home.jpg',
-    badge: 'EAGLE WING',
-    spec: 'HEAT.RDY · Gradient Sleeve',
-  },
-  {
-    id: 'esp-away-24',
-    name: 'Spain 2024 Away Player Edition',
-    category: 'National Teams',
-    price: '3,950 BDT',
-    image: '/jerseys/spain-away.jpg',
-    badge: 'EURO CHAMPIONS',
-    spec: 'Electric Neon · Performance Doubleknit',
-  },
-  {
-    id: 'bd-special-24',
-    name: 'Bangladesh Special Edition Sports 9',
-    category: 'National Teams',
-    price: '2,650 BDT',
-    image: '/jerseys/bangladesh-special.jpg',
-    badge: 'LIMITED RUN',
-    spec: 'CoolPass Active · Emerald Honeycomb',
-  },
-];
 
 // Brand Pillars
 const BRAND_PILLARS = [
@@ -113,6 +58,9 @@ const BRAND_PILLARS = [
 export default function GoalWearPage() {
   return (
     <div className="relative min-h-screen bg-[#050608] text-[#CBD5E1] selection:bg-[#00FF66]/30 selection:text-[#FFFFFF] overflow-hidden">
+      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'GoalWear', path: '/products/goalwear' }]} />
+      <BrandJsonLd />
+      <GoalWearProductsJsonLd />
       {/* ── 01. HERO SECTION ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20 border-b border-white/[0.08]">
         {/* Stadium Tunnel Background Grid Shader */}
@@ -402,13 +350,13 @@ export default function GoalWearPage() {
               <div className="flex items-center gap-6">
                 <span className="text-[#7E8B9F]">Other Products:</span>
                 <Link
-                  href="/ryneka"
+                  href="/products/ryneka"
                   className="text-[#7C3AED] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
                   RYNEKA
                 </Link>
                 <Link
-                  href="/skypics"
+                  href="/products/skypics"
                   className="text-[#38BDF8] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
                   SkyPics

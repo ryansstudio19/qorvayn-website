@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { ShaderBackground } from '@/components/canvas/shader-background';
 import { SITE } from '@/data/site';
@@ -12,6 +13,7 @@ export const metadata: Metadata = pageMetadata(PAGE_SEO.privacy);
 export default function PrivacyPage() {
   return (
     <div className="relative min-h-screen">
+      <BreadcrumbListJsonLd items={[{ name: 'Privacy Policy', path: '/privacy' }]} />
       {/* ── 1. COMPACT PAGE HERO ─────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 sm:pt-36 pb-16 border-b border-white/[0.06]">
         {/* Deep ambient backdrop */}

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -17,6 +18,7 @@ export const metadata: Metadata = pageMetadata(PAGE_SEO.products);
 export default function ProductsPage() {
   return (
     <>
+      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }]} />
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[62vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#07090D] via-[#0B0F17] to-[#07090D] pointer-events-none" />

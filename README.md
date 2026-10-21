@@ -25,3 +25,5 @@ Leave it unset or set it to `https://www.qorvayn.tech` for **Production** in Ver
 - Page titles/descriptions live in `src/data/seo.ts`; metadata helper in `src/lib/metadata.ts`.
 - OG/Twitter images are generated with `next/og` (`opengraph-image.tsx` / `twitter-image.tsx`).
 - The non-www to www redirect is configured in the Vercel dashboard (Settings > Domains), not in code.
+
+- **Sitemap dates:** update the `lastModified` value for a page in `src/app/sitemap.ts` whenever that page's content changes meaningfully.

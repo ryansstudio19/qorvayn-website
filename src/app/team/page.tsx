@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -91,6 +92,7 @@ export default function TeamPage() {
 
   return (
     <>
+      <BreadcrumbListJsonLd items={[{ name: 'Team', path: '/team' }]} />
       <PageHero
         eyebrow="THE PEOPLE BEHIND QORVAYN"
         title="A team building toward the future."

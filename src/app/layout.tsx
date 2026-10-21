@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { AmbientBackground } from '@/components/ui/ambient-background';
 import { baseMetadata } from '@/lib/metadata';
 import { siteJsonLd } from '@/lib/schema';
+import { JsonLd } from '@/components/seo/json-ld';
 import { Analytics } from '@vercel/analytics/react';
 
 const spaceGrotesk = Space_Grotesk({
@@ -43,10 +44,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/qorvayn-logo.png" type="image/png" sizes="256x256" />
         <link rel="apple-touch-icon" href="/qorvayn-logo.png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
-        />
+        <JsonLd data={siteJsonLd} />
       </head>
       <body className="bg-[#07090D] text-[#F5F7FA] min-h-screen flex flex-col font-sans antialiased selection:bg-[#4F8CFF]/30 relative">
         <AmbientBackground />

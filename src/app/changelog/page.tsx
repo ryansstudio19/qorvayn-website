@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { GlassCard } from '@/components/ui/glass-card';
@@ -23,6 +24,7 @@ export const metadata: Metadata = pageMetadata(PAGE_SEO.changelog);
 export default function ChangelogPage() {
   return (
     <div className="pt-32 pb-24">
+      <BreadcrumbListJsonLd items={[{ name: 'Changelog', path: '/changelog' }]} />
       {/* ── HERO SECTION ─────────────────────────────────── */}
       <section className="relative pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(79,140,255,0.08)_0%,transparent_70%)] pointer-events-none" />

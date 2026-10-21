@@ -91,7 +91,7 @@ export function Navbar() {
                 link.href === '/'
                   ? pathname === '/'
                   : pathname.startsWith(link.href) ||
-                    (link.href === '/products' && (pathname.startsWith('/ryneka') || pathname.startsWith('/skypics') || pathname.startsWith('/goalwear')));
+                    (link.href === '/products');
               return (
                 <Link
                   key={link.href}

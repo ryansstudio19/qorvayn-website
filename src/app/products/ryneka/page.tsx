@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd, SoftwareApplicationJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -150,6 +151,8 @@ const TARGET_AUDIENCES = [
 export default function RynekaPage() {
   return (
     <div className="relative min-h-screen">
+      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'RYNEKA', path: '/products/ryneka' }]} />
+      <SoftwareApplicationJsonLd name="RYNEKA" path="/products/ryneka" applicationCategory="UtilitiesApplication" description={PAGE_SEO.ryneka.description} />
       {/* ── 01. PRODUCT HERO ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-28 pb-20">
         {/* Layered Background & Gradients */}

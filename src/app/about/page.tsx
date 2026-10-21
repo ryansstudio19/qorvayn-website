@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
@@ -174,6 +175,7 @@ const PROCESS_STEPS = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbListJsonLd items={[{ name: 'About', path: '/about' }]} />
       {/* ── SECTION 01: ABOUT HERO ───────────────────────── */}
       <PageHero
         eyebrow="ABOUT QORVAYN"

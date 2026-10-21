@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
+import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
@@ -23,6 +24,7 @@ const SOCIAL_CHANNELS = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbListJsonLd items={[{ name: 'Contact', path: '/contact' }]} />
       <PageHero
         eyebrow="CONTACT QORVAYN"
         title="Let's build something meaningful."

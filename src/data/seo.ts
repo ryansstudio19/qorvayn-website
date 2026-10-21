@@ -80,13 +80,13 @@ export const PAGE_SEO = {
     path: '/privacy',
     title: 'Privacy Policy: How We Handle Your Information',
     description:
-      'Read how QORVAYN collects, uses and protects information across our website and digital products. This page is a draft template and may be updated.',
+      'Read how QORVAYN collects, uses and protects information across our website and digital products, and the choices you have over your personal data.',
   },
   terms: {
     path: '/terms',
     title: 'Terms of Service: Rules for Using Our Website',
     description:
-      'Read the terms that apply when you use the QORVAYN website and related digital products. This page is a draft template and may be updated before launch.',
+      'Read the terms of service that apply when you browse the QORVAYN website and use our digital products, including your rights and responsibilities.',
   },
   thankYou: {
     path: '/contact/thank-you',
