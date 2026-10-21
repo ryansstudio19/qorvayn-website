@@ -85,12 +85,12 @@ const GOALWEAR_FAQS: FaqItem[] = [
   {
     question: 'How does delivery work across Bangladesh?',
     answer:
-      'GoalWear delivers across all 64 districts in Bangladesh, with estimated delivery times of 24-48h Dhaka · 3-4d Nationwide.',
+      'GoalWear delivers across all 64 districts in Bangladesh. Delivery typically takes 24 to 48 hours in Dhaka and 3 to 4 days elsewhere in Bangladesh.',
   },
   {
     question: 'What payment methods are accepted on GoalWear?',
     answer:
-      'GoalWear offers Cash On Delivery across all 64 districts in Bangladesh with 150 BDT advance dispatch verification via bKash.',
+      'Cash On Delivery is available across all 64 districts in Bangladesh with a 150 BDT advance dispatch verification via bKash.',
   },
   {
     question: 'How does the interactive 3D kit visualizer work?',
