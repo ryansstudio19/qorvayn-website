@@ -43,7 +43,7 @@ export function EmailCapture({
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-md mx-auto" noValidate>
       <div className="flex flex-col sm:flex-row gap-2.5">
         <div className="relative flex-1">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#6B7280]">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#94A3B8]">
             <Mail size={16} />
           </div>
           <input
@@ -58,7 +58,7 @@ export function EmailCapture({
             aria-label="Email address"
             aria-invalid={!!error}
             aria-describedby={error ? 'email-error' : undefined}
-            className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F5F7FA] text-sm placeholder:text-[#6B7280] focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all"
+            className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F5F7FA] text-sm placeholder:text-[#94A3B8] focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all"
           />
         </div>
         <Button type="submit" variant="primary" size="md">
@@ -70,7 +70,7 @@ export function EmailCapture({
           {error}
         </p>
       )}
-      {note && <p className="text-[#6B7280] text-xs text-left">{note}</p>}
+      {note && <p className="text-[#94A3B8] text-xs text-left">{note}</p>}
     </form>
   );
 }

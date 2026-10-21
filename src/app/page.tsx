@@ -9,7 +9,8 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { Reveal } from '@/components/ui/reveal';
 import { SITE, CORE_VALUES } from '@/data/site';
 import { PRODUCTS } from '@/data/products';
-import { LazyHeroScene as HeroScene, LazyEcosystemScene as EcosystemScene } from '@/components/three/lazy-scenes';
+import { HeroScene } from '@/components/three/hero-scene';
+import { EcosystemScene } from '@/components/three/ecosystem-scene';
 import {
   ArrowRight,
   Lightbulb,

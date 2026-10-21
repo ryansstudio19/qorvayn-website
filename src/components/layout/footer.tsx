@@ -32,6 +32,7 @@ export function Footer() {
                   aria-hidden="true"
                   width={80}
                   height={80}
+                  sizes="40px"
                   className="w-full h-full object-contain select-none transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
@@ -114,9 +115,8 @@ export function Footer() {
               <a
                 href={`mailto:${SITE.email}`}
                 className="inline-flex items-center gap-2 text-sm text-[#7DB0FF] hover:text-[#45D7FF] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
-                aria-label="Email QORVAYN"
               >
-                <Mail size={15} />
+                <Mail size={15} aria-hidden="true" />
                 <span>{SITE.email}</span>
               </a>
             </div>
