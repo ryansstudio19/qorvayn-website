@@ -274,7 +274,7 @@ export default function HomePage() {
                   </Link>
                   , the{' '}
                   <Link href="/products/skypics" className="text-[#7DB0FF] hover:underline underline-offset-4">
-                    SkyPics visual photography platform
+                    eSkypixx visual photography platform
                   </Link>
                   , and{' '}
                   <Link href="/products/goalwear" className="text-[#7DB0FF] hover:underline underline-offset-4">

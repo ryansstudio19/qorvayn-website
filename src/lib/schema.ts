@@ -106,7 +106,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-// ── Software applications (RYNEKA, SkyPics) ────────────────────
+// ── Software applications (RYNEKA, eSkypixx) ────────────────────
 export interface SoftwareAppInput {
   name: string;
   description: string;

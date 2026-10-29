@@ -77,7 +77,7 @@ export default function FuturePage() {
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
                   Visual streaming infrastructure for distributed creative collaboration on the{' '}
                   <Link href="/products/skypics" className="text-[#45D7FF] hover:underline underline-offset-4">
-                    SkyPics visual photography platform
+                    eSkypixx visual photography platform
                   </Link>
                   .
                 </p>

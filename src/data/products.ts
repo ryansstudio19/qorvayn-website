@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'skypics',
-    name: 'SkyPics',
+    name: 'eSkypixx',
     tagline: 'An AI-powered visual platform',
     description:
       'An AI-powered visual and social platform focused on nature, sky, photography, and creative experiences.',

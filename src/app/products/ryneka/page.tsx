@@ -1054,7 +1054,7 @@ export default function RynekaPage() {
                 href="/products/skypics"
                 className="text-[#00E5FF] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
               >
-                SkyPics Sky &amp; Nature Platform
+                eSkypixx Sky &amp; Nature Platform
               </Link>
               <Link
                 href="/products/goalwear"

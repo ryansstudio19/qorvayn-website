@@ -17,10 +17,10 @@ export interface PageSeo {
 export const PAGE_SEO = {
   home: {
     path: '/',
-    title: 'QORVAYN | AI Operating System, SkyPics and GoalWear',
+    title: 'QORVAYN | AI Operating System, eSkypixx and GoalWear',
     absoluteTitle: true,
     description:
-      'QORVAYN is a remote-first technology company from Bangladesh building RYNEKA, an AI Operating System, plus SkyPics and GoalWear, all human-centered.',
+      'QORVAYN is a remote-first technology company from Bangladesh building RYNEKA, an AI Operating System, plus eSkypixx and GoalWear, all human-centered.',
   },
   about: {
     path: '/about',
@@ -30,9 +30,9 @@ export const PAGE_SEO = {
   },
   products: {
     path: '/products',
-    title: 'Products: RYNEKA AI OS, SkyPics and GoalWear',
+    title: 'Products: RYNEKA AI OS, eSkypixx and GoalWear',
     description:
-      'Explore the QORVAYN product ecosystem: RYNEKA, an AI Operating System, SkyPics for sky and nature photography, and GoalWear football jerseys and streetwear.',
+      'Explore the QORVAYN product ecosystem: RYNEKA, an AI Operating System, eSkypixx for sky and nature photography, and GoalWear football jerseys and streetwear.',
   },
   ryneka: {
     path: '/products/ryneka',
@@ -42,9 +42,9 @@ export const PAGE_SEO = {
   },
   skypics: {
     path: '/products/skypics',
-    title: 'SkyPics: AI Platform for Sky and Nature Photos',
+    title: 'eSkypixx: AI Platform for Sky and Nature Photos',
     description:
-      'SkyPics is an AI-powered visual and social platform by QORVAYN for discovering, creating and sharing sky, nature and photography experiences.',
+      'eSkypixx is an AI-powered visual and social platform by QORVAYN for discovering, creating and sharing sky, nature and photography experiences.',
   },
   goalwear: {
     path: '/products/goalwear',
@@ -68,7 +68,7 @@ export const PAGE_SEO = {
     path: '/changelog',
     title: 'Changelog: Product Updates and Release Notes',
     description:
-      'Follow the progress of QORVAYN and its products. A public changelog of updates, releases and milestones across RYNEKA, SkyPics, GoalWear and our website.',
+      'Follow the progress of QORVAYN and its products. A public changelog of updates, releases and milestones across RYNEKA, eSkypixx, GoalWear and our website.',
   },
   contact: {
     path: '/contact',
@@ -100,7 +100,7 @@ export const PAGE_SEO = {
     path: '/blog',
     title: 'Blog: Engineering Notes and Ecosystem Dispatches',
     description:
-      'Read engineering articles, product architecture notes and ecosystem updates from QORVAYN covering RYNEKA, SkyPics and GoalWear.',
+      'Read engineering articles, product architecture notes and ecosystem updates from QORVAYN covering RYNEKA, eSkypixx and GoalWear.',
     noindex: true,
   },
 } as const satisfies Record<string, PageSeo>;

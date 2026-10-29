@@ -160,7 +160,7 @@ const DIFFERENTIATION = [
   {
     pillar: 'LESS NOISE',
     lead: 'More meaningful visual contemplation',
-    body: 'Free from algorithmic rage-bait, hyperactive infinite reels, and auto-playing ads. SkyPics is designed to present photographs with minimal compression so visual art has room to breathe.',
+    body: 'Free from algorithmic rage-bait, hyperactive infinite reels, and auto-playing ads. eSkypixx is designed to present photographs with minimal compression so visual art has room to breathe.',
   },
   {
     pillar: 'MORE DISCOVERY',
@@ -292,37 +292,37 @@ const SKYPICS_USE_CASES = [
 
 const SKYPICS_FAQS: FaqItem[] = [
   {
-    question: 'What is SkyPics?',
+    question: 'What is eSkypixx?',
     answer:
-      'SkyPics is an AI-powered platform for sky and nature photography being developed within the QORVAYN technology ecosystem. It is designed to combine calm visual curation with purposeful AI tools for atmospheric discovery and photo archive organization.',
+      'eSkypixx is an AI-powered platform for sky and nature photography being developed within the QORVAYN technology ecosystem. It is designed to combine calm visual curation with purposeful AI tools for atmospheric discovery and photo archive organization.',
   },
   {
-    question: 'Is SkyPics designed to generate artificial nature photos?',
+    question: 'Is eSkypixx designed to generate artificial nature photos?',
     answer:
-      'No. SkyPics is built around the principle of human creativity and the natural world. AI is envisioned strictly as an optical companion—designed to help analyze cloud and lighting conditions, organize personal photo libraries, and connect related photographs—rather than replacing photographers with synthetic imagery.',
+      'No. eSkypixx is built around the principle of human creativity and the natural world. AI is envisioned strictly as an optical companion—designed to help analyze cloud and lighting conditions, organize personal photo libraries, and connect related photographs—rather than replacing photographers with synthetic imagery.',
   },
   {
-    question: 'How is SkyPics designed to differ from mainstream social media photo feeds?',
+    question: 'How is eSkypixx designed to differ from mainstream social media photo feeds?',
     answer:
-      'SkyPics is built around the principles of a calm experience and visual-first design. It is designed to avoid public follower counts, virality scores, 24-hour disappearing stories, sponsored feed ads, and infinite-scroll loops, and is instead designed to present photographs with minimal compression alongside atmospheric context.',
+      'eSkypixx is built around the principles of a calm experience and visual-first design. It is designed to avoid public follower counts, virality scores, 24-hour disappearing stories, sponsored feed ads, and infinite-scroll loops, and is instead designed to present photographs with minimal compression alongside atmospheric context.',
   },
   {
-    question: 'Who is SkyPics designed for?',
+    question: 'Who is eSkypixx designed for?',
     answer:
-      'SkyPics is being crafted for landscape and sky photographers, nature lovers, travelers, visual artists, photography enthusiasts, and anyone who enjoys observing clouds, twilight transitions, and natural horizons.',
+      'eSkypixx is being crafted for landscape and sky photographers, nature lovers, travelers, visual artists, photography enthusiasts, and anyone who enjoys observing clouds, twilight transitions, and natural horizons.',
   },
   {
-    question: 'What is the current development status of SkyPics?',
+    question: 'What is the current development status of eSkypixx?',
     answer:
-      'SkyPics is currently in the product vision and architecture research stage at QORVAYN. You can follow progress on the QORVAYN changelog or contact the team with questions and early feedback.',
+      'eSkypixx is currently in the product vision and architecture research stage at QORVAYN. You can follow progress on the QORVAYN changelog or contact the team with questions and early feedback.',
   },
 ];
 
-export default function SkyPicsPage() {
+export default function ESkypixxPage() {
   return (
     <div className="relative min-h-screen bg-[#050816] text-[#CBD5E1] selection:bg-[#38BDF8]/30 selection:text-[#FFFFFF] overflow-hidden">
-      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'SkyPics', path: '/products/skypics' }]} />
-      <SoftwareApplicationJsonLd name="SkyPics" path="/products/skypics" applicationCategory="SocialNetworkingApplication" description={PAGE_SEO.skypics.description} />
+      <BreadcrumbListJsonLd items={[{ name: 'Products', path: '/products' }, { name: 'eSkypixx', path: '/products/skypics' }]} />
+      <SoftwareApplicationJsonLd name="eSkypixx" path="/products/skypics" applicationCategory="SocialNetworkingApplication" description={PAGE_SEO.skypics.description} />
       <FaqPageJsonLd items={SKYPICS_FAQS} />
       {/* ── 01. HERO SECTION ─────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20 border-b border-white/[0.08]">
@@ -347,7 +347,7 @@ export default function SkyPicsPage() {
 
           <Reveal delay={0.06}>
             <h1 className="font-display font-extrabold text-[#FFFFFF] text-6xl sm:text-7xl lg:text-8xl tracking-tight mb-6">
-              SkyPics
+              eSkypixx
             </h1>
           </Reveal>
 
@@ -366,7 +366,7 @@ export default function SkyPicsPage() {
           <Reveal delay={0.24}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button href="#overview" variant="cyan" size="lg">
-                Explore SkyPics
+                Explore eSkypixx
               </Button>
               <Button href="/" variant="secondary" size="lg">
                 Back to QORVAYN
@@ -396,14 +396,14 @@ export default function SkyPicsPage() {
                 02 / Product Overview
               </span>
               <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-8">
-                What is SkyPics?
+                What is eSkypixx?
               </h2>
               <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent mx-auto mb-10" />
               <p className="text-lg sm:text-xl text-[#CBD5E1] leading-relaxed font-light mb-8 max-w-3xl mx-auto">
-                SkyPics is an AI-powered visual and social platform being developed under <strong className="text-white font-medium">QORVAYN</strong>, focused on nature, sky photography, and creative visual experiences.
+                eSkypixx is an AI-powered visual and social platform being developed under <strong className="text-white font-medium">QORVAYN</strong>, focused on nature, sky photography, and creative visual experiences.
               </p>
               <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-2xl mx-auto">
-                In an era dominated by hyperactive algorithmic feeds designed to maximize screen time, SkyPics is conceived as an antidote: a quiet, expansive space dedicated to the transcendent beauty of the sky and the natural world.
+                In an era dominated by hyperactive algorithmic feeds designed to maximize screen time, eSkypixx is conceived as an antidote: a quiet, expansive space dedicated to the transcendent beauty of the sky and the natural world.
               </p>
             </div>
           </Reveal>
@@ -420,7 +420,7 @@ export default function SkyPicsPage() {
                   &ldquo;Technology should help people see more.&rdquo;
                 </blockquote>
                 <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed mb-8 max-w-2xl">
-                  SkyPics is built on the belief that photography is more than uploading an image. It is about capturing moments, discovering beauty, exploring nature, sharing visual experiences, connecting people through photography, and using AI to enhance the way people interact with visual content.
+                  eSkypixx is built on the belief that photography is more than uploading an image. It is about capturing moments, discovering beauty, exploring nature, sharing visual experiences, connecting people through photography, and using AI to enhance the way people interact with visual content.
                 </p>
 
                 {/* Emotional Cadence */}
@@ -451,7 +451,7 @@ export default function SkyPicsPage() {
             <SectionHeading
               eyebrow="03 / The Experience"
               title="Built around the moments worth seeing."
-              description="SkyPics is designed around visual contemplation rather than endless content consumption."
+              description="eSkypixx is designed around visual contemplation rather than endless content consumption."
               className="mb-20 text-center"
             />
           </Reveal>
@@ -508,7 +508,7 @@ export default function SkyPicsPage() {
                 Where AI meets photography.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                Rather than replacing the photographer or synthesizing artificial imagery, SkyPics envisions AI as an intelligent optical companion that deepens discovery and organizes visual archives.
+                Rather than replacing the photographer or synthesizing artificial imagery, eSkypixx envisions AI as an intelligent optical companion that deepens discovery and organizes visual archives.
               </p>
             </div>
           </Reveal>
@@ -539,7 +539,7 @@ export default function SkyPicsPage() {
           <Reveal delay={0.2}>
             <div className="mt-12 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] text-center max-w-2xl mx-auto">
               <p className="text-xs font-mono text-[#7E8B9F] leading-relaxed">
-                <strong className="text-[#CBD5E1]">Research Notice:</strong> The features above reflect product architecture explorations under development at QORVAYN. SkyPics does not claim released commercial AI generation or automated editing models.
+                <strong className="text-[#CBD5E1]">Research Notice:</strong> The features above reflect product architecture explorations under development at QORVAYN. eSkypixx does not claim released commercial AI generation or automated editing models.
               </p>
             </div>
           </Reveal>
@@ -558,7 +558,7 @@ export default function SkyPicsPage() {
                 Made for the sky. Inspired by the world.
               </h2>
               <p className="text-lg text-[#94A3B8] leading-relaxed">
-                The sky is an ever-shifting, boundaryless gallery shared by everyone on Earth. SkyPics organizes visual storytelling around four primordial natural dimensions.
+                The sky is an ever-shifting, boundaryless gallery shared by everyone on Earth. eSkypixx organizes visual storytelling around four primordial natural dimensions.
               </p>
             </div>
           </Reveal>
@@ -635,7 +635,7 @@ export default function SkyPicsPage() {
                 Every image can lead somewhere.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                In SkyPics, an image is not a static endpoint to quickly scroll past. It is an entry portal that connects to atmospheric context, similar lighting conditions, and geographically diverse skies.
+                In eSkypixx, an image is not a static endpoint to quickly scroll past. It is an entry portal that connects to atmospheric context, similar lighting conditions, and geographically diverse skies.
               </p>
             </div>
           </Reveal>
@@ -734,7 +734,7 @@ export default function SkyPicsPage() {
                 Photography is better when it connects people.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed max-w-2xl mx-auto">
-                SkyPics explores a social philosophy rooted in mutual appreciation, craft, and shared wonder — entirely divorced from modern engagement engineering.
+                eSkypixx explores a social philosophy rooted in mutual appreciation, craft, and shared wonder — entirely divorced from modern engagement engineering.
               </p>
             </div>
           </Reveal>
@@ -744,7 +744,7 @@ export default function SkyPicsPage() {
               <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/25 flex items-center justify-center text-red-400 mb-5">
                 <VolumeX size={18} />
               </div>
-              <h3 className="font-display font-bold text-xl text-white mb-2">What SkyPics Rejects</h3>
+              <h3 className="font-display font-bold text-xl text-white mb-2">What eSkypixx Rejects</h3>
               <ul className="space-y-2.5 text-sm text-[#94A3B8]">
                 <li className="flex items-start gap-2">
                   <span className="text-red-400">✕</span>
@@ -769,7 +769,7 @@ export default function SkyPicsPage() {
               <div className="w-10 h-10 rounded-xl bg-[#38BDF8]/10 border border-[#38BDF8]/25 flex items-center justify-center text-[#38BDF8] mb-5">
                 <HeartHandshake size={18} />
               </div>
-              <h3 className="font-display font-bold text-xl text-white mb-2">What SkyPics Cultivates</h3>
+              <h3 className="font-display font-bold text-xl text-white mb-2">What eSkypixx Cultivates</h3>
               <ul className="space-y-2.5 text-sm text-[#94A3B8]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#38BDF8]">✓</span>
@@ -805,7 +805,7 @@ export default function SkyPicsPage() {
                 Not another photo feed.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                Why build a visual platform in the 2020s? Because the digital photography experience has been reduced to fast-scrolling commodities. SkyPics is engineered on five deliberate departures.
+                Why build a visual platform in the 2020s? Because the digital photography experience has been reduced to fast-scrolling commodities. eSkypixx is engineered on five deliberate departures.
               </p>
             </div>
           </Reveal>
@@ -837,7 +837,7 @@ export default function SkyPicsPage() {
             <SectionHeading
               eyebrow="09 / Foundational Values"
               title="Seven Core Product Principles"
-              description="The uncompromised architectural commitments that steer every design decision for SkyPics."
+              description="The uncompromised architectural commitments that steer every design decision for eSkypixx."
               className="mb-20 text-center"
             />
           </Reveal>
@@ -890,7 +890,7 @@ export default function SkyPicsPage() {
                 Built for people who look closer.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                SkyPics is being crafted for anyone who recognizes that observing nature with intention is an act of deep contemplation.
+                eSkypixx is being crafted for anyone who recognizes that observing nature with intention is an act of deep contemplation.
               </p>
             </div>
           </Reveal>
@@ -926,7 +926,7 @@ export default function SkyPicsPage() {
                 11 / Research & Horizons
               </span>
               <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
-                Where SkyPics could go next.
+                Where eSkypixx could go next.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
                 Long-term technical explorations into spatial depth, atmospheric optics, and non-destructive image processing.
@@ -987,7 +987,7 @@ export default function SkyPicsPage() {
                 13 / Ecosystem Architecture
               </span>
               <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
-                SkyPics within QORVAYN
+                eSkypixx within QORVAYN
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed max-w-2xl mx-auto">
                 QORVAYN is dedicated to building what comes next — intelligent digital products that make technology more useful, accessible, and human-centered.
@@ -1016,7 +1016,7 @@ export default function SkyPicsPage() {
               </div>
 
               <p className="text-sm text-[#94A3B8] leading-relaxed max-w-xl mx-auto">
-                SkyPics represents QORVAYN&apos;s commitment to creative visual tools, proving that futuristic technology can cultivate quiet reverence for the natural world instead of digital noise.
+                eSkypixx represents QORVAYN&apos;s commitment to creative visual tools, proving that futuristic technology can cultivate quiet reverence for the natural world instead of digital noise.
               </p>
             </div>
           </Reveal>
@@ -1032,10 +1032,10 @@ export default function SkyPicsPage() {
                 14 / Use Cases in Practice
               </span>
               <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
-                Ways to explore, organize, and share on SkyPics.
+                Ways to explore, organize, and share on eSkypixx.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                SkyPics is designed around how photographers and observers experience natural light and atmospheric moments.
+                eSkypixx is designed around how photographers and observers experience natural light and atmospheric moments.
               </p>
             </div>
           </Reveal>
@@ -1067,10 +1067,10 @@ export default function SkyPicsPage() {
                 15 / Frequently Asked Questions
               </span>
               <h2 className="font-display font-extrabold text-[#FFFFFF] text-3xl sm:text-5xl tracking-tight mb-6">
-                Common questions about SkyPics.
+                Common questions about eSkypixx.
               </h2>
               <p className="text-[#94A3B8] text-lg leading-relaxed">
-                Key details on the SkyPics platform vision, AI philosophy, and current research status at QORVAYN.
+                Key details on the eSkypixx platform vision, AI philosophy, and current research status at QORVAYN.
               </p>
             </div>
           </Reveal>
@@ -1101,7 +1101,7 @@ export default function SkyPicsPage() {
               See what&apos;s next.
             </h2>
             <p className="text-[#94A3B8] text-lg leading-relaxed mb-10 max-w-md mx-auto">
-              SkyPics is part of the future QORVAYN is building. Follow our journey as we architect human-centered digital experiences.
+              eSkypixx is part of the future QORVAYN is building. Follow our journey as we architect human-centered digital experiences.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

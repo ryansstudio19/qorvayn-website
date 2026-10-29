@@ -85,11 +85,11 @@ const ECOSYSTEM_PRODUCTS = [
   },
   {
     id: 'skypics',
-    name: 'SkyPics',
+    name: 'eSkypixx',
     tagline: 'Nature, Sky & Creative Expression',
     status: 'Platform Vision',
     description:
-      'SkyPics is an envisioned AI-powered visual and social platform focused on nature, sky photography, creative expression, and intelligent visual discovery.',
+      'eSkypixx is an envisioned AI-powered visual and social platform focused on nature, sky photography, creative expression, and intelligent visual discovery.',
     href: '/products/skypics',
     accent: '#38BDF8',
   },
@@ -569,7 +569,7 @@ export default function AboutPage() {
                 </Link>
                 , creative platforms like the{' '}
                 <Link href="/products/skypics" className="text-[#7DB0FF] hover:underline underline-offset-4">
-                  SkyPics sky and nature photography platform
+                  eSkypixx sky and nature photography platform
                 </Link>
                 , and digital commerce through{' '}
                 <Link href="/products/goalwear" className="text-[#7DB0FF] hover:underline underline-offset-4">

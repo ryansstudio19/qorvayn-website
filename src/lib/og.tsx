@@ -75,10 +75,10 @@ export async function renderOgImage({ eyebrow, title, subtitle, accent }: OgOpti
 export const OG_PAGES = {
   home: {
     eyebrow: 'HUMAN-CENTERED TECHNOLOGY',
-    title: 'AI Operating System, SkyPics and GoalWear',
+    title: 'AI Operating System, eSkypixx and GoalWear',
     subtitle: 'Remote-first. Founded 10 March 2026 in Bangladesh.',
     accent: '#4F8CFF',
-    alt: 'QORVAYN: AI Operating System, SkyPics and GoalWear',
+    alt: 'QORVAYN: AI Operating System, eSkypixx and GoalWear',
   },
   ryneka: {
     eyebrow: 'QORVAYN PRODUCT',
@@ -89,10 +89,10 @@ export const OG_PAGES = {
   },
   skypics: {
     eyebrow: 'QORVAYN PRODUCT',
-    title: 'SkyPics',
+    title: 'eSkypixx',
     subtitle: 'An AI-powered visual platform for sky, nature and photography.',
     accent: '#45D7FF',
-    alt: 'SkyPics, an AI-powered visual platform by QORVAYN',
+    alt: 'eSkypixx, an AI-powered visual platform by QORVAYN',
   },
   goalwear: {
     eyebrow: 'QORVAYN BRAND',

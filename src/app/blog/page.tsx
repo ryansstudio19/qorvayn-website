@@ -19,7 +19,7 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="QORVAYN JOURNAL"
         title="Engineering Notes & Dispatches."
-        description="Articles, technical architecture notes, and ecosystem reflections from the team building RYNEKA, SkyPics, and GoalWear."
+        description="Articles, technical architecture notes, and ecosystem reflections from the team building RYNEKA, eSkypixx, and GoalWear."
         shaderPreset="aurora"
       />
 

@@ -37,12 +37,12 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
     badge: 'Product Engine',
     title: 'Tri-Product Ecosystem Architecture & Spatial Concepts',
     description:
-      'Detailed the core product paradigms for QORVAYN flagship offerings: RYNEKA AI Operating System, SkyPics Visual & Social Platform, and GoalWear Football & Streetwear Commerce.',
+      'Detailed the core product paradigms for QORVAYN flagship offerings: RYNEKA AI Operating System, eSkypixx Visual & Social Platform, and GoalWear Football & Streetwear Commerce.',
     category: 'Ecosystem',
     categoryColor: '#45D7FF',
     highlights: [
       'Published architectural specifications for RYNEKA AI Operating System & Modular Workspace',
-      'Designed SkyPics AI-powered nature and sky photography creative platform framework',
+      'Designed eSkypixx AI-powered nature and sky photography creative platform framework',
       'Outlined GoalWear football jersey and streetwear e-commerce experience with interactive 3D kit inspection',
       'Implemented 3D spatial interactive perspective cards with depth parallax',
       'Standardized design system typography using Space Grotesk and Inter',

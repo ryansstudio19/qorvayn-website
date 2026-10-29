@@ -7,7 +7,7 @@ import { useReducedMotion } from 'framer-motion';
 
 const NODE_CONFIGS = [
   { position: [-2.1, 0.2, 0] as [number, number, number], color: '#4F8CFF' }, // RYNEKA
-  { position: [2.1, 0.35, -0.4] as [number, number, number], color: '#45D7FF' }, // SkyPics
+  { position: [2.1, 0.35, -0.4] as [number, number, number], color: '#45D7FF' }, // eSkypixx
   { position: [0, -1.4, 0.4] as [number, number, number], color: '#6EE7B7' },  // GoalWear
 ];
 

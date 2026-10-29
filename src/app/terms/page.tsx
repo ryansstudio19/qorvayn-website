@@ -165,7 +165,7 @@ export default function TermsPage() {
                   </h2>
                 </div>
                 <p>
-                  All content, branding, and assets displayed on this website—including but not limited to the names QORVAYN, RYNEKA, SkyPics, and GoalWear, alongside visual identities, logos, graphics, interface concepts, typography arrangements, procedural 3D shaders, and written copy—are the proprietary intellectual property of QORVAYN or its respective contributors and licensors.
+                  All content, branding, and assets displayed on this website—including but not limited to the names QORVAYN, RYNEKA, eSkypixx, and GoalWear, alongside visual identities, logos, graphics, interface concepts, typography arrangements, procedural 3D shaders, and written copy—are the proprietary intellectual property of QORVAYN or its respective contributors and licensors.
                 </p>
                 <p>
                   These works are protected by applicable copyright, design, and intellectual property laws. Except as explicitly permitted for personal, non-commercial viewing, you may not reproduce, redistribute, republish, modify, broadcast, publicly display, reverse engineer, or commercially exploit any original QORVAYN materials without prior express written authorization.
@@ -197,7 +197,7 @@ export default function TermsPage() {
                   <li>The website, its delivery networks, or host servers are entirely free from external transmission errors or unexpected technical interruptions.</li>
                 </ul>
                 <p className="text-sm text-[#7E8B9F] pt-1">
-                  Descriptions of forthcoming product architectures, including RYNEKA, SkyPics, and GoalWear, reflect forward-looking conceptual research and engineering explorations. Features, interfaces, and release schedules remain subject to evolution prior to public launch.
+                  Descriptions of forthcoming product architectures, including RYNEKA, eSkypixx, and GoalWear, reflect forward-looking conceptual research and engineering explorations. Features, interfaces, and release schedules remain subject to evolution prior to public launch.
                 </p>
               </section>
 

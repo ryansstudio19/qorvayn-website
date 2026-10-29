@@ -71,7 +71,7 @@ src/
 - Founder & CEO: Ryan Zannah
 - Founded: 10 March 2026, Bangladesh, Remote-first
 - Email: theqorvayn@gmail.com
-- Products: RYNEKA, SkyPics, GoalWear
+- Products: RYNEKA, eSkypixx, GoalWear
 - No fake claims, metrics, testimonials, or physical addresses
 - Legal pages marked as draft templates
 

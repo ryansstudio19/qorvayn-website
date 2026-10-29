@@ -470,7 +470,7 @@ export default function GoalWearPage() {
                   href="/products/skypics"
                   className="text-[#38BDF8] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F8CFF] rounded"
                 >
-                  SkyPics Visual Photography Platform
+                  eSkypixx Visual Photography Platform
                 </Link>
               </div>
             </div>

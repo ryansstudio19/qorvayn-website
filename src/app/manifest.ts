@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'QORVAYN',
     short_name: 'QORVAYN',
     description:
-      'QORVAYN is a remote-first technology company building RYNEKA, SkyPics and GoalWear.',
+      'QORVAYN is a remote-first technology company building RYNEKA, eSkypixx and GoalWear.',
     start_url: '/',
     display: 'browser',
     background_color: '#07090D',
