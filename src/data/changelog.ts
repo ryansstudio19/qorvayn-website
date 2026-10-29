@@ -37,15 +37,15 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
     badge: 'Product Engine',
     title: 'Tri-Product Ecosystem Architecture & Spatial Concepts',
     description:
-      'Detailed the core product paradigms for QORVAYN flagship offerings: RYNEKA Neural Workspace, SkyPics Visual Cloud, and GoalWear Ambient Wearable Tech.',
+      'Detailed the core product paradigms for QORVAYN flagship offerings: RYNEKA AI Operating System, SkyPics Visual & Social Platform, and GoalWear Football & Streetwear Commerce.',
     category: 'Ecosystem',
     categoryColor: '#45D7FF',
     highlights: [
-      'Published architectural specifications for RYNEKA AI & Neural Spatial Workspace',
-      'Designed SkyPics cloud media storage and zero-knowledge privacy preservation framework',
-      'Outlined GoalWear ambient biometric telemetry and minimal wearable lifestyle integration',
+      'Published architectural specifications for RYNEKA AI Operating System & Modular Workspace',
+      'Designed SkyPics AI-powered nature and sky photography creative platform framework',
+      'Outlined GoalWear football jersey and streetwear e-commerce experience with interactive 3D kit inspection',
       'Implemented 3D spatial interactive perspective cards with depth parallax',
-      'Standardized design system typography using Space Grotesk and Plus Jakarta Sans',
+      'Standardized design system typography using Space Grotesk and Inter',
     ],
   },
   {
@@ -73,7 +73,7 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
     badge: 'Genesis',
     title: 'Founding of QORVAYN',
     description:
-      'QORVAYN was officially founded by Ryan Zannah in Bangladesh with a simple, uncompromising ambition: to build honest, human-centered technology that amplifies human capability.',
+      'QORVAYN was officially founded on 10 March 2026 by Ryan Zannah alongside co-founders Adelia Maharani and Siyami Muntaha Saba in Bangladesh with a simple ambition: to build meaningful, human-centered technology for the future.',
     category: 'Foundation',
     categoryColor: '#A78BFA',
     highlights: [

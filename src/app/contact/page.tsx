@@ -9,7 +9,7 @@ import { PageHero } from '@/components/ui/page-hero';
 import { ContactForm } from '@/components/sections/contact-form';
 import { SITE } from '@/data/site';
 import { SignalScene } from '@/components/three/signal-scene';
-import { Mail, Phone, MapPin, Instagram, Youtube, Music2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Youtube, Music2, Facebook, Twitter, Linkedin, Github } from 'lucide-react';
 
 export const metadata: Metadata = pageMetadata(PAGE_SEO.contact);
 
@@ -20,6 +20,7 @@ const SOCIAL_CHANNELS = [
   { icon: Music2, href: SITE.social.tiktok, label: 'TikTok', handle: '@qorvayn' },
   { icon: Facebook, href: SITE.social.facebook, label: 'Facebook', handle: 'QORVAYN' },
   { icon: Twitter, href: SITE.social.twitter, label: 'X (Twitter)', handle: '@Qorvayn' },
+  { icon: Github, href: SITE.social.github, label: 'GitHub', handle: '@qorvayn' },
 ];
 
 export default function ContactPage() {

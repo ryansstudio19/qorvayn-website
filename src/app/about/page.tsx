@@ -96,10 +96,10 @@ const ECOSYSTEM_PRODUCTS = [
   {
     id: 'goalwear',
     name: 'GoalWear',
-    tagline: 'Football Style & Digital Commerce',
-    status: 'Brand Ecosystem · Concept',
+    tagline: 'Built for matchday. Worn everywhere.',
+    status: 'Brand Ecosystem',
     description:
-      'GoalWear is a football and streetwear e-commerce brand focused on bringing football-inspired style and shopping experiences to its audience.',
+      'A football jersey and football streetwear e-commerce brand featuring matchday player-edition drops, classic club kits, and street culture.',
     href: '/products/goalwear',
     accent: '#34D399',
   },
@@ -109,37 +109,37 @@ const CORE_VALUES_LIST = [
   {
     number: '01',
     title: 'Innovation',
-    description: 'We explore new ideas and technologies to create meaningful digital experiences.',
+    description: 'We challenge conventional approaches and build what comes next.',
     icon: Lightbulb,
   },
   {
     number: '02',
     title: 'Human-Centered Technology',
-    description: 'We believe technology should be designed around real people, their needs, and their everyday lives.',
+    description: 'Technology should serve people, not complicate their lives.',
     icon: Heart,
   },
   {
     number: '03',
     title: 'Accessibility',
-    description: 'We aim to make useful technology more approachable and accessible to a wider audience.',
+    description: 'Powerful technology should be available to more people.',
     icon: Globe,
   },
   {
     number: '04',
     title: 'Privacy',
-    description: 'We believe people should have greater transparency and control over how technology interacts with their lives.',
+    description: 'People should have control over their data and digital lives.',
     icon: Shield,
   },
   {
     number: '05',
     title: 'Craftsmanship',
-    description: 'We value thoughtful design, attention to detail, and continuous improvement in everything we build.',
+    description: 'We care about the details behind every product we create.',
     icon: Gem,
   },
   {
     number: '06',
     title: 'Long-Term Thinking',
-    description: 'We focus on creating products and foundations that can grow, evolve, and remain useful over time.',
+    description: 'We build for the future, not just for the moment.',
     icon: Telescope,
   },
 ];
@@ -222,7 +222,7 @@ export default function AboutPage() {
               <Reveal delay={0.08}>
                 <div className="space-y-6 text-[#94A3B8] text-base sm:text-lg leading-relaxed">
                   <p>
-                    QORVAYN is an independent technology company founded in Bangladesh on March 10, 2026, by Ryan Zannah.
+                    QORVAYN is an independent technology company founded in Bangladesh on 10 March 2026 by Ryan Zannah alongside co-founders Adelia Maharani and Siyami Muntaha Saba.
                   </p>
                   <p>
                     We are building a growing ecosystem of digital products across intelligent software, creative platforms, and digital commerce.
@@ -255,9 +255,13 @@ export default function AboutPage() {
                       <span className="text-[#6B7280] font-mono text-xs uppercase">Founder & CEO</span>
                       <span className="text-[#F5F7FA] font-medium">Ryan Zannah</span>
                     </div>
+                    <div className="py-3.5 flex items-center justify-between gap-4">
+                      <span className="text-[#6B7280] font-mono text-xs uppercase shrink-0">Co-Founders</span>
+                      <span className="text-[#F5F7FA] font-medium text-right text-xs sm:text-sm">Adelia Maharani · Siyami Muntaha Saba</span>
+                    </div>
                     <div className="py-3.5 flex items-center justify-between">
                       <span className="text-[#6B7280] font-mono text-xs uppercase">Founded</span>
-                      <span className="text-[#F5F7FA] font-medium">March 10, 2026</span>
+                      <span className="text-[#F5F7FA] font-medium">10 March 2026</span>
                     </div>
                     <div className="py-3.5 flex items-center justify-between">
                       <span className="text-[#6B7280] font-mono text-xs uppercase">Country</span>
@@ -550,13 +554,16 @@ export default function AboutPage() {
           <Reveal delay={0.08}>
             <div className="rounded-3xl p-8 sm:p-12 bg-[#07090D] border border-white/10 relative overflow-hidden space-y-6 text-[#94A3B8] text-base sm:text-lg leading-relaxed shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
               <p>
-                QORVAYN began on March 10, 2026, with a vision to build meaningful technology and create digital products with long-term potential.
+                QORVAYN began on 10 March 2026 with a simple ambition: to build meaningful technology for the future.
               </p>
               <p>
-                Founded by Ryan Zannah in Bangladesh, the company started with an ambition that extended beyond a single website or application: to build a technology ecosystem capable of supporting different ideas, products, and experiences.
+                Founded by Ryan Zannah alongside co-founders Adelia Maharani and Siyami Muntaha Saba, QORVAYN is growing into a technology ecosystem focused on intelligent software, creative digital experiences, and products designed around real human needs.
               </p>
               <p>
-                As the vision developed, QORVAYN began taking shape through projects spanning AI-powered software like the{' '}
+                QORVAYN currently follows a remote-first approach. While the team primarily works remotely, members occasionally meet in person at a private location to collaborate, plan, and work together.
+              </p>
+              <p>
+                Today, the ecosystem takes shape through projects spanning AI-powered software like the{' '}
                 <Link href="/products/ryneka" className="text-[#7DB0FF] hover:underline underline-offset-4">
                   RYNEKA AI Operating System
                 </Link>
@@ -568,14 +575,11 @@ export default function AboutPage() {
                 <Link href="/products/goalwear" className="text-[#7DB0FF] hover:underline underline-offset-4">
                   GoalWear football jerseys and streetwear
                 </Link>
-                .
-              </p>
-              <p>
-                We are still at the beginning of our journey. Every project, every experiment, and every improvement documented in our{' '}
+                , with every milestone documented in our{' '}
                 <Link href="/changelog" className="text-[#7DB0FF] hover:underline underline-offset-4">
                   public product changelog
                 </Link>{' '}
-                contributes to the{' '}
+                toward the{' '}
                 <Link href="/future" className="text-[#7DB0FF] hover:underline underline-offset-4">
                   long-term future vision of QORVAYN
                 </Link>
@@ -619,7 +623,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TEAM.map((member, i) => (
               <Reveal key={member.id} delay={i * 0.06}>
                 <div className="rounded-2xl p-4 bg-[#0B0F17]/80 border border-white/[0.08] hover:border-white/20 transition-all duration-300 group flex flex-col justify-between h-full shadow-[0_4px_20px_rgba(0,0,0,0.3)]">

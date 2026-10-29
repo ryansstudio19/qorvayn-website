@@ -237,7 +237,7 @@ export default function HomePage() {
 
           <Reveal delay={0.08}>
             <p className="text-[#94A3B8] text-lg leading-relaxed mb-14">
-              QORVAYN began on 10 March 2026 with a simple ambition: to build meaningful technology for the future. Founded by Ryan Zannah, QORVAYN is growing into a technology ecosystem focused on intelligent software, creative digital experiences, and products designed around real human needs. QORVAYN currently follows a remote-first approach. While the team primarily works remotely, members occasionally meet in person at a private location to collaborate, plan, and work together.
+              QORVAYN began on 10 March 2026 with a simple ambition: to build meaningful technology for the future. Founded by Ryan Zannah alongside co-founders Adelia Maharani and Siyami Muntaha Saba, QORVAYN is growing into a technology ecosystem focused on intelligent software, creative digital experiences, and products designed around real human needs. QORVAYN currently follows a remote-first approach. While the team primarily works remotely, members occasionally meet in person at a private location to collaborate, plan, and work together.
             </p>
           </Reveal>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
                   QORVAYN founded
                 </h3>
                 <p className="text-[#94A3B8] text-sm leading-relaxed">
-                  Founded by Ryan Zannah with a clear vision to build honest, human-centered technology.
+                  Founded by Ryan Zannah alongside co-founders Adelia Maharani and Siyami Muntaha Saba with a clear vision to build honest, human-centered technology.
                 </p>
               </div>
             </Reveal>

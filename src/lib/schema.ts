@@ -34,12 +34,24 @@ export const organizationSchema = {
   image: `${SITE_URL}/qorvayn-logo.png`,
   description: SITE.description,
   foundingDate: SITE.foundedDate,
-  founder: {
-    '@type': 'Person',
-    '@id': FOUNDER_ID,
-    name: SITE.founder,
-    jobTitle: 'Founder & CEO',
-  },
+  founder: [
+    {
+      '@type': 'Person',
+      '@id': FOUNDER_ID,
+      name: SITE.founder,
+      jobTitle: 'Founder & CEO',
+    },
+    {
+      '@type': 'Person',
+      name: 'Adelia Maharani',
+      jobTitle: 'Co-Founder / Brand & Creative Direction',
+    },
+    {
+      '@type': 'Person',
+      name: 'Siyami Muntaha Saba',
+      jobTitle: 'Co-Founder & Head of Design',
+    },
+  ],
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
