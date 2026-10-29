@@ -9,11 +9,12 @@ import { PageHero } from '@/components/ui/page-hero';
 import { ContactForm } from '@/components/sections/contact-form';
 import { SITE } from '@/data/site';
 import { SignalScene } from '@/components/three/signal-scene';
-import { Mail, Phone, MapPin, Instagram, Youtube, Music2, Facebook, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Youtube, Music2, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = pageMetadata(PAGE_SEO.contact);
 
 const SOCIAL_CHANNELS = [
+  { icon: Linkedin, href: SITE.social.linkedin, label: 'LinkedIn', handle: '/company/qorvayn' },
   { icon: Instagram, href: SITE.social.instagram, label: 'Instagram', handle: '@qorvayn' },
   { icon: Youtube, href: SITE.social.youtube, label: 'YouTube', handle: '@Qorvayn' },
   { icon: Music2, href: SITE.social.tiktok, label: 'TikTok', handle: '@qorvayn' },

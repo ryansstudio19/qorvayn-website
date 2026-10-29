@@ -2,9 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SITE } from '@/data/site';
 import { PRODUCTS } from '@/data/products';
-import { Instagram, Youtube, Music2, Facebook, Twitter, Github, Mail, Globe } from 'lucide-react';
+import { Instagram, Youtube, Music2, Facebook, Twitter, Github, Linkedin, Mail, Globe } from 'lucide-react';
 
 const SOCIAL_LINKS = [
+  { icon: Linkedin, href: SITE.social.linkedin, label: 'QORVAYN on LinkedIn' },
   { icon: Github, href: SITE.social.github, label: 'QORVAYN on GitHub' },
   { icon: Twitter, href: SITE.social.twitter, label: 'QORVAYN on X (Twitter)' },
   { icon: Instagram, href: SITE.social.instagram, label: 'QORVAYN on Instagram' },

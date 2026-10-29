@@ -15,6 +15,7 @@ export const SITE = {
   email: 'theqorvayn@gmail.com',
   phone: '+880 1983-905724',
   social: {
+    linkedin: 'https://www.linkedin.com/company/qorvayn/',
     instagram: 'https://www.instagram.com/qorvayn',
     youtube: 'https://www.youtube.com/@Qorvayn',
     tiktok: 'https://www.tiktok.com/@qorvayn',

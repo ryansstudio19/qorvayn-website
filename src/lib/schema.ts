@@ -10,6 +10,7 @@ const WEBSITE_ID = `${SITE_URL}/#website`;
 const FOUNDER_ID = `${SITE_URL}/#founder`;
 
 const SOCIAL_PROFILES = [
+  SITE.social.linkedin,
   SITE.social.instagram,
   SITE.social.youtube,
   SITE.social.tiktok,
