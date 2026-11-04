@@ -9,7 +9,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { Button } from '@/components/ui/button';
 import { PRODUCTS } from '@/data/products';
-import { EcosystemScene } from '@/components/three/ecosystem-scene';
+import { LazyEcosystemScene as EcosystemScene } from '@/components/three/lazy-scenes';
 import { ShaderBackground } from '@/components/canvas/shader-background';
 import { ChevronRight, ArrowRight, Layers } from 'lucide-react';
 

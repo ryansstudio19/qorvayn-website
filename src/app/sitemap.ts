@@ -10,18 +10,18 @@ import { BLOG_POSTS } from '@/data/blog';
  * from `PAGE_SEO.blog` in `src/data/seo.ts` and add `'/blog'` to `LAST_MODIFIED` below.
  */
 const LAST_MODIFIED: Record<string, string> = {
-  '/': '2026-10-21',
-  '/about': '2026-10-21',
-  '/products': '2026-10-21',
-  '/products/ryneka': '2026-10-21',
-  '/products/skypics': '2026-10-21',
-  '/products/goalwear': '2026-10-21',
-  '/team': '2026-10-21',
-  '/future': '2026-10-21',
-  '/changelog': '2026-10-21',
-  '/contact': '2026-10-21',
-  '/privacy': '2026-10-21',
-  '/terms': '2026-10-21',
+  '/': '2026-11-04',
+  '/about': '2026-11-04',
+  '/products': '2026-11-04',
+  '/products/ryneka': '2026-11-04',
+  '/products/skypics': '2026-11-04',
+  '/products/goalwear': '2026-11-04',
+  '/team': '2026-11-04',
+  '/future': '2026-11-04',
+  '/changelog': '2026-11-04',
+  '/contact': '2026-11-04',
+  '/privacy': '2026-11-04',
+  '/terms': '2026-11-04',
 };
 
 const PRIORITY: Record<string, number> = {

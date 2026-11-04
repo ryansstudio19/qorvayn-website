@@ -88,10 +88,7 @@ export function Navbar() {
           >
             {NAV_LINKS.map((link) => {
               const active =
-                link.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(link.href) ||
-                    (link.href === '/products');
+                link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
               return (
                 <Link
                   key={link.href}

@@ -15,17 +15,41 @@ export function EmailCapture({
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email || !email.includes('@') || !email.includes('.')) {
       setError('Please enter a valid email address.');
       return;
     }
     setError('');
-    setSubmitted(true);
-    // TODO: Connect real newsletter or waitlist service provider (e.g. Resend, Mailchimp, ConvertKit)
+    setSubmitting(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('access_key', '0ae8c121-8064-4f5f-9198-7d52145dacea');
+      formData.append('email', email.trim());
+      formData.append('subject', 'New Ecosystem Updates Signup — QORVAYN');
+      formData.append('message', `New dispatch/waitlist subscription request from: ${email.trim()}`);
+      formData.append('from_name', 'QORVAYN Ecosystem Updates');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError('Unable to subscribe right now. Please try again shortly.');
+      }
+    } catch {
+      setError('Network connection issue. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -61,8 +85,8 @@ export function EmailCapture({
             className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F5F7FA] text-sm placeholder:text-[#6B7280] focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all"
           />
         </div>
-        <Button type="submit" variant="primary" size="md">
-          {buttonLabel}
+        <Button type="submit" variant="primary" size="md" disabled={submitting}>
+          {submitting ? 'Subscribing…' : buttonLabel}
         </Button>
       </div>
       {error && (

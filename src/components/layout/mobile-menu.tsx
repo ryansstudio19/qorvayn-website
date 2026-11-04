@@ -31,10 +31,7 @@ export function MobileMenu({ links, isOpen, onClose, pathname }: MobileMenuProps
           <nav className="flex flex-col gap-2 mt-4" aria-label="Mobile main navigation">
             {links.map((link) => {
               const active =
-                link.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(link.href) ||
-                    (link.href === '/products');
+                link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
               return (
                 <Link
                   key={link.href}
