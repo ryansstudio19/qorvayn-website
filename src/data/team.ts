@@ -2,6 +2,16 @@
 // and confirmed responsibilities. To respect privacy and current team consensus,
 // roles can be configured as specific roles or switched to 'Core Team'.
 
+export interface TeamMemberSocials {
+  website?: string;
+  linkedin?: string;
+  github?: string;
+  instagram?: string;
+  facebook?: string;
+  twitter?: string;
+  youtube?: string;
+}
+
 export interface TeamMember {
   id: string;
   name: string;
@@ -10,6 +20,7 @@ export interface TeamMember {
   initials: string;
   image: string;
   objectPosition?: string;
+  socials?: TeamMemberSocials;
 }
 
 export const TEAM: TeamMember[] = [
@@ -21,6 +32,15 @@ export const TEAM: TeamMember[] = [
     initials: 'RZ',
     image: '/team/ryan-zannah.jpg',
     objectPosition: '52% 20%',
+    socials: {
+      website: 'https://ryanzannah.online',
+      linkedin: 'https://www.linkedin.com/in/ryanzannah24/',
+      github: 'https://github.com/ryansstudio19',
+      instagram: 'https://www.instagram.com/ryan.zannah/',
+      facebook: 'https://www.facebook.com/ryan202319',
+      twitter: 'https://x.com/ryan_zannah',
+      youtube: 'https://www.youtube.com/@ryan_zannah24',
+    },
   },
   {
     id: 'adelia-maharani',

@@ -40,6 +40,16 @@ export const organizationSchema = {
       '@id': FOUNDER_ID,
       name: SITE.founder,
       jobTitle: 'Founder & CEO',
+      url: 'https://ryanzannah.online',
+      sameAs: [
+        'https://ryanzannah.online',
+        'https://www.linkedin.com/in/ryanzannah24/',
+        'https://github.com/ryansstudio19',
+        'https://www.instagram.com/ryan.zannah/',
+        'https://www.facebook.com/ryan202319',
+        'https://x.com/ryan_zannah',
+        'https://www.youtube.com/@ryan_zannah24',
+      ],
     },
     {
       '@type': 'Person',

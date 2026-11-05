@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
 import { PAGE_SEO } from '@/data/seo';
 import { BreadcrumbListJsonLd } from '@/components/seo/json-ld';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { PageHero } from '@/components/ui/page-hero';
 import { Button } from '@/components/ui/button';
+import { TeamCard } from '@/components/sections/team-card';
 import { TEAM } from '@/data/team';
 import {
   ArrowRight,
@@ -625,36 +625,12 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TEAM.map((member, i) => (
-              <Reveal key={member.id} delay={i * 0.06}>
-                <div className="rounded-2xl p-4 bg-[#0B0F17]/80 border border-white/[0.08] hover:border-white/20 transition-all duration-300 group flex flex-col justify-between h-full shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                  <div>
-                    {/* 4:5 Portrait Container */}
-                    <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#07090D] mb-4 border border-white/[0.06]">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        style={{ objectPosition: member.objectPosition || 'center top' }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/90 via-[#0B0F17]/20 to-transparent pointer-events-none opacity-80" />
-                    </div>
-
-                    <h3 className="font-display font-bold text-[#F5F7FA] text-base group-hover:text-[#7DB0FF] transition-colors leading-snug">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs text-[#94A3B8] font-medium mt-1 leading-relaxed">
-                      {member.role}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-[#6B7280]">
-                    <span className="uppercase tracking-wider">{member.category}</span>
-                    <span className="text-[#4F8CFF]">QORVAYN</span>
-                  </div>
-                </div>
-              </Reveal>
+              <TeamCard
+                key={member.id}
+                member={member}
+                delay={i * 0.06}
+                compact={true}
+              />
             ))}
           </div>
         </Container>
