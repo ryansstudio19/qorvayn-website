@@ -77,6 +77,13 @@ export const TEAM: TeamMember[] = [
     initials: 'RE',
     image: '/team/rahat-ehsan-sufi.jpg',
     objectPosition: '50% 18%',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/rahat-ehsan-sufi-9b76ab437',
+      instagram: 'https://www.instagram.com/rahatqorvayn1',
+      facebook: 'https://www.facebook.com/rahatqorvayn1',
+      twitter: 'https://x.com/rahatqorvayn1',
+      youtube: 'https://www.youtube.com/@editor.rahat1',
+    },
   },
   {
     id: 'sayel',
