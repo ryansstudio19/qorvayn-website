@@ -4,6 +4,11 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, CheckCircle2 } from 'lucide-react';
 
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '0ae8c121-8064-4f5f-9198-7d52145dacea';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 interface EmailCaptureProps {
   buttonLabel?: string;
   note?: string;
@@ -14,13 +19,22 @@ export function EmailCapture({
   note = 'Product updates only. Legal wording to be finalized before launch.',
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
+  const [botcheck, setBotcheck] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email || !email.includes('@') || !email.includes('.')) {
+
+    // Silent honeypot trap for automated bots
+    if (botcheck) {
+      setSubmitted(true);
+      return;
+    }
+
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !EMAIL_REGEX.test(trimmedEmail)) {
       setError('Please enter a valid email address.');
       return;
     }
@@ -29,11 +43,12 @@ export function EmailCapture({
 
     try {
       const formData = new FormData();
-      formData.append('access_key', '0ae8c121-8064-4f5f-9198-7d52145dacea');
-      formData.append('email', email.trim());
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      formData.append('email', trimmedEmail.slice(0, 160));
       formData.append('subject', 'New Ecosystem Updates Signup — QORVAYN');
-      formData.append('message', `New dispatch/waitlist subscription request from: ${email.trim()}`);
+      formData.append('message', `New dispatch/waitlist subscription request from: ${trimmedEmail.slice(0, 160)}`);
       formData.append('from_name', 'QORVAYN Ecosystem Updates');
+      formData.append('botcheck', '');
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -65,6 +80,19 @@ export function EmailCapture({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-md mx-auto" noValidate>
+      {/* Hidden Honeypot Anti-Bot Field */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        style={{ display: 'none' }}
+        checked={botcheck}
+        onChange={(e) => setBotcheck(e.target.checked)}
+      />
+
       <div className="flex flex-col sm:flex-row gap-2.5">
         <div className="relative flex-1">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#6B7280]">
@@ -72,6 +100,7 @@ export function EmailCapture({
           </div>
           <input
             type="email"
+            maxLength={160}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);

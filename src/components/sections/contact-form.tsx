@@ -5,11 +5,17 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Send, AlertCircle } from 'lucide-react';
 
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '0ae8c121-8064-4f5f-9198-7d52145dacea';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 interface FormState {
   name: string;
   email: string;
   subject: string;
   message: string;
+  botcheck: string;
 }
 
 interface FormErrors {
@@ -25,18 +31,26 @@ export function ContactForm() {
     email: '',
     subject: '',
     message: '',
+    botcheck: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
+  const [lastSubmitAt, setLastSubmitAt] = useState<number>(0);
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
-    if (!form.name.trim()) errs.name = 'Please enter your full name.';
-    if (!form.email || !form.email.includes('@') || !form.email.includes('.')) {
+    const trimmedName = form.name.trim();
+    const trimmedEmail = form.email.trim();
+    const trimmedMessage = form.message.trim();
+
+    if (!trimmedName || trimmedName.length < 2) {
+      errs.name = 'Please enter your full name.';
+    }
+    if (!trimmedEmail || !EMAIL_REGEX.test(trimmedEmail)) {
       errs.email = 'Please provide a valid email address.';
     }
-    if (!form.message.trim() || form.message.trim().length < 5) {
+    if (!trimmedMessage || trimmedMessage.length < 5) {
       errs.message = 'Please provide a message with at least 5 characters.';
     }
     return errs;
@@ -44,21 +58,40 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    // Silent honeypot trap for automated bots
+    if (form.botcheck) {
+      router.push('/contact/thank-you');
+      return;
+    }
+
+    // Rate-limit guard (15s cooldown between submissions)
+    const now = Date.now();
+    if (now - lastSubmitAt < 15000) {
+      setApiError('Please wait a few seconds before sending another message.');
+      return;
+    }
+
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
 
     setSubmitting(true);
     setApiError(null);
+    setLastSubmitAt(now);
 
     try {
       const formData = new FormData();
-      formData.append('access_key', '0ae8c121-8064-4f5f-9198-7d52145dacea');
-      formData.append('name', form.name.trim());
-      formData.append('email', form.email.trim());
-      formData.append('subject', form.subject.trim() || `Inquiry from ${form.name.trim()} — QORVAYN`);
-      formData.append('message', form.message.trim());
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      formData.append('name', form.name.trim().slice(0, 120));
+      formData.append('email', form.email.trim().slice(0, 160));
+      formData.append(
+        'subject',
+        (form.subject.trim() || `Inquiry from ${form.name.trim()} — QORVAYN`).slice(0, 200)
+      );
+      formData.append('message', form.message.trim().slice(0, 4000));
       formData.append('from_name', 'QORVAYN Website');
+      formData.append('botcheck', '');
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -93,6 +126,19 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+      {/* Hidden Honeypot Anti-Bot Field */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        style={{ display: 'none' }}
+        checked={Boolean(form.botcheck)}
+        onChange={(e) => setForm((prev) => ({ ...prev, botcheck: e.target.checked ? '1' : '' }))}
+      />
+
       <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-[#94A3B8] leading-relaxed flex items-center gap-2.5">
         <span className="w-2 h-2 rounded-full bg-[#4F8CFF] animate-pulse flex-shrink-0" />
         <span>Direct inquiry channel — all messages are delivered directly to the QORVAYN core team.</span>
@@ -107,6 +153,7 @@ export function ContactForm() {
           id="contact-name"
           type="text"
           required
+          maxLength={120}
           autoComplete="name"
           placeholder="Your full name"
           value={form.name}
@@ -131,6 +178,7 @@ export function ContactForm() {
           id="contact-email"
           type="email"
           required
+          maxLength={160}
           autoComplete="email"
           placeholder="your@email.com"
           value={form.email}
@@ -154,6 +202,7 @@ export function ContactForm() {
         <input
           id="contact-subject"
           type="text"
+          maxLength={200}
           autoComplete="off"
           placeholder="What is this about?"
           value={form.subject}
@@ -171,6 +220,7 @@ export function ContactForm() {
           id="contact-message"
           required
           rows={5}
+          maxLength={4000}
           placeholder="Write your message here…"
           value={form.message}
           onChange={handleChange('message')}
