@@ -98,7 +98,7 @@ export const TEAM: TeamMember[] = [
       website: 'https://srsayel.online',
       linkedin: 'https://www.linkedin.com/in/shoyetur-rahman-sayel-922862432',
       instagram: 'https://www.instagram.com/sayel.x',
-      facebook: 'https://www.facebook.com/share/1Co78zm7rR/?mibextid=wwXIfr',
+      facebook: 'https://www.facebook.com/profile.php?id=61596365753964',
       twitter: 'https://x.com/sayel_ps',
       youtube: 'https://www.youtube.com/@Shoyetur',
     },

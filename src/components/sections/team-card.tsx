@@ -165,7 +165,19 @@ export function TeamCard({
                     : 'text-xl sm:text-2xl mb-2'
               }`}
             >
-              {member.name}
+              {member.socials?.website ? (
+                <a
+                  href={member.socials.website}
+                  target="_blank"
+                  rel="noopener"
+                  title={`${member.name} — personal website`}
+                  className="hover:underline underline-offset-4 decoration-[#4F8CFF]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F8CFF] rounded-sm"
+                >
+                  {member.name}
+                </a>
+              ) : (
+                member.name
+              )}
             </h3>
 
             <p
