@@ -253,7 +253,7 @@ export default function AboutPage() {
                     </div>
                     <div className="py-3.5 flex items-center justify-between">
                       <span className="text-[#6B7280] font-mono text-xs uppercase">Founder & CEO</span>
-                      <span className="text-[#F5F7FA] font-medium">Ryan Zannah</span>
+                      <a href="https://ryanzannah.online" className="text-[#F5F7FA] font-medium underline decoration-[#7DB0FF]/50 underline-offset-4 transition-colors hover:text-[#7DB0FF] hover:decoration-[#7DB0FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7DB0FF] rounded-sm">Ryan Zannah</a>
                     </div>
                     <div className="py-3.5 flex items-center justify-between gap-4">
                       <span className="text-[#6B7280] font-mono text-xs uppercase shrink-0">Co-Founders</span>
