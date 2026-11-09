@@ -78,6 +78,7 @@ export const TEAM: TeamMember[] = [
     image: '/team/rahat-ehsan-sufi.jpg',
     objectPosition: '50% 18%',
     socials: {
+      website: 'https://rahates.online',
       linkedin: 'https://www.linkedin.com/in/rahat-ehsan-sufi-9b76ab437',
       instagram: 'https://www.instagram.com/rahatqorvayn1',
       facebook: 'https://www.facebook.com/rahatqorvayn1',
@@ -93,5 +94,13 @@ export const TEAM: TeamMember[] = [
     initials: 'SR',
     image: '/team/sayel.jpg',
     objectPosition: '47% 20%',
+    socials: {
+      website: 'https://srsayel.online',
+      linkedin: 'https://www.linkedin.com/in/shoyetur-rahman-sayel-922862432',
+      instagram: 'https://www.instagram.com/sayel.x',
+      facebook: 'https://www.facebook.com/share/1Co78zm7rR/?mibextid=wwXIfr',
+      twitter: 'https://x.com/sayel_ps',
+      youtube: 'https://www.youtube.com/@Shoyetur',
+    },
   },
 ];
